@@ -1,0 +1,57 @@
+{
+  "id": "salesforce-lead-creation-from-website-webhook",
+  "title": "Salesforce: Lead Creation from Website using Webhook",
+  "slug": "salesforce-lead-creation-from-website-webhook",
+  "categories": [
+    "Sales",
+    "Marketing",
+    "Communication",
+    "Productivity"
+  ],
+  "integrations": [
+    "salesforce",
+    "twilio-sms",
+    "microsoft-365-email",
+    "google-gmail"
+  ],
+  "description": "Creates Salesforce leads in real time from website form submissions using a webhook, with automated SMS notifications and email alerts to managers.",
+  "longDescription": "This workflow enables real-time lead creation in Salesforce when a customer submits a form on a website.\n\nIt is designed for businesses that want to eliminate manual lead entry, respond faster to inbound enquiries, and automatically notify sales teams or managers when a new lead is created.\n\n**How the workflow works:**\n• The workflow is triggered by a webhook connected to a website form\n• Form data is received and validated through the Start block\n• A Salesforce Create Record block creates a new Lead using the submitted details\n• An SMS notification is sent to the lead or internal team using an SMS gateway\n• An email notification is sent to a manager using Microsoft 365 Email or Gmail\n\n**Key capabilities:**\n• Real-time lead capture without polling or scheduled jobs\n• Direct mapping of website form fields to Salesforce Lead fields\n• Immediate outbound communication via SMS and email\n• Works with any website or form provider capable of calling a webhook\n\nAll workflow executions and errors are logged automatically, ensuring visibility and traceability of inbound lead activity.",
+  "thumbnails": [],
+  "useCaseBlocks": [
+    "Start – Webhook Trigger",
+    "Salesforce – Create Record (Lead)",
+    "SMS Gateway – Send SMS",
+    "Email – Send (Microsoft 365 or Gmail)"
+  ],
+  "benefits": [
+    "Eliminates manual lead entry by creating Salesforce leads instantly from website forms.",
+    "Improves response times with immediate SMS and email notifications.",
+    "Ensures consistent and accurate data capture directly into Salesforce.",
+    "Enables real-time visibility of inbound leads for sales managers."
+  ],
+  "howToSteps": [
+    {
+      "title": "Configure the webhook trigger",
+      "description": "Create a webhook Start block and connect it to the website form so that form submissions are sent directly into the workflow."
+    },
+    {
+      "title": "Create the Salesforce lead",
+      "description": "Map incoming form fields to Salesforce Lead fields using the Create Record block and submit the data to Salesforce."
+    },
+    {
+      "title": "Send notifications",
+      "description": "Send an SMS using the SMS gateway and notify the manager via Microsoft 365 Email or Gmail with the newly created lead details."
+    }
+  ],
+  "lastUpdated": "03/Jan/2026",
+  "difficulty": "Beginner",
+  "estimatedSetupTime": "15 minutes",
+  "tags": [
+    "Salesforce",
+    "Lead Creation",
+    "Webhook",
+    "Website Forms",
+    "SMS",
+    "Email Automation"
+  ]
+}

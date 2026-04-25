@@ -1,0 +1,61 @@
+{
+  "id": "asknicely",
+  "name": "AskNicely",
+  "logo": "/brand/integration-icons/asknicely.svg",
+  "categories": ["Forms & Surveys", "Customer Support", "Customer Experience"],
+  "hero": {
+    "heading": "Gapflow and AskNicely",
+    "subheading": "Automate customer feedback collection and NPS tracking",
+    "image": "/brand/integration-icons/asknicely.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {"name": "Triggers", "items": ["Webhook Received", "Scheduled Survey", "Feedback Received", "NPS Score Changed", "Response Collected"]},
+      {"name": "Actions", "items": ["Import Contact", "Send Email Survey", "Send SMS Survey", "Bulk Add Contacts", "Schedule Survey"]},
+      {"name": "Advanced", "items": ["NPS Tracking", "CSAT Measurement", "CES Analysis", "Custom Fields", "Conditional Surveys"]}
+    ]
+  },
+  "useCases": [
+    {"title": "Automated NPS Collection", "blocks": ["Trigger Event", "Import Contact", "Send Survey", "Track Response"]},
+    {"title": "Post-Purchase Feedback", "blocks": ["Order Completed", "Schedule Survey", "Send Email", "Log Score"]},
+    {"title": "Bulk Survey Distribution", "blocks": ["Extract Contacts", "Bulk Add", "Send Surveys", "Monitor Results"]},
+    {"title": "Support Ticket CSAT", "blocks": ["Ticket Closed", "Import Contact", "Send Survey", "Update CRM"]},
+    {"title": "Onboarding Feedback", "blocks": ["User Registered", "Schedule Survey", "Send Email", "Track Progress"]},
+    {"title": "SMS Campaign", "blocks": ["Event Occurs", "Import Contact", "Send SMS Survey", "Capture Response"]},
+    {"title": "Scheduled Touchpoints", "blocks": ["Schedule Met", "Extract Customers", "Send Surveys", "Analyze Feedback"]},
+    {"title": "Low Score Alerts", "blocks": ["Response Received", "Check Score", "Trigger Alert", "Create Task"]},
+    {"title": "Customer Journey Tracking", "blocks": ["Milestone Reached", "Send Survey", "Log Feedback", "Update Profile"]},
+    {"title": "Renewal Feedback", "blocks": ["Contract Renewal", "Import Contact", "Send Survey", "Track Sentiment"]}
+  ],
+  "documentation": [
+    {"title": "Getting Started with AskNicely", "description": "Connect AskNicely to Gapflow and automate customer feedback collection with NPS, CSAT, and CES surveys.", "link": "/docs/asknicely/getting-started"},
+    {"title": "Survey Automation", "description": "Learn how to automate survey distribution via email and SMS based on customer events and triggers.", "link": "/docs/asknicely/automation"},
+    {"title": "NPS Best Practices", "description": "Master NPS tracking and feedback analysis with proven patterns for customer experience improvement.", "link": "/docs/asknicely/best-practices"}
+  ],
+  "tutorials": [
+    {"title": "Automate Post-Purchase Surveys", "description": "Build workflows that automatically send NPS surveys to customers after purchase completion and track responses.", "thumbnail": "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg", "videoUrl": "https://youtube.com/watch?v=example1"},
+    {"title": "Multi-Channel Survey Distribution", "description": "Create intelligent workflows that distribute surveys via email and SMS based on customer preferences.", "thumbnail": "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg", "videoUrl": "https://youtube.com/watch?v=example2"},
+    {"title": "Real-Time Feedback Processing", "description": "Set up webhooks to capture survey responses in real-time and trigger actions based on NPS scores.", "thumbnail": "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg", "videoUrl": "https://youtube.com/watch?v=example3"}
+  ],
+  "faqs": [
+    {"question": "How do I connect AskNicely to Gapflow?", "answer": "Use your AskNicely API key to securely connect to Gapflow. Navigate to Integrations, select AskNicely, and enter your credentials from your AskNicely account settings."},
+    {"question": "Can I send surveys via both email and SMS?", "answer": "Yes! AskNicely supports both email and SMS survey distribution. Choose the channel based on customer preferences or use both for maximum reach."},
+    {"question": "How do I automate survey sending?", "answer": "Connect AskNicely actions to triggers like CRM events, support ticket closures, or scheduled intervals. Gapflow automatically sends surveys when conditions are met."},
+    {"question": "Can I import contacts in bulk?", "answer": "Absolutely! Use the Bulk Add action to import multiple contacts at once and optionally send surveys immediately or schedule them for later."},
+    {"question": "How do I track NPS, CSAT, and CES scores?", "answer": "AskNicely automatically tracks these metrics. Use webhooks to capture responses in real-time and sync scores to your CRM or data warehouse."},
+    {"question": "Can I trigger actions based on survey responses?", "answer": "Yes! Set up webhooks to receive survey responses and use conditional logic to trigger alerts, create tasks, or update records based on feedback scores."}
+  ],
+  "testimonials": [
+    {"quote": "Automating AskNicely surveys transformed our customer experience program. We now capture feedback at every touchpoint.", "author": "Jennifer Martinez", "role": "CX Manager", "company": "SaaS Company"},
+    {"quote": "NPS tracking is seamless. Every support ticket closure triggers a survey automatically and scores sync to Salesforce.", "author": "Robert Thompson", "role": "Support Director", "company": "Tech Enterprise"},
+    {"quote": "We increased survey response rates by 40% using multi-channel distribution. Email and SMS automation is incredibly powerful.", "author": "Lisa Wong", "role": "Customer Success Lead", "company": "E-commerce Platform"},
+    {"quote": "Real-time feedback processing lets us address low scores immediately. Customer satisfaction improved dramatically.", "author": "James Peterson", "role": "Operations Manager", "company": "Service Provider"}
+  ],
+  "limits": [
+    {"title": "API Rate Limits", "description": "AskNicely API rate limits depend on your subscription plan. Gapflow automatically manages throttling and queuing for reliable operation."},
+    {"title": "Bulk Import Size", "description": "Large contact imports can be processed in batches. Gapflow handles pagination automatically for optimal performance."},
+    {"title": "Survey Frequency", "description": "Respect customer preferences and avoid survey fatigue. Use conditional logic to limit survey frequency per contact."},
+    {"title": "SMS Credits", "description": "SMS surveys consume credits based on your AskNicely plan. Monitor usage and set up alerts when credits are running low."}
+  ],
+  "relatedQuestions": ["How to optimize response rates?", "Can I customize survey templates?", "What about survey fatigue?", "How to handle low NPS scores?", "Best practices for CSAT tracking?"]
+}

@@ -1,0 +1,81 @@
+{
+  "id": "salesforce-search-map-opportunities-with-accounts-outbound-reach",
+  "title": "Salesforce – Search and Map Opportunities with Accounts to Automate Outbound Reach",
+  "slug": "salesforce-search-map-opportunities-with-accounts-outbound-reach",
+  "categories": [
+    "Sales",
+    "Productivity",
+    "Customer Support",
+    "Communication"
+  ],
+  "integrations": [
+    "salesforce",
+    "microsoft-365-email",
+    "google-gmail",
+    "bright-pattern",
+    "genesys-cloud",
+    "twilio-sms",
+    "onedrive",
+    "aws-s3",
+    "asknicely",
+    "surveymonkey"
+  ],
+  "description": "Automatically retrieves Salesforce opportunities based on defined criteria, maps them to their associated accounts, and enables proactive outbound engagement through email, contact centre campaigns, or downstream systems.",
+  "longDescription": "This workflow enables businesses to proactively identify and act on Salesforce opportunities that meet specific business criteria, such as opportunity stage, amount, probability percentage, close date, or creation date.\n\nIt is designed for teams that want to automate follow-ups, chase high-value opportunities, or drive consistent outbound engagement without manual CRM searches or spreadsheet exports.\n\n**How the workflow works:**\n• Runs automatically on a defined schedule, such as every morning at 9am, using the organisation's local timezone\n• Retrieves opportunity records from Salesforce using visual field selection and configurable filter conditions\n• Uses a Field Mapper block to map opportunity fields to account identifiers, enabling relationship-based lookups\n• Retrieves associated account records in bulk using mapped identifiers\n• Delivers the combined opportunity and account data via email to supervisors or stakeholders\n\n**Outbound and engagement extensions:**\n• Send proactive emails using Microsoft 365 Email or Gmail\n• Trigger SMS outreach using supported SMS gateways\n• Add records to outbound campaigns in contact centre platforms such as Bright Pattern or Genesys\n• Export data to OneDrive or AWS S3 for tracking, audit, or reporting\n• Pass data to survey platforms such as SurveyMonkey or AskNicely for customer feedback campaigns\n\nAll executions and errors are logged automatically, providing visibility and traceability across scheduled runs.",
+  "thumbnails": [
+    "/templates/salesforce-search-and-map-opportunities-with-accounts-outbound-reach/1_sf-search_and_map_overview.jpg",
+    "/templates/salesforce-search-and-map-opportunities-with-accounts-outbound-reach/2_sf-search_and_map_-sf_block.jpg",
+    "/templates/salesforce-search-and-map-opportunities-with-accounts-outbound-reach/3_sf-search_and_map_-fieldmapper.jpg",
+    "/templates/salesforce-search-and-map-opportunities-with-accounts-outbound-reach/4_sf-search_and_map_-sf-mappedrecords.jpg"
+  ],
+  "useCaseBlocks": [
+    "Start / Schedule Trigger",
+    "Salesforce – Retrieve Records (Opportunities)",
+    "Field Mapper",
+    "Salesforce – Retrieve Records (Accounts)",
+    "Email – Send (Microsoft 365 or Gmail)",
+    "Optional: SMS Gateway – Send SMS",
+    "Optional: Contact Centre – Add to Outbound List",
+    "Optional: Survey Tool – Trigger Survey",
+    "Optional: OneDrive / AWS S3 – Export Records"
+  ],
+  "benefits": [
+    "Enables proactive outreach by automatically identifying opportunities that require follow-up.",
+    "Eliminates manual CRM searches and repetitive list preparation for sales and support teams.",
+    "Ensures consistent and timely engagement through scheduled, automated execution.",
+    "Creates a single workflow that connects CRM data to email, contact centre, and communication tools."
+  ],
+  "howToSteps": [
+    {
+      "title": "Schedule the workflow execution",
+      "description": "Configure the workflow to run automatically at a defined time, such as every morning, using the organisation's local timezone settings."
+    },
+    {
+      "title": "Retrieve Salesforce opportunity records",
+      "description": "Select the Salesforce account and Opportunities object, visually choose required fields, and apply filter conditions such as amount, stage, probability, or close date."
+    },
+    {
+      "title": "Map opportunities to accounts",
+      "description": "Use the Field Mapper block to map the Opportunity AccountId field to the Account Id field, enabling relationship-based record retrieval."
+    },
+    {
+      "title": "Retrieve associated account records",
+      "description": "Fetch account details in bulk using the mapped identifiers to enrich opportunity data with account-level information."
+    },
+    {
+      "title": "Trigger outbound actions",
+      "description": "Send emails, initiate SMS outreach, add records to outbound contact centre campaigns, or export the data for reporting and follow-up."
+    }
+  ],
+  "lastUpdated": "03/Jan/2026",
+  "difficulty": "Beginner",
+  "estimatedSetupTime": "15 minutes",
+  "tags": [
+    "Salesforce",
+    "Opportunities",
+    "Outbound Engagement",
+    "Email Automation",
+    "Contact Centre",
+    "Sales Automation"
+  ]
+}

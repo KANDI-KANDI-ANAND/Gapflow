@@ -1,0 +1,70 @@
+{
+  "id": "azure-ai",
+  "name": "Microsoft Azure AI",
+  "logo": "/brand/integration-icons/azure-ai.svg",
+  "categories": ["AI", "Machine Learning", "Microsoft Azure"],
+  "hero": {
+    "heading": "Gapflow and Azure AI",
+    "subheading": "Enterprise AI services with Azure Cognitive Services and Machine Learning",
+    "image": "/brand/integration-icons/azure-ai.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {
+        "name": "Triggers",
+        "items": ["API Request", "Model Training Complete", "Batch Job Done", "Cognitive Service Event", "Pipeline Trigger"]
+      },
+      {
+        "name": "Actions",
+        "items": ["Analyze Text", "Process Image", "Speech Recognition", "Run ML Model", "Translate Language"]
+      },
+      {
+        "name": "Advanced",
+        "items": ["Custom Vision", "Azure OpenAI", "Form Recognizer", "Video Indexer", "Anomaly Detector"]
+      }
+    ]
+  },
+  "useCases": [
+    {"title": "Document Intelligence", "blocks": ["Upload Document", "Extract Data", "Validate Fields", "Store Results"]},
+    {"title": "Computer Vision", "blocks": ["Image Input", "Analyze Content", "Detect Objects", "Tag Images"]},
+    {"title": "Speech Services", "blocks": ["Audio File", "Transcribe Speech", "Translate", "Synthesize Voice"]},
+    {"title": "Language Understanding", "blocks": ["User Input", "Extract Intent", "Parse Entities", "Route Action"]},
+    {"title": "Content Moderation", "blocks": ["User Content", "Scan Content", "Flag Violations", "Take Action"]},
+    {"title": "Face Recognition", "blocks": ["Photo Upload", "Detect Faces", "Verify Identity", "Grant Access"]},
+    {"title": "Anomaly Detection", "blocks": ["Time Series Data", "Detect Anomalies", "Alert Team", "Investigate"]},
+    {"title": "Custom Search", "blocks": ["Search Query", "Cognitive Search", "Rank Results", "Return Matches"]},
+    {"title": "Text Analytics", "blocks": ["Text Input", "Extract Key Phrases", "Analyze Sentiment", "Detect Language"]},
+    {"title": "Video Analysis", "blocks": ["Video Upload", "Index Content", "Extract Insights", "Generate Metadata"]}
+  ],
+  "documentation": [
+    {"title": "Getting Started with Azure AI", "description": "Connect Azure AI services to Gapflow and leverage enterprise-grade cognitive capabilities.", "link": "/docs/azure-ai/getting-started"},
+    {"title": "Cognitive Services Integration", "description": "Use Vision, Speech, Language, and Decision services for intelligent applications.", "link": "/docs/azure-ai/cognitive-services"},
+    {"title": "Azure Machine Learning", "description": "Train, deploy, and manage ML models at scale with Azure ML integration.", "link": "/docs/azure-ai/machine-learning"}
+  ],
+  "tutorials": [
+    {"title": "Intelligent Document Processing", "description": "Build an automated document processing pipeline that extracts and validates data from any form.", "thumbnail": "https://images.pexels.com/photos/8849295/pexels-photo-8849295.jpeg", "videoUrl": "https://youtube.com/watch?v=example1"},
+    {"title": "Multi-Language Customer Support", "description": "Create a support system with automatic translation and speech recognition for global customers.", "thumbnail": "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg", "videoUrl": "https://youtube.com/watch?v=example2"},
+    {"title": "Visual Quality Inspection", "description": "Set up automated quality inspection using Custom Vision for manufacturing processes.", "thumbnail": "https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg", "videoUrl": "https://youtube.com/watch?v=example3"}
+  ],
+  "faqs": [
+    {"question": "How do I connect Azure AI?", "answer": "Use Azure subscription keys and endpoints for each service. Managed identity recommended for production."},
+    {"question": "What services are available?", "answer": "Vision, Speech, Language, Decision, Azure OpenAI, Form Recognizer, Video Indexer, and more."},
+    {"question": "Can I use Azure OpenAI?", "answer": "Yes! Access GPT-4, GPT-3.5, DALL-E, and other OpenAI models through Azure with enterprise SLAs."},
+    {"question": "What about data residency?", "answer": "Deploy in 60+ regions worldwide. Keep data in specific geographic locations for compliance."},
+    {"question": "How does pricing work?", "answer": "Pay-per-use for most services. Volume discounts and reserved capacity available for predictable workloads."},
+    {"question": "What about custom models?", "answer": "Train custom models with Custom Vision, Custom Speech, and Azure ML for domain-specific needs."}
+  ],
+  "testimonials": [
+    {"quote": "Document processing accuracy reached 99.5%. Form Recognizer handles any layout flawlessly.", "author": "Patricia Moore", "role": "Process Automation Lead", "company": "Financial Services"},
+    {"quote": "Multi-language support expanded our market 5x. Speech translation quality is phenomenal.", "author": "Carlos Mendez", "role": "Global Operations", "company": "Customer Support Platform"},
+    {"quote": "Custom Vision model deployment took 2 hours. Production-ready quality inspection running 24/7.", "author": "Dr. Lisa Wang", "role": "ML Engineer", "company": "Manufacturing Company"},
+    {"quote": "Azure OpenAI integration gives us GPT-4 with enterprise security. Perfect for sensitive data.", "author": "Mark Anderson", "role": "CTO", "company": "Healthcare Tech"}
+  ],
+  "limits": [
+    {"title": "API Rate Limits", "description": "Vary by service and pricing tier (F0: low, S1: medium, S2+: high). Request increases as needed."},
+    {"title": "Transaction Limits", "description": "Free tier has monthly transaction limits. Paid tiers offer higher quotas and no caps."},
+    {"title": "Data Size", "description": "Limits on file sizes and data volumes per request. Use batch processing for large datasets."},
+    {"title": "Model Training", "description": "Custom model training has time and data limits. Scale up for complex models and large datasets."}
+  ],
+  "relatedQuestions": ["How to optimize costs?", "Can I use containers?", "What about HIPAA compliance?", "How to monitor usage?", "Best practices for production?"]
+}

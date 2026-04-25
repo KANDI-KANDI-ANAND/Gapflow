@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "id": "5ab8b140-17c2-4e94-a721-b96f853e49b3",
+    "name": "Gapflow.ai — Docs Landing",
+    "version": "0.1.0",
+    "created_at": "2025-11-06T13:00:06.908234",
+    "viewport_strategy": "desktop-first-responsive",
+    "theme_ref": "gapflow_theme.css",
+    "page": "docs"
+  },
+  "layout": {
+    "container": {
+      "max_width": 1200,
+      "padding_x": "xl"
+    },
+    "grid": {
+      "columns": 12,
+      "gutter": "lg"
+    },
+    "section_defaults": {
+      "padding_y": "section"
+    }
+  },
+  "sections": [
+    {
+      "id": "docs-hero",
+      "type": "section",
+      "style": {
+        "background": "gradient-dark",
+        "align": "center"
+      },
+      "container": true,
+      "content": {
+        "eyebrow": {
+          "type": "pill",
+          "tone": "accent",
+          "text": "Documentation"
+        },
+        "heading": {
+          "type": "h1",
+          "text": "Build with Gapflow"
+        },
+        "subheading": {
+          "type": "p",
+          "variant": "body-lg",
+          "text": "Guides, API reference, SDKs, and examples to ship automations quickly."
+        },
+        "ctas": [
+          {
+            "type": "button",
+            "variant": "primary",
+            "size": "lg",
+            "label": "Get Started",
+            "action": "/docs/getting-started"
+          },
+          {
+            "type": "button",
+            "variant": "secondary",
+            "size": "lg",
+            "label": "API Reference",
+            "action": "/docs/api"
+          }
+        ]
+      }
+    },
+    {
+      "id": "quick-start",
+      "type": "section",
+      "style": {
+        "background": "white"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "Quick starts"
+        },
+        "grid": [
+          {
+            "icon": "zap",
+            "title": "Create your first flow",
+            "desc": "Visual builder walkthrough",
+            "action": "/docs/getting-started"
+          },
+          {
+            "icon": "bot",
+            "title": "Add an AI action",
+            "desc": "Models, prompts, evals",
+            "action": "/docs/ai-actions"
+          },
+          {
+            "icon": "plug",
+            "title": "Connect an app",
+            "desc": "Webhooks and OAuth",
+            "action": "/docs/connectors"
+          }
+        ]
+      }
+    },
+    {
+      "id": "references",
+      "type": "section",
+      "style": {
+        "background": "light"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "References"
+        },
+        "grid": [
+          {
+            "icon": "file-text",
+            "title": "API",
+            "desc": "Endpoints & auth",
+            "action": "/docs/api"
+          },
+          {
+            "icon": "package",
+            "title": "SDKs",
+            "desc": "JavaScript, Python",
+            "action": "/docs/sdks"
+          },
+          {
+            "icon": "puzzle",
+            "title": "Connector SDK",
+            "desc": "Create custom nodes",
+            "action": "/docs/connectors"
+          }
+        ]
+      }
+    },
+    {
+      "id": "examples",
+      "type": "section",
+      "style": {
+        "background": "white"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "Examples"
+        },
+        "tiles": [
+          {
+            "title": "Power BI → Slack digest",
+            "action": "/docs/examples/powerbi-slack"
+          },
+          {
+            "title": "RAG: docs to answers",
+            "action": "/docs/examples/rag"
+          },
+          {
+            "title": "Incident → on‑call paging",
+            "action": "/docs/examples/oncall"
+          }
+        ]
+      }
+    },
+    {
+      "id": "support",
+      "type": "section",
+      "style": {
+        "background": "light-gradient"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "Need help?"
+        },
+        "subheading": {
+          "type": "p",
+          "variant": "body",
+          "text": "Join the community or contact support."
+        },
+        "ctas": [
+          {
+            "type": "button",
+            "variant": "primary",
+            "label": "Community",
+            "action": "/community"
+          },
+          {
+            "type": "button",
+            "variant": "ghost",
+            "label": "Contact Support",
+            "action": "/support"
+          }
+        ]
+      }
+    }
+  ]
+}

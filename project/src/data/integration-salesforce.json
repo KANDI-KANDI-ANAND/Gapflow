@@ -1,0 +1,201 @@
+{
+  "id": "salesforce",
+  "name": "Salesforce",
+  "logo": "/brand/integration-icons/salesforce.svg",
+  "categories": ["CRM", "Sales Ops", "RevOps"],
+  "hero": {
+    "heading": "Gapflow and Salesforce",
+    "subheading": "Explore the world of endless possibilities with purpose-built automation",
+    "image": "/brand/integration-icons/salesforce.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {
+        "name": "Triggers",
+        "items": [
+          "New Lead Created",
+          "Contact Updated",
+          "Opportunity Stage Changed",
+          "Case Status Updated",
+          "Account Modified"
+        ]
+      },
+      {
+        "name": "Actions",
+        "items": [
+          "Create Lead",
+          "Update Contact",
+          "Create Opportunity",
+          "Search Records",
+          "Bulk Import Data"
+        ]
+      },
+      {
+        "name": "Data Operations",
+        "items": [
+          "Fetch Contacts, Leads & Opportunities",
+          "Implement Search Filters",
+          "Bulk Import/Export",
+          "Sync Custom Objects",
+          "Update Field Mappings"
+        ]
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Lead Enrichment Automation",
+      "blocks": ["Salesforce Trigger", "Data Enrichment", "Update Lead", "Slack Notification"]
+    },
+    {
+      "title": "Pipeline Stage Alerts",
+      "blocks": ["Salesforce Trigger", "Filter", "Teams Message", "Create Task"]
+    },
+    {
+      "title": "Case AI Summary",
+      "blocks": ["Salesforce Trigger", "OpenAI", "Email", "Update Case"]
+    },
+    {
+      "title": "Daily Exec Digest",
+      "blocks": ["Schedule", "Salesforce Query", "Format Data", "Email Report"]
+    },
+    {
+      "title": "Contact Sync to Marketing",
+      "blocks": ["Salesforce Trigger", "Transform", "Mailchimp", "Log Activity"]
+    },
+    {
+      "title": "Opportunity Won Celebration",
+      "blocks": ["Salesforce Trigger", "Filter", "Slack", "Update Record"]
+    },
+    {
+      "title": "Data Warehouse Sync",
+      "blocks": ["Schedule", "Salesforce Export", "Transform", "BigQuery Load"]
+    },
+    {
+      "title": "Support Ticket Creation",
+      "blocks": ["Salesforce Trigger", "Map Fields", "Zendesk", "Link Records"]
+    },
+    {
+      "title": "Revenue Forecast Report",
+      "blocks": ["Schedule", "Salesforce Analytics", "Power BI", "Email Dashboard"]
+    },
+    {
+      "title": "Account Health Scoring",
+      "blocks": ["Schedule", "Salesforce Query", "Calculate Score", "Update Account"]
+    }
+  ],
+  "documentation": [
+    {
+      "title": "Getting Started with Salesforce",
+      "description": "Learn how to connect your Salesforce account and set up your first automation workflow.",
+      "link": "/docs/salesforce/getting-started"
+    },
+    {
+      "title": "Advanced Salesforce Operations",
+      "description": "Discover advanced techniques for bulk operations, custom objects, and complex field mappings.",
+      "link": "/docs/salesforce/advanced"
+    },
+    {
+      "title": "Salesforce API Best Practices",
+      "description": "Understand API limits, optimization strategies, and best practices for Salesforce integrations.",
+      "link": "/docs/salesforce/best-practices"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "Build Your First Salesforce Automation",
+      "description": "Step-by-step tutorial on creating a simple lead routing automation that enriches leads with external data, scores them based on custom criteria, and automatically assigns them to the right sales rep.",
+      "thumbnail": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example1"
+    },
+    {
+      "title": "Sync Salesforce with Your Data Warehouse",
+      "description": "Learn how to set up automated data pipelines that sync your Salesforce data to BigQuery or Snowflake, enabling advanced analytics and business intelligence reporting.",
+      "thumbnail": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example2"
+    },
+    {
+      "title": "AI-Powered Case Management",
+      "description": "Discover how to leverage AI to automatically categorize, prioritize, and route support cases, while generating intelligent summaries for your support team.",
+      "thumbnail": "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example3"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I authenticate my Salesforce account?",
+      "answer": "You can authenticate using OAuth 2.0. Simply click the 'Connect' button in the integration settings, and you'll be redirected to Salesforce to authorize Gapflow. We support both production and sandbox environments."
+    },
+    {
+      "question": "What are the API rate limits?",
+      "answer": "Salesforce enforces API limits based on your license type. Gapflow automatically handles rate limiting and implements exponential backoff. We recommend using bulk operations for large data sets to optimize API usage."
+    },
+    {
+      "question": "Can I sync custom objects?",
+      "answer": "Yes! Gapflow fully supports Salesforce custom objects. You can trigger workflows based on custom object changes and perform CRUD operations on any custom object in your org."
+    },
+    {
+      "question": "How do I handle field-level security?",
+      "answer": "Gapflow respects Salesforce field-level security settings. Ensure the connected user has appropriate permissions to read and write the fields used in your workflows."
+    },
+    {
+      "question": "Can I test automations in a sandbox?",
+      "answer": "Absolutely. You can connect both production and sandbox environments. We recommend testing all workflows in a sandbox before deploying to production."
+    },
+    {
+      "question": "What happens if my workflow fails?",
+      "answer": "Gapflow provides detailed error logs and automatic retry mechanisms. You can configure alerts to notify you via email or Slack when workflows fail, and easily debug issues using our execution history."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Gapflow transformed our lead routing process. What used to take hours now happens instantly.",
+      "author": "Sarah Chen",
+      "role": "Sales Operations Manager",
+      "company": "TechCorp"
+    },
+    {
+      "quote": "The Salesforce integration is seamless. We've automated 80% of our manual CRM tasks.",
+      "author": "Michael Rodriguez",
+      "role": "Revenue Operations Lead",
+      "company": "Growth Dynamics"
+    },
+    {
+      "quote": "Finally, a no-code tool that actually works with complex Salesforce setups.",
+      "author": "Jennifer Park",
+      "role": "CRM Administrator",
+      "company": "Enterprise Solutions Inc"
+    },
+    {
+      "quote": "We reduced our data sync time from 6 hours to 15 minutes using Gapflow.",
+      "author": "David Thompson",
+      "role": "Data Engineer",
+      "company": "Analytics Pro"
+    }
+  ],
+  "limits": [
+    {
+      "title": "API Rate Limits",
+      "description": "Salesforce enforces API limits based on your license type. Use bulk operations for large data sets and monitor your API usage in the Salesforce Setup menu."
+    },
+    {
+      "title": "Field-Level Security",
+      "description": "Ensure the connected user has appropriate field-level and object-level permissions. Missing permissions will result in workflow failures."
+    },
+    {
+      "title": "Bulk Operations",
+      "description": "For operations involving more than 200 records, use Salesforce Bulk API. Gapflow automatically switches to bulk mode when appropriate."
+    },
+    {
+      "title": "Governor Limits",
+      "description": "Be aware of Salesforce governor limits including SOQL queries, DML statements, and CPU time. Design workflows to minimize resource consumption."
+    }
+  ],
+  "relatedQuestions": [
+    "How to set up OAuth for Salesforce?",
+    "What's the difference between SOAP and REST API?",
+    "How to optimize bulk data operations?",
+    "Can I use Salesforce Flow with Gapflow?",
+    "How to handle duplicate records?"
+  ]
+}

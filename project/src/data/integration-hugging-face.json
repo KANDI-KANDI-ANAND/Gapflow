@@ -1,0 +1,70 @@
+{
+  "id": "hugging-face",
+  "name": "Hugging Face",
+  "logo": "/brand/integration-icons/hugging-face.svg",
+  "categories": ["AI", "Machine Learning", "Models"],
+  "hero": {
+    "heading": "Gapflow and Hugging Face",
+    "subheading": "Access 500K+ AI models for any machine learning task",
+    "image": "/brand/integration-icons/hugging-face.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {
+        "name": "Triggers",
+        "items": ["Model Inference Request", "Dataset Updated", "Training Complete", "Pipeline Ready", "Webhook Event"]
+      },
+      {
+        "name": "Actions",
+        "items": ["Run Inference", "Train Model", "Generate Text", "Classify Images", "Process Audio"]
+      },
+      {
+        "name": "Advanced",
+        "items": ["Custom Pipelines", "Model Deployment", "Dataset Management", "Fine-tuning", "Edge Deployment"]
+      }
+    ]
+  },
+  "useCases": [
+    {"title": "Image Classification", "blocks": ["Image Upload", "Run Model", "Get Predictions", "Store Results"]},
+    {"title": "Text Generation", "blocks": ["Prompt Input", "Select Model", "Generate Text", "Post-process"]},
+    {"title": "Speech-to-Text", "blocks": ["Audio File", "Transcribe", "Format Text", "Save Transcript"]},
+    {"title": "Sentiment Analysis", "blocks": ["Text Input", "Analyze Sentiment", "Score Result", "Update Record"]},
+    {"title": "Object Detection", "blocks": ["Image Input", "Detect Objects", "Draw Bounding Boxes", "Return Data"]},
+    {"title": "Translation", "blocks": ["Source Text", "Detect Language", "Translate", "Validate Output"]},
+    {"title": "Question Answering", "blocks": ["Question & Context", "Run QA Model", "Extract Answer", "Return Result"]},
+    {"title": "Named Entity Recognition", "blocks": ["Text Document", "Extract Entities", "Classify Types", "Structure Data"]},
+    {"title": "Text Summarization", "blocks": ["Long Article", "Summarize", "Extract Key Points", "Format Output"]},
+    {"title": "Zero-Shot Classification", "blocks": ["Text & Labels", "Classify", "Score Confidence", "Return Top Match"]}
+  ],
+  "documentation": [
+    {"title": "Getting Started with Hugging Face", "description": "Connect Hugging Face to Gapflow and access 500K+ AI models for any machine learning task.", "link": "/docs/hugging-face/getting-started"},
+    {"title": "Model Inference API", "description": "Run inference on any Hugging Face model using simple API calls with automatic scaling.", "link": "/docs/hugging-face/inference"},
+    {"title": "Custom Model Deployment", "description": "Deploy your own fine-tuned models on Hugging Face infrastructure with dedicated endpoints.", "link": "/docs/hugging-face/deployment"}
+  ],
+  "tutorials": [
+    {"title": "Multi-Modal AI Pipeline", "description": "Build a complete pipeline that processes text, images, and audio using multiple Hugging Face models.", "thumbnail": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg", "videoUrl": "https://youtube.com/watch?v=example1"},
+    {"title": "Custom Model Fine-tuning", "description": "Fine-tune pre-trained models on your data and deploy them for production use automatically.", "thumbnail": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg", "videoUrl": "https://youtube.com/watch?v=example2"},
+    {"title": "Real-time Image Analysis", "description": "Set up real-time image classification and object detection for your application workflows.", "thumbnail": "https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg", "videoUrl": "https://youtube.com/watch?v=example3"}
+  ],
+  "faqs": [
+    {"question": "How do I connect Hugging Face?", "answer": "Use your Hugging Face API token from your account settings. Free tier available for testing and development."},
+    {"question": "Which models can I use?", "answer": "Access 500K+ models for NLP, computer vision, audio, multimodal tasks. All public models available via API."},
+    {"question": "What about custom models?", "answer": "Deploy and run your own models using Inference Endpoints. Full control over model versions and configurations."},
+    {"question": "How does pricing work?", "answer": "Free tier for public models with rate limits. Dedicated endpoints priced hourly based on compute resources."},
+    {"question": "Can I use transformers offline?", "answer": "Yes! Download models and run them locally or use edge deployment for offline inference capabilities."},
+    {"question": "What about model fine-tuning?", "answer": "Fine-tune models using AutoTrain or custom training scripts. Deploy fine-tuned models to dedicated endpoints."}
+  ],
+  "testimonials": [
+    {"quote": "Access to 500K+ models transformed our ML capabilities. Build new features in hours, not months.", "author": "Dr. Emily Chen", "role": "AI Research Lead", "company": "ML Startup"},
+    {"quote": "Image classification pipeline processes 1M+ images daily. Accuracy and speed are exceptional.", "author": "Robert Martinez", "role": "Computer Vision Engineer", "company": "E-commerce Platform"},
+    {"quote": "Speech-to-text quality rivals commercial services. Multi-language support is game-changing.", "author": "Aisha Khan", "role": "Product Manager", "company": "EdTech Company"},
+    {"quote": "Custom model deployment is seamless. Fine-tune, deploy, scale - all automated and reliable.", "author": "James Wilson", "role": "ML Engineer", "company": "AI Platform"}
+  ],
+  "limits": [
+    {"title": "API Rate Limits", "description": "Free tier: limited requests/day. Pro: higher limits. Dedicated endpoints: no rate limits, pay for compute."},
+    {"title": "Model Size", "description": "Very large models may require dedicated endpoints. Free inference has memory constraints."},
+    {"title": "Inference Speed", "description": "Shared inference can have cold starts. Dedicated endpoints offer consistent, fast performance."},
+    {"title": "Concurrent Requests", "description": "Free tier: limited concurrency. Scale with dedicated endpoints for high-throughput applications."}
+  ],
+  "relatedQuestions": ["How to choose a model?", "Can I use GPU acceleration?", "What about batch inference?", "How to monitor performance?", "Best practices for deployment?"]
+}

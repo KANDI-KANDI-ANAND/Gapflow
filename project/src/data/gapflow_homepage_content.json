@@ -1,0 +1,925 @@
+{
+  "meta": {
+    "id": "7ea56a35-de73-462c-ae07-fc0741b0aeaf",
+    "name": "Gapflow.ai — Homepage (Modular Spec, Bolt-ready)",
+    "version": "0.2.0",
+    "created_at": "2025-11-06T12:15:34.569247",
+    "viewport_strategy": "desktop-first-responsive",
+    "theme": "make-style",
+    "designer_notes": [
+      "This spec is modular. Each section is a bolt:section node with a unique id.",
+      "All spacings reference spacing tokens; do not hardcode px except where explicitly noted.",
+      "Use CSS variables from the attached theme for colors, radius, shadows, motion."
+    ],
+    "notes": "Content layer filled with real messaging for Gapflow.ai (broad use beyond call centres)."
+  },
+  "tokens": {
+    "colors": {
+      "primary-gradient": [
+        "#6B4BFF",
+        "#9A68FF"
+      ],
+      "accent-green": "#32D38A",
+      "neutral-100": "#FFFFFF",
+      "neutral-200": "#F7F8FC",
+      "neutral-300": "#F3F5FB",
+      "neutral-400": "#E3E6EF",
+      "neutral-800": "#202124",
+      "neutral-600": "#5F6368",
+      "muted": "#9AA0A6",
+      "hero-dark-start": "#0B0E1A",
+      "hero-dark-end": "#191E3A"
+    },
+    "typography": {
+      "font-heading": "Poppins, Inter, Arial, sans-serif",
+      "font-body": "Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif",
+      "h1": {
+        "size": 56,
+        "line": 64,
+        "weight": 700,
+        "tracking": -0.5
+      },
+      "h2": {
+        "size": 40,
+        "line": 48,
+        "weight": 700,
+        "tracking": -0.2
+      },
+      "h3": {
+        "size": 28,
+        "line": 36,
+        "weight": 700
+      },
+      "body-lg": {
+        "size": 18,
+        "line": 28,
+        "weight": 400
+      },
+      "body": {
+        "size": 16,
+        "line": 26,
+        "weight": 400
+      },
+      "caption": {
+        "size": 12,
+        "line": 18,
+        "weight": 400
+      }
+    },
+    "radius": {
+      "sm": 8,
+      "md": 12,
+      "lg": 16,
+      "xl": 24,
+      "xxl": 32
+    },
+    "shadows": {
+      "card": "0 2px 6px rgba(0,0,0,0.06)",
+      "elevated": "0 8px 24px rgba(0,0,0,0.12)",
+      "glow": "0 0 24px rgba(201,198,249,0.55)"
+    },
+    "spacing": {
+      "xs": 8,
+      "sm": 12,
+      "md": 16,
+      "lg": 24,
+      "xl": 32,
+      "xxl": 48,
+      "section": 100
+    },
+    "z": {
+      "base": 1,
+      "raised": 10,
+      "modal": 1000
+    },
+    "breakpoints": {
+      "desktop": 1200,
+      "tablet": 992,
+      "mobile": 768
+    },
+    "motion": {
+      "durations": {
+        "fast": 150,
+        "base": 250,
+        "slow": 400,
+        "bg": 8000
+      },
+      "easing": {
+        "inout": "cubic-bezier(.4,0,.2,1)"
+      },
+      "scroll_reveal": {
+        "type": "fade-up",
+        "distance": 24,
+        "delay_step": 60
+      }
+    }
+  },
+  "components": {
+    "button": {
+      "props": {
+        "variant": [
+          "primary",
+          "secondary",
+          "ghost"
+        ],
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "icon": "optional-left"
+      },
+      "render": "button.bolt-btn[data-variant][data-size] span.label + optional svg.icon",
+      "interaction": "hover: scale(1.03) + gradient-glow; focus-visible outline"
+    },
+    "card": {
+      "props": {
+        "elevation": [
+          "base",
+          "raised"
+        ],
+        "interactive": [
+          true,
+          false
+        ],
+        "padding": [
+          "md",
+          "lg"
+        ]
+      },
+      "render": "div.bolt-card > header + div.content + optional footer",
+      "interaction": "hover: translateY(-3px) + border-accent + shadow-elevated when interactive"
+    },
+    "pill": {
+      "props": {
+        "tone": [
+          "accent",
+          "muted"
+        ],
+        "icon": "optional-left"
+      },
+      "render": "span.bolt-pill[aria-label]"
+    },
+    "icon": {
+      "props": {
+        "name": "string",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      },
+      "render": "svg use href='#icon-{name}' with gradient fill on hover"
+    },
+    "logo_wall": {
+      "props": {
+        "columns": 6,
+        "gap": "lg"
+      },
+      "render": "ul.bolt-logos > li > img[alt]"
+    },
+    "flow_canvas": {
+      "description": "Hero animation / visual builder preview with nodal connections",
+      "render": "canvas#flow-hero + data-driven nodes in absolutely positioned layer",
+      "data_schema": {
+        "nodes": [
+          {
+            "id": "string",
+            "x": "number",
+            "y": "number",
+            "label": "string",
+            "icon": "string",
+            "state": [
+              "idle",
+              "active",
+              "success"
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "from": "id",
+            "to": "id",
+            "animated": true
+          }
+        ]
+      },
+      "interaction": "idle: slow background sweep; on hover over node: pulse ring; on intersection in viewport: animate lines"
+    }
+  },
+  "layout": {
+    "container": {
+      "max_width": 1200,
+      "padding_x": "xl"
+    },
+    "grid": {
+      "columns": 12,
+      "gutter": "lg"
+    },
+    "section_defaults": {
+      "padding_y": "section"
+    }
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "section",
+      "style": {
+        "background": "gradient-dark",
+        "align": "center"
+      },
+      "container": true,
+      "content": {
+        "eyebrow": {
+          "type": "pill",
+          "tone": "accent",
+          "text": "AI Automation & Orchestration"
+        },
+        "heading": {
+          "type": "h1",
+          "text": "Build, run, and scale workflows with AI at the core"
+        },
+        "subheading": {
+          "type": "p",
+          "variant": "body-lg",
+          "text": "Gapflow connects your apps, data, and AI agents so teams can automate anything—from customer ops to data pipelines—visually."
+        },
+        "ctas": [
+          {
+            "type": "button",
+            "variant": "primary",
+            "size": "lg",
+            "label": "Start Building",
+            "icon": "rocket",
+            "action": "/app/signup"
+          },
+          {
+            "type": "button",
+            "variant": "secondary",
+            "size": "lg",
+            "label": "Watch 90‑sec Demo",
+            "icon": "play",
+            "action": "#demo"
+          }
+        ],
+        "visual": {
+          "type": "flow_canvas",
+          "preset": "constellation",
+          "data": {
+            "nodes": [
+              {
+                "id": "trigger",
+                "x": 120,
+                "y": 80,
+                "label": "Trigger",
+                "icon": "zap",
+                "state": "active"
+              },
+              {
+                "id": "ai",
+                "x": 360,
+                "y": 140,
+                "label": "AI Agent",
+                "icon": "bot",
+                "state": "idle"
+              },
+              {
+                "id": "api",
+                "x": 600,
+                "y": 90,
+                "label": "API",
+                "icon": "link",
+                "state": "idle"
+              },
+              {
+                "id": "report",
+                "x": 600,
+                "y": 220,
+                "label": "Report",
+                "icon": "bar-chart",
+                "state": "success"
+              }
+            ],
+            "edges": [
+              {
+                "from": "trigger",
+                "to": "ai",
+                "animated": true
+              },
+              {
+                "from": "ai",
+                "to": "api",
+                "animated": true
+              },
+              {
+                "from": "ai",
+                "to": "report",
+                "animated": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "vision",
+      "type": "section",
+      "style": {
+        "background": "light"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "Your universal workflow & AI orchestration layer"
+        },
+        "columns": 2,
+        "left": {
+          "type": "diagram",
+          "nodes": [
+            {
+              "label": "Apps",
+              "children": [
+                "CRM",
+                "Support",
+                "Comm"
+              ]
+            },
+            {
+              "label": "Gapflow",
+              "children": [
+                "Flows",
+                "AI",
+                "Data"
+              ]
+            },
+            {
+              "label": "Outputs",
+              "children": [
+                "Dashboards",
+                "Tickets",
+                "Notifications"
+              ]
+            }
+          ]
+        },
+        "right": {
+          "type": "bullets",
+          "items": [
+            "Automate anything — triggers, logic, AI actions, and outputs",
+            "Connect everything — CRMs, BI, bots, databases, and APIs",
+            "Scale with confidence — roles, versioning, audit, and SLAs"
+          ]
+        }
+      }
+    },
+    {
+      "id": "how-it-works",
+      "type": "section",
+      "style": {
+        "background": "white"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "How Gapflow works"
+        },
+        "steps": [
+          {
+            "icon": "mouse-pointer",
+            "title": "Choose a trigger",
+            "desc": "Webhook, schedule, event, or app change"
+          },
+          {
+            "icon": "bot",
+            "title": "Add logic & AI",
+            "desc": "Branching, variables, RAG, summarization, reasoning"
+          },
+          {
+            "icon": "send",
+            "title": "Automate outputs",
+            "desc": "APIs, tickets, messages, dashboards, webhooks"
+          }
+        ],
+        "interactive_demo": {
+          "type": "mini-canvas",
+          "preset": "3-step",
+          "autoplay": true
+        }
+      }
+    },
+    {
+      "id": "use-cases",
+      "type": "section",
+      "style": {
+        "background": "light"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "Use cases across teams and industries"
+        },
+        "tabs": [
+          {
+            "id": "call-centre",
+            "label": "Call Centre",
+            "cards": [
+              {
+                "title": "SLA Alerts",
+                "desc": "Notify supervisors before breaches",
+                "icon": "bell"
+              },
+              {
+                "title": "Agent Summaries",
+                "desc": "AI daily wrap via email/Slack",
+                "icon": "inbox"
+              },
+              {
+                "title": "Wallboard Sync",
+                "desc": "Live KPIs to dashboards & TVs",
+                "icon": "activity"
+              }
+            ]
+          },
+          {
+            "id": "marketing",
+            "label": "Marketing",
+            "cards": [
+              {
+                "title": "Lead Scoring",
+                "desc": "Qualify and route with AI",
+                "icon": "star"
+              },
+              {
+                "title": "Campaign Sync",
+                "desc": "Auto-sync CRM ↔ Ads",
+                "icon": "arrows-left-right"
+              },
+              {
+                "title": "Nurture Flows",
+                "desc": "Multi‑step emails and triggers",
+                "icon": "mail"
+              }
+            ]
+          },
+          {
+            "id": "data",
+            "label": "Data & BI",
+            "cards": [
+              {
+                "title": "Daily Digest",
+                "desc": "Power BI → Slack/Teams",
+                "icon": "bar-chart"
+              },
+              {
+                "title": "Warehouse Load",
+                "desc": "ETL to BigQuery/Snowflake",
+                "icon": "database"
+              },
+              {
+                "title": "Anomaly Alerts",
+                "desc": "Detect spikes & drift",
+                "icon": "alert-triangle"
+              }
+            ]
+          },
+          {
+            "id": "ai",
+            "label": "AI Agents",
+            "cards": [
+              {
+                "title": "Summarise Tickets",
+                "desc": "Intent + next best action",
+                "icon": "bot"
+              },
+              {
+                "title": "RAG Answers",
+                "desc": "Docs → trusted responses",
+                "icon": "book-open"
+              },
+              {
+                "title": "Reasoning Chains",
+                "desc": "Multi‑step task execution",
+                "icon": "brain-circuit"
+              }
+            ]
+          },
+          {
+            "id": "itops",
+            "label": "IT & Ops",
+            "cards": [
+              {
+                "title": "Incident Routing",
+                "desc": "On‑call paging & escalation",
+                "icon": "phone-forwarded"
+              },
+              {
+                "title": "Log Watch",
+                "desc": "Errors to Slack/Email",
+                "icon": "terminal"
+              },
+              {
+                "title": "Access Reviews",
+                "desc": "RBAC attestations",
+                "icon": "shield"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "capabilities",
+      "type": "section",
+      "style": {
+        "background": "white"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "Core capabilities"
+        },
+        "grid": [
+          {
+            "icon": "flow",
+            "title": "Visual Flow Builder",
+            "points": [
+              "Drag‑and‑drop nodes",
+              "Branching & variables",
+              "Reusable templates"
+            ]
+          },
+          {
+            "icon": "sparkles",
+            "title": "AI‑Native Actions",
+            "points": [
+              "OpenAI/Claude/Gemini",
+              "RAG & eval hooks",
+              "Guardrails & grounding"
+            ]
+          },
+          {
+            "icon": "plug",
+            "title": "Integrations",
+            "points": [
+              "CRMs/BI/Comms",
+              "DBs/Storage/APIs",
+              "Webhooks & events"
+            ]
+          },
+          {
+            "icon": "lock",
+            "title": "Governance & Observability",
+            "points": [
+              "SSO/RBAC",
+              "Versioning & locks",
+              "Audit logs & metrics"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "integrations",
+      "type": "section",
+      "style": {
+        "background": "light"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "Connect Gapflow to your stack"
+        },
+        "logo_wall": {
+          "rows": 2,
+          "columns": 6,
+          "items": [
+            "OpenAI",
+            "Anthropic",
+            "Gemini",
+            "Bedrock",
+            "Salesforce",
+            "HubSpot",
+            "Dynamics 365",
+            "Bright Pattern",
+            "Twilio",
+            "WhatsApp",
+            "Power BI",
+            "BigQuery",
+            "Snowflake",
+            "PostgreSQL",
+            "Google Sheets",
+            "Slack"
+          ]
+        },
+        "cta": {
+          "type": "button",
+          "variant": "ghost",
+          "label": "Browse all connectors",
+          "action": "/integrations"
+        }
+      }
+    },
+    {
+      "id": "templates",
+      "type": "section",
+      "style": {
+        "background": "white"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "Templates to get you moving fast"
+        },
+        "filters": [
+          "All",
+          "Marketing",
+          "Data",
+          "Call Centre",
+          "AI Agents",
+          "IT & Ops"
+        ],
+        "tiles": [
+          {
+            "thumb": "tpl1",
+            "title": "Power BI → Slack Daily Digest",
+            "badge": "Data"
+          },
+          {
+            "thumb": "tpl2",
+            "title": "Abandoned Chat Reclaim",
+            "badge": "Call Centre"
+          },
+          {
+            "thumb": "tpl3",
+            "title": "Lead Qualify + Enrich",
+            "badge": "Marketing"
+          },
+          {
+            "thumb": "tpl4",
+            "title": "Ticket Summaries to Email",
+            "badge": "AI Agents"
+          },
+          {
+            "thumb": "tpl5",
+            "title": "ETL to Snowflake Nightly",
+            "badge": "Data"
+          }
+        ]
+      }
+    },
+    {
+      "id": "teams",
+      "type": "section",
+      "style": {
+        "background": "light"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "Built for teams"
+        },
+        "highlights": [
+          {
+            "icon": "users",
+            "title": "Roles & permissions",
+            "desc": "Granular access by workspace/project"
+          },
+          {
+            "icon": "git-branch",
+            "title": "Versioning & locks",
+            "desc": "Freeze critical flows; safe edits"
+          },
+          {
+            "icon": "message-square",
+            "title": "Comments & reviews",
+            "desc": "Discuss steps and approve changes"
+          }
+        ]
+      }
+    },
+    {
+      "id": "developers",
+      "type": "section",
+      "style": {
+        "background": "white"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "For developers"
+        },
+        "cta": {
+          "type": "button",
+          "variant": "secondary",
+          "label": "Read the docs",
+          "action": "/docs"
+        },
+        "bullets": [
+          "Custom nodes (SDK)",
+          "CLI & REST API",
+          "Incoming/outgoing webhooks",
+          "YAML/JSON export & import"
+        ]
+      }
+    },
+    {
+      "id": "enterprise",
+      "type": "section",
+      "style": {
+        "background": "dark"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "Enterprise ready"
+        },
+        "grid": [
+          {
+            "icon": "shield-check",
+            "title": "Security",
+            "desc": "SSO, RBAC, encryption at rest & in transit"
+          },
+          {
+            "icon": "server",
+            "title": "Deployment",
+            "desc": "SaaS, private cloud, or on‑prem options"
+          },
+          {
+            "icon": "file-check",
+            "title": "Compliance",
+            "desc": "SOC 2, GDPR, Australian Privacy Principles"
+          },
+          {
+            "icon": "lifebuoy",
+            "title": "Support",
+            "desc": "SLAs, onboarding, dedicated success"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pricing",
+      "type": "section",
+      "style": {
+        "background": "white"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "Pricing"
+        },
+        "plans": [
+          {
+            "name": "Starter",
+            "price": "Free",
+            "features": [
+              "Core builder",
+              "Community support",
+              "Popular connectors"
+            ],
+            "cta": "Start free"
+          },
+          {
+            "name": "Pro",
+            "price": "$",
+            "features": [
+              "Unlimited flows & runs",
+              "All connectors",
+              "Advanced AI actions"
+            ],
+            "cta": "Start trial"
+          },
+          {
+            "name": "Enterprise",
+            "price": "Custom",
+            "features": [
+              "SSO/RBAC",
+              "On‑prem/private cloud",
+              "SLA & dedicated support"
+            ],
+            "cta": "Talk to sales"
+          }
+        ]
+      }
+    },
+    {
+      "id": "final-cta",
+      "type": "section",
+      "style": {
+        "background": "light-gradient"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "Start building your flow today"
+        },
+        "ctas": [
+          {
+            "type": "button",
+            "variant": "primary",
+            "size": "lg",
+            "label": "Get Started",
+            "action": "/app/signup"
+          },
+          {
+            "type": "button",
+            "variant": "ghost",
+            "size": "lg",
+            "label": "Explore Templates",
+            "action": "/templates"
+          }
+        ]
+      }
+    },
+    {
+      "id": "footer",
+      "type": "section",
+      "style": {
+        "background": "white"
+      },
+      "container": true,
+      "content": {
+        "columns": 4,
+        "menus": {
+          "Product": [
+            "Features",
+            "Use Cases",
+            "Templates",
+            "Pricing"
+          ],
+          "Developers": [
+            "Docs",
+            "API",
+            "SDK",
+            "Status"
+          ],
+          "Company": [
+            "About",
+            "Partners",
+            "Contact",
+            "Careers"
+          ],
+          "Resources": [
+            "Blog",
+            "Community",
+            "Security",
+            "Privacy"
+          ]
+        },
+        "legal": "© Gapcloud Pty Ltd"
+      }
+    }
+  ],
+  "accessibility": {
+    "rules": [
+      "All interactive elements must have focus-visible styles and ARIA labels.",
+      "Hero animation must reduce motion if prefers-reduced-motion is set.",
+      "Text contrast must meet WCAG 2.1 AA."
+    ]
+  },
+  "interactions": {
+    "onScrollReveal": {
+      "apply_to": [
+        "hero",
+        "vision",
+        "how-it-works",
+        "use-cases",
+        "capabilities",
+        "integrations",
+        "templates",
+        "teams",
+        "developers",
+        "enterprise",
+        "pricing",
+        "final-cta"
+      ],
+      "effect": "fade-up"
+    },
+    "onHoverCard": {
+      "lift": 3,
+      "shadow": "elevated",
+      "border": "accent"
+    },
+    "ctaClickTracking": {
+      "data-attr": "data-cta",
+      "values": [
+        "get-started",
+        "demo",
+        "docs",
+        "templates",
+        "pricing"
+      ]
+    }
+  }
+}

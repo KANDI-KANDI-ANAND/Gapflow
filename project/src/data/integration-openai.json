@@ -1,0 +1,201 @@
+{
+  "id": "openai",
+  "name": "OpenAI",
+  "logo": "/brand/integration-icons/openai.svg",
+  "categories": ["AI", "Machine Learning", "Natural Language Processing"],
+  "hero": {
+    "heading": "Gapflow and OpenAI",
+    "subheading": "Explore the world of endless possibilities with purpose-built automation",
+    "image": "/brand/integration-icons/openai.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {
+        "name": "Models",
+        "items": [
+          "GPT-4 Text Generation",
+          "GPT-3.5 Turbo Processing",
+          "DALL-E Image Generation",
+          "Whisper Speech-to-Text",
+          "Text-to-Speech (TTS)"
+        ]
+      },
+      {
+        "name": "Operations",
+        "items": [
+          "Generate Content",
+          "Analyze Sentiment",
+          "Summarize Text",
+          "Translate Languages",
+          "Create Images from Prompts"
+        ]
+      },
+      {
+        "name": "Use Cases",
+        "items": [
+          "Automated Customer Support",
+          "Content Generation at Scale",
+          "Data Analysis & Insights",
+          "Document Summarization",
+          "Code Generation & Review"
+        ]
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "AI-Powered Customer Support",
+      "blocks": ["Trigger", "OpenAI GPT-4", "Response Formatting", "Send Reply"]
+    },
+    {
+      "title": "Content Generation Workflow",
+      "blocks": ["Schedule", "Fetch Topics", "OpenAI Generate", "Publish Content"]
+    },
+    {
+      "title": "Email Summarization",
+      "blocks": ["Email Trigger", "Extract Text", "OpenAI Summarize", "Store Summary"]
+    },
+    {
+      "title": "Sentiment Analysis Pipeline",
+      "blocks": ["Data Source", "OpenAI Analyze", "Categorize", "Alert Team"]
+    },
+    {
+      "title": "Document Translation",
+      "blocks": ["Upload Trigger", "Extract Content", "OpenAI Translate", "Save File"]
+    },
+    {
+      "title": "Code Review Assistant",
+      "blocks": ["GitHub Trigger", "OpenAI Review", "Comment on PR", "Notify Developer"]
+    },
+    {
+      "title": "Meeting Notes Generator",
+      "blocks": ["Whisper Transcribe", "OpenAI Summarize", "Format Notes", "Email Team"]
+    },
+    {
+      "title": "Product Description Creator",
+      "blocks": ["Product Data", "OpenAI Generate", "Format HTML", "Update Database"]
+    },
+    {
+      "title": "Social Media Content",
+      "blocks": ["Schedule", "OpenAI Generate", "DALL-E Image", "Post to Platforms"]
+    },
+    {
+      "title": "Data Extraction & Analysis",
+      "blocks": ["Document Upload", "OpenAI Extract", "Structure Data", "Store Results"]
+    }
+  ],
+  "documentation": [
+    {
+      "title": "Getting Started with OpenAI",
+      "description": "Learn how to integrate OpenAI's powerful models into your workflows and start building AI-powered automations.",
+      "link": "/docs/openai/getting-started"
+    },
+    {
+      "title": "Prompt Engineering Guide",
+      "description": "Master the art of crafting effective prompts to get the best results from OpenAI models in your automations.",
+      "link": "/docs/openai/prompt-engineering"
+    },
+    {
+      "title": "Best Practices & Optimization",
+      "description": "Learn how to optimize your OpenAI usage, manage costs, and implement error handling strategies.",
+      "link": "/docs/openai/best-practices"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "Build an AI Customer Support Bot",
+      "description": "Create an intelligent customer support system that uses GPT-4 to automatically respond to customer inquiries with contextual, accurate information while maintaining your brand voice.",
+      "thumbnail": "https://images.pexels.com/photos/8438922/pexels-photo-8438922.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example1"
+    },
+    {
+      "title": "Automated Content Generation Pipeline",
+      "description": "Set up a complete content generation workflow that researches topics, generates articles, creates accompanying images, and publishes to your CMS automatically.",
+      "thumbnail": "https://images.pexels.com/photos/7376/startup-photos.jpg",
+      "videoUrl": "https://youtube.com/watch?v=example2"
+    },
+    {
+      "title": "Document Intelligence System",
+      "description": "Build a system that automatically processes documents, extracts key information, generates summaries, and routes them to the appropriate teams.",
+      "thumbnail": "https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example3"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I get started with OpenAI integration?",
+      "answer": "You'll need an OpenAI API key from platform.openai.com. Create an account, navigate to API keys, and generate a new key. Then connect it in Gapflow's integration settings."
+    },
+    {
+      "question": "What models are supported?",
+      "answer": "Gapflow supports all OpenAI models including GPT-4, GPT-3.5 Turbo, DALL-E 3, Whisper, and TTS. You can select the appropriate model based on your use case and budget."
+    },
+    {
+      "question": "How is pricing handled?",
+      "answer": "OpenAI charges based on token usage. Gapflow displays estimated costs before running workflows and provides detailed usage analytics to help you monitor and optimize spending."
+    },
+    {
+      "question": "Can I use custom fine-tuned models?",
+      "answer": "Yes! If you've fine-tuned models in OpenAI, you can reference them by their model ID in your Gapflow workflows."
+    },
+    {
+      "question": "What about rate limits?",
+      "answer": "OpenAI enforces rate limits based on your account tier. Gapflow automatically handles rate limiting with intelligent retry logic and queuing."
+    },
+    {
+      "question": "How do I ensure quality responses?",
+      "answer": "Use clear, specific prompts with examples. Set appropriate temperature and max token parameters. Test thoroughly and implement validation checks in your workflows."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "OpenAI integration cut our content production time by 70%. Game-changing automation.",
+      "author": "Alex Rivera",
+      "role": "Content Director",
+      "company": "Media Innovations"
+    },
+    {
+      "quote": "Our customer support is now 24/7 with AI-powered responses. Customer satisfaction up 40%.",
+      "author": "Jessica Wong",
+      "role": "Customer Success Lead",
+      "company": "Support Excellence"
+    },
+    {
+      "quote": "The document analysis workflow processes 1000+ documents daily. Incredible efficiency.",
+      "author": "Marcus Johnson",
+      "role": "Operations Manager",
+      "company": "Legal Tech Solutions"
+    },
+    {
+      "quote": "Building AI features used to require a full dev team. Now our ops team does it.",
+      "author": "Priya Sharma",
+      "role": "Head of Operations",
+      "company": "Startup Accelerator"
+    }
+  ],
+  "limits": [
+    {
+      "title": "Token Limits",
+      "description": "Each model has maximum token limits for input and output. GPT-4 supports up to 128K tokens, while GPT-3.5 Turbo supports up to 16K tokens. Plan your workflows accordingly."
+    },
+    {
+      "title": "Rate Limits",
+      "description": "OpenAI enforces rate limits based on your usage tier. Gapflow handles these automatically, but high-volume workflows may need batching or queuing strategies."
+    },
+    {
+      "title": "Cost Management",
+      "description": "Monitor your usage carefully as costs can add up quickly with high-volume operations. Use cheaper models where appropriate and implement caching strategies."
+    },
+    {
+      "title": "Content Policy",
+      "description": "OpenAI has usage policies that prohibit certain types of content. Ensure your workflows comply with OpenAI's usage policies to avoid API restrictions."
+    }
+  ],
+  "relatedQuestions": [
+    "How to optimize token usage?",
+    "What's the difference between GPT-4 and GPT-3.5?",
+    "How to implement streaming responses?",
+    "Can I use function calling?",
+    "How to handle API errors?"
+  ]
+}

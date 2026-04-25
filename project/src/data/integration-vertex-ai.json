@@ -1,0 +1,70 @@
+{
+  "id": "vertex-ai",
+  "name": "Google Vertex AI",
+  "logo": "/brand/integration-icons/vertex-ai.svg",
+  "categories": ["AI", "Machine Learning", "Google Cloud"],
+  "hero": {
+    "heading": "Gapflow and Vertex AI",
+    "subheading": "Enterprise AI platform for building and deploying ML models at scale",
+    "image": "/brand/integration-icons/vertex-ai.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {
+        "name": "Triggers",
+        "items": ["Model Prediction Request", "Training Job Complete", "Batch Job Finished", "Endpoint Ready", "Pipeline Event"]
+      },
+      {
+        "name": "Actions",
+        "items": ["Run Prediction", "Train Model", "Deploy Endpoint", "Batch Predict", "Evaluate Model"]
+      },
+      {
+        "name": "Advanced",
+        "items": ["AutoML", "Custom Training", "Model Monitoring", "Feature Store", "Explainable AI"]
+      }
+    ]
+  },
+  "useCases": [
+    {"title": "Predictive Analytics", "blocks": ["Input Data", "Run Prediction", "Analyze Results", "Take Action"]},
+    {"title": "Image Recognition", "blocks": ["Image Upload", "AutoML Vision", "Get Classifications", "Store Results"]},
+    {"title": "NLP Processing", "blocks": ["Text Input", "Run NLP Model", "Extract Insights", "Update Records"]},
+    {"title": "Recommendation Engine", "blocks": ["User Data", "Get Recommendations", "Personalize", "Track Performance"]},
+    {"title": "Fraud Detection", "blocks": ["Transaction Data", "Risk Prediction", "Flag Suspicious", "Alert Team"]},
+    {"title": "Demand Forecasting", "blocks": ["Historical Data", "Generate Forecast", "Optimize Inventory", "Update Plans"]},
+    {"title": "Quality Inspection", "blocks": ["Product Image", "Detect Defects", "Score Quality", "Route Item"]},
+    {"title": "Customer Churn", "blocks": ["Customer Data", "Predict Churn Risk", "Trigger Retention", "Monitor Results"]},
+    {"title": "Price Optimization", "blocks": ["Market Data", "Predict Optimal Price", "Update Pricing", "Track Revenue"]},
+    {"title": "Document Classification", "blocks": ["Document Upload", "Classify Type", "Extract Data", "Route Process"]}
+  ],
+  "documentation": [
+    {"title": "Getting Started with Vertex AI", "description": "Connect Google Vertex AI to Gapflow and deploy enterprise-grade machine learning models.", "link": "/docs/vertex-ai/getting-started"},
+    {"title": "AutoML & Custom Training", "description": "Train models with AutoML or custom code for any machine learning task at scale.", "link": "/docs/vertex-ai/training"},
+    {"title": "Model Deployment & Serving", "description": "Deploy models to production endpoints with auto-scaling and monitoring.", "link": "/docs/vertex-ai/deployment"}
+  ],
+  "tutorials": [
+    {"title": "End-to-End ML Pipeline", "description": "Build a complete MLOps pipeline from data ingestion to model serving with full automation.", "thumbnail": "https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg", "videoUrl": "https://youtube.com/watch?v=example1"},
+    {"title": "AutoML Image Classification", "description": "Train and deploy a custom image classification model using AutoML without writing code.", "thumbnail": "https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg", "videoUrl": "https://youtube.com/watch?v=example2"},
+    {"title": "Real-time Predictions at Scale", "description": "Set up real-time prediction endpoints that scale automatically based on traffic.", "thumbnail": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg", "videoUrl": "https://youtube.com/watch?v=example3"}
+  ],
+  "faqs": [
+    {"question": "How do I connect Vertex AI?", "answer": "Use Google Cloud service account credentials with appropriate Vertex AI permissions for secure access."},
+    {"question": "What is AutoML?", "answer": "AutoML automatically builds and trains models without code. Supports vision, NLP, tabular, video use cases."},
+    {"question": "Can I use custom models?", "answer": "Yes! Train custom models with TensorFlow, PyTorch, scikit-learn. Full flexibility for any ML framework."},
+    {"question": "How does scaling work?", "answer": "Automatic scaling based on traffic. Configure min/max replicas for optimal cost and performance."},
+    {"question": "What about model monitoring?", "answer": "Built-in monitoring for drift detection, performance tracking, and explainability. Alerts for degradation."},
+    {"question": "Can I do batch predictions?", "answer": "Absolutely! Batch prediction jobs for large datasets with automatic parallelization and optimization."}
+  ],
+  "testimonials": [
+    {"quote": "Vertex AI MLOps capabilities are unmatched. Train, deploy, monitor - entire lifecycle automated.", "author": "Dr. Sarah Johnson", "role": "ML Platform Lead", "company": "Enterprise Corp"},
+    {"quote": "AutoML saved us 6 months of development. Production-ready models with just our data.", "author": "Michael Rodriguez", "role": "Data Science Manager", "company": "Retail Chain"},
+    {"quote": "Model serving scales perfectly. Handle 100 to 100K requests per second seamlessly.", "author": "Jennifer Chen", "role": "ML Engineer", "company": "FinTech Platform"},
+    {"quote": "Feature Store integration simplified our pipelines. Consistent features across training and serving.", "author": "David Kim", "role": "AI Architect", "company": "Tech Company"}
+  ],
+  "limits": [
+    {"title": "API Quotas", "description": "Quotas vary by operation and region. Request quota increases for high-volume production use."},
+    {"title": "Training Resources", "description": "Training job resources configurable. Larger models require more compute and time."},
+    {"title": "Endpoint Scaling", "description": "Auto-scaling has limits. Configure appropriately for traffic patterns and set max replicas."},
+    {"title": "Data Transfer", "description": "Best performance when data in same region. Cross-region transfers incur costs and latency."}
+  ],
+  "relatedQuestions": ["How to optimize costs?", "Can I use GPUs?", "What about model versioning?", "How to A/B test models?", "Best practices for MLOps?"]
+}

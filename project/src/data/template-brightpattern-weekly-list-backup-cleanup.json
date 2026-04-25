@@ -1,0 +1,76 @@
+{
+  "id": "brightpattern-weekly-list-backup-cleanup",
+  "title": "BP: Weekly List Backup & Cleanup",
+  "slug": "brightpattern-weekly-list-backup-cleanup",
+  "categories": [
+    "Contact Centre",
+    "Customer Support",
+    "AI & Automation",
+    "Productivity",
+    "List Management"
+  ],
+  "integrations": [
+    "bright-pattern",
+    "microsoft-365-email",
+    "google-gmail",
+    "aws-s3"
+  ],
+  "description": "Weekly Bright Pattern list backup via email, then cleanup by deleting all records from the same list.",
+  "longDescription": "This workflow automates weekly list management for Bright Pattern by backing up list records and then cleaning up the same list.\n\n**Purpose:**\n• Retrieve records from a selected Bright Pattern list (default 100 records; user-configurable)\n• Email the retrieved data to recipients as the backup snapshot\n• Wait 10 seconds (customisable) before proceeding\n• Delete all records from the same Bright Pattern list\n• Send a final email confirming deletion\n\n**Execution flow:**\n• Start: manual run or scheduled weekly (e.g., Mondays)\n• Bright Pattern - Get Records: select list visually and retrieve records (default limit 100)\n• Office 365 Email: send \"Retrieve data\" email with retrieved records\n• Checkpoint (optional): delay 10 seconds (customisable)\n• Bright Pattern - Delete Records: delete all records from the same list\n• Office 365 Email: send \"Records are deleted\" confirmation\n\n**Notes:**\n• Additional logic can be added using IF blocks and Error nodes to ensure data is backed up before deleting records.",
+  "thumbnails": [
+    "/templates/brightpattern-weekly-list-backup-cleanup/brightpattern-weekly-backup-overview.jpg",
+    "/templates/brightpattern-weekly-list-backup-cleanup/brightpattern-get-records-block.jpg",
+    "/templates/brightpattern-weekly-list-backup-cleanup/checkpoint-block.jpg"
+  ],
+  "useCaseBlocks": [
+    "Start (Scheduled/Manual)",
+    "Bright Pattern - Get Records",
+    "Office 365 Email - Send Backup",
+    "Checkpoint (Delay)",
+    "Bright Pattern - Delete Records",
+    "Office 365 Email - Confirm Deletion"
+  ],
+  "benefits": [
+    "Automates weekly backup and cleanup of a Bright Pattern list in a repeatable flow.",
+    "Default 100-record retrieval limit with user-configurable control during setup.",
+    "Reduces manual admin effort by standardising backup and cleanup steps.",
+    "Adds clear notifications at key points (backup sent, deletion completed)."
+  ],
+  "howToSteps": [
+    {
+      "title": "Configure the Start trigger",
+      "description": "Set the workflow to run manually or on a weekly schedule (e.g., Mondays)."
+    },
+    {
+      "title": "Retrieve records from Bright Pattern",
+      "description": "In Bright Pattern - Get Records, choose the Bright Pattern credential and select the target list visually. Set the limit (default 100; configurable by the user)."
+    },
+    {
+      "title": "Send the backup email",
+      "description": "Use Office 365 Email (Graph) to send an email to recipients with subject \"Retrieve data\" and include the retrieved records in the email body."
+    },
+    {
+      "title": "Add a short delay before deletion",
+      "description": "Add the Checkpoint block (optional) and set a waiting time of 10 seconds (customisable) before proceeding."
+    },
+    {
+      "title": "Delete all records from the list",
+      "description": "Use Bright Pattern - Delete Records to delete all records from the same selected list."
+    },
+    {
+      "title": "Send deletion confirmation",
+      "description": "Send a second Office 365 email to recipients with subject \"Records are deleted\" and include deletion status/details."
+    }
+  ],
+  "lastUpdated": "07-Jan-2026",
+  "difficulty": "Beginner",
+  "estimatedSetupTime": "20 minutes",
+  "tags": [
+    "Bright Pattern",
+    "List backup",
+    "List cleanup",
+    "Weekly schedule",
+    "Office 365",
+    "Automation"
+  ]
+}

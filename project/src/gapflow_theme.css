@@ -1,0 +1,352 @@
+/* Gapflow.ai Theme — Make-style, Desktop-first Responsive */
+/* Root Tokens */
+:root {
+  --color-primary-1: #10B981;
+  --color-primary-2: #059669;
+  --color-accent: #F59E0B;
+  --color-neutral-100: #FFFFFF;
+  --color-neutral-200: #F7F8FC;
+  --color-neutral-300: #F3F5FB;
+  --color-neutral-400: #E3E6EF;
+  --color-neutral-600: #5F6368;
+  --color-neutral-800: #202124;
+  --color-muted: #9AA0A6;
+  --hero-dark-start: #064E3B;
+  --hero-dark-end: #065F46;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-xxl: 32px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+  --space-section: 100px;
+
+  --shadow-card: 0 2px 6px rgba(0, 0, 0, 0.06);
+  --shadow-elevated: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 24px rgba(16, 185, 129, 0.45);
+
+  --easing: cubic-bezier(.4, 0, .2, 1);
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 400ms;
+  --dur-bg: 8000ms;
+
+  --container-max: 1200px;
+}
+
+/* Base */
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-neutral-200);
+  color: var(--color-neutral-800);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6
+}
+
+h1,
+h2,
+h3 {
+  font-family: Poppins, Inter, Arial, sans-serif;
+  color: var(--color-neutral-800);
+  margin: 0 0 var(--space-lg)
+}
+
+h1 {
+  font-size: 56px;
+  line-height: 64px;
+  font-weight: 700;
+  letter-spacing: -0.5px
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 700
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 700
+}
+
+p.lead {
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--color-neutral-600)
+}
+
+/* Containers & Sections */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-xl)
+}
+
+section {
+  padding: var(--space-section) 0
+}
+
+section.bg-light {
+  background: var(--color-neutral-300)
+}
+
+section.bg-white {
+  background: var(--color-neutral-100)
+}
+
+section.bg-dark {
+  background: linear-gradient(135deg, var(--hero-dark-start), var(--hero-dark-end));
+  color: #fff
+}
+
+section.bg-light-gradient {
+  background: linear-gradient(180deg, #D1FAE5, #ECFDF5)
+}
+
+/* Hero */
+.section-hero {
+  position: relative;
+  overflow: hidden
+}
+
+.section-hero .gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(1200px 600px at 50% -10%, rgba(16, 185, 129, .25), transparent);
+  pointer-events: none
+}
+
+.section-hero .cta {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  margin-top: var(--space-xl)
+}
+
+.flow-canvas {
+  position: relative;
+  height: 360px;
+  margin-top: var(--space-xxl)
+}
+
+.flow-canvas canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(var(--shadow-glow))
+}
+
+/* Buttons */
+.bolt-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 14px;
+  padding: 12px 18px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform var(--dur-fast) var(--easing), box-shadow var(--dur-fast) var(--easing)
+}
+
+.bolt-btn[data-variant="primary"] {
+  background: linear-gradient(90deg, var(--color-primary-1), var(--color-primary-2));
+  color: white;
+  box-shadow: var(--shadow-card)
+}
+
+.bolt-btn[data-variant="primary"]:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-elevated)
+}
+
+.bolt-btn[data-variant="secondary"] {
+  background: transparent;
+  border-color: #B5B7C2;
+  color: var(--color-neutral-800)
+}
+
+.bolt-btn[data-variant="secondary"]:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-card)
+}
+
+.bolt-btn[data-variant="ghost"] {
+  background: transparent;
+  color: inherit;
+  opacity: .9
+}
+
+.bolt-btn:focus-visible {
+  outline: 2px solid #6EE7B7;
+  outline-offset: 2px
+}
+
+/* Card */
+.bolt-card {
+  background: #fff;
+  border: 1px solid var(--color-neutral-400);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  padding: var(--space-lg);
+  transition: transform var(--dur-fast) var(--easing), box-shadow var(--dur-fast) var(--easing), border-color var(--dur-fast) var(--easing)
+}
+
+.bolt-card[data-interactive="true"]:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-elevated);
+  border-color: #6EE7B7
+}
+
+/* Pill */
+.bolt-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px
+}
+
+.bolt-pill[data-tone="accent"] {
+  background: rgba(50, 211, 138, 0.12);
+  color: #0a8d56
+}
+
+.bolt-pill[data-tone="muted"] {
+  background: #EEF0F5;
+  color: var(--color-muted)
+}
+
+/* Logo wall */
+.bolt-logos {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-lg);
+  align-items: center
+}
+
+.bolt-logos img {
+  max-height: 28px;
+  opacity: .8;
+  filter: grayscale(1);
+  transition: opacity var(--dur-fast) var(--easing)
+}
+
+.bolt-logos img:hover {
+  opacity: 1;
+  filter: none
+}
+
+/* Tabs (use-cases) */
+.tabs {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-xl)
+}
+
+.tabs button {
+  border: none;
+  background: #EEF0F5;
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer
+}
+
+.tabs button.active {
+  background: linear-gradient(90deg, var(--color-primary-1), var(--color-primary-2));
+  color: #fff
+}
+
+.tab-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg)
+}
+
+/* Grids */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xxl)
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg)
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important
+  }
+
+  .flow-canvas canvas {
+    filter: none
+  }
+}
+
+/* Responsive (desktop-first) */
+@media (max-width:1200px) {
+  h1 {
+    font-size: 48px;
+    line-height: 56px
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
+
+@media (max-width:992px) {
+  .grid-2 {
+    grid-template-columns: 1fr
+  }
+
+  .tab-grid {
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
+
+@media (max-width:768px) {
+  h1 {
+    font-size: 40px;
+    line-height: 48px
+  }
+
+  .tab-grid {
+    grid-template-columns: 1fr
+  }
+}
+
+/* Animations */
+@keyframes gradientSweep {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}

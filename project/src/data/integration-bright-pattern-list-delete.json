@@ -1,0 +1,32 @@
+{
+  "id": "bright-pattern-list-delete",
+  "title": "Bright Pattern List Management - Delete All Records",
+  "slug": "bright-pattern-list-delete",
+  "categories": ["Customer Support", "Data & Analytics", "Productivity"],
+  "integrations": ["bright-pattern", "salesforce", "google-sheets"],
+  "description": "Bulk delete all records from Bright Pattern contact lists with audit logging and backup before deletion.",
+  "longDescription": "This workflow enables safe and efficient bulk deletion of records from Bright Pattern contact lists. It creates automatic backups of all records before deletion, logs all deletions for audit compliance, can sync deletion status back to your CRM, and sends completion reports. Perfect for cleaning up old campaigns, removing outdated contacts, or maintaining GDPR compliance by bulk-deleting customer data upon request.",
+  "thumbnails": [
+    "/templates/bp_list_bulk_delete.jpg",
+    "/templates/bp_block_properties.jpg",
+    "/templates/office365_properties.jpg"
+  ],
+  "useCaseBlocks": [
+    "Select Bright Pattern List",
+    "Export & Backup Records",
+    "Validate Deletion Criteria",
+    "Bulk Delete All Records",
+    "Update CRM Status",
+    "Send Completion Report"
+  ],
+  "benefits": [
+    "Delete thousands of records in minutes vs hours manually",
+    "Automatic backup before deletion for data safety",
+    "Full audit trail for compliance requirements",
+    "Sync deletion status back to CRM automatically"
+  ],
+  "lastUpdated": "2025-01-23",
+  "difficulty": "Intermediate",
+  "estimatedSetupTime": "15 minutes",
+  "tags": ["bright-pattern", "bulk-delete", "list-management", "data-cleanup", "compliance", "gdpr", "contact-center"]
+}

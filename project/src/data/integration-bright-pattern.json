@@ -1,0 +1,201 @@
+{
+  "id": "bright-pattern",
+  "name": "Bright Pattern",
+  "logo": "/brand/integration-icons/bright-pattern.svg",
+  "categories": ["Communication", "Contact Center", "Customer Service"],
+  "hero": {
+    "heading": "Gapflow and Bright Pattern",
+    "subheading": "Automate omnichannel contact center operations and customer interactions",
+    "image": "/brand/integration-icons/bright-pattern.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {
+        "name": "Triggers",
+        "items": [
+          "Call Received",
+          "Chat Started",
+          "Email Received",
+          "SMS Received",
+          "Call Ended"
+        ]
+      },
+      {
+        "name": "Actions",
+        "items": [
+          "Make Outbound Call",
+          "Send SMS",
+          "Send Email",
+          "Start Chat",
+          "Update Contact"
+        ]
+      },
+      {
+        "name": "Advanced",
+        "items": [
+          "IVR Navigation",
+          "Call Recording",
+          "Queue Management",
+          "Agent Routing",
+          "Interaction Analytics"
+        ]
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Smart Call Routing",
+      "blocks": ["Call Received", "Identify Caller", "Route to Agent", "Log Interaction"]
+    },
+    {
+      "title": "Omnichannel Support",
+      "blocks": ["Message Received", "Unify Channels", "Route to Agent", "Track History"]
+    },
+    {
+      "title": "Automated Follow-ups",
+      "blocks": ["Call Ended", "Analyze Outcome", "Schedule Follow-up", "Send Reminder"]
+    },
+    {
+      "title": "Customer Verification",
+      "blocks": ["Call Started", "Verify Identity", "Access Records", "Authenticate User"]
+    },
+    {
+      "title": "Post-Call Survey",
+      "blocks": ["Call Completed", "Send Survey", "Collect Feedback", "Analyze CSAT"]
+    },
+    {
+      "title": "Escalation Management",
+      "blocks": ["Issue Detected", "Create Ticket", "Escalate Call", "Notify Manager"]
+    },
+    {
+      "title": "Campaign Automation",
+      "blocks": ["Schedule Campaign", "Load Contacts", "Make Calls", "Track Results"]
+    },
+    {
+      "title": "CRM Integration",
+      "blocks": ["Interaction Start", "Fetch CRM Data", "Display Info", "Update Records"]
+    },
+    {
+      "title": "Performance Analytics",
+      "blocks": ["Schedule Report", "Fetch Metrics", "Generate Insights", "Email Team"]
+    },
+    {
+      "title": "Callback Management",
+      "blocks": ["Callback Request", "Schedule Call", "Notify Agent", "Execute Callback"]
+    }
+  ],
+  "documentation": [
+    {
+      "title": "Getting Started with Bright Pattern",
+      "description": "Connect Bright Pattern to Gapflow and learn how to automate call routing, messaging, and omnichannel workflows.",
+      "link": "/docs/bright-pattern/getting-started"
+    },
+    {
+      "title": "Omnichannel Automation",
+      "description": "Build unified workflows that handle voice, chat, email, and SMS interactions from a single automated system.",
+      "link": "/docs/bright-pattern/omnichannel"
+    },
+    {
+      "title": "Agent & Queue Management",
+      "description": "Automate agent assignment, queue prioritization, and workload distribution for optimal contact center performance.",
+      "link": "/docs/bright-pattern/agent-management"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "Intelligent Call Routing System",
+      "description": "Build a smart routing system that analyzes caller data, identifies priority, and routes to the best available agent automatically.",
+      "thumbnail": "https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example1"
+    },
+    {
+      "title": "Omnichannel Customer Journey",
+      "description": "Create seamless customer experiences across voice, chat, email, and SMS with unified interaction history and routing.",
+      "thumbnail": "https://images.pexels.com/photos/3184454/pexels-photo-3184454.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example2"
+    },
+    {
+      "title": "Automated Outbound Campaigns",
+      "description": "Set up proactive outreach campaigns with predictive dialing, automated callbacks, and comprehensive results tracking.",
+      "thumbnail": "https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example3"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I connect Bright Pattern?",
+      "answer": "Use API credentials from your Bright Pattern tenant. You'll need access to the REST API and webhook configurations."
+    },
+    {
+      "question": "What channels are supported?",
+      "answer": "Voice calls, SMS, email, web chat, mobile app messaging, and social media channels. Full omnichannel capabilities."
+    },
+    {
+      "question": "Can I customize routing logic?",
+      "answer": "Yes! Build complex routing rules based on caller data, agent skills, queue priority, time of day, and custom criteria."
+    },
+    {
+      "question": "How does CRM integration work?",
+      "answer": "Integrate with Salesforce, Dynamics, HubSpot and more. Screen pops, automatic logging, and bi-directional data sync."
+    },
+    {
+      "question": "What about call recording?",
+      "answer": "Access call recordings via API, trigger transcription services, and implement automated quality assurance workflows."
+    },
+    {
+      "question": "Can I analyze interactions?",
+      "answer": "Yes! Extract interaction data, perform sentiment analysis, identify trends, and generate comprehensive performance reports."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Call routing intelligence reduced wait times 45%. Customers reach the right agent immediately every time.",
+      "author": "Patricia Davis",
+      "role": "Contact Center Manager",
+      "company": "Insurance Provider"
+    },
+    {
+      "quote": "Omnichannel automation unified our entire operation. Seamless handoffs between channels, perfect history.",
+      "author": "Carlos Rodriguez",
+      "role": "Customer Experience Director",
+      "company": "Telecommunications"
+    },
+    {
+      "quote": "Automated follow-ups increased conversion 30%. No customer interaction falls through the cracks anymore.",
+      "author": "Rachel Kim",
+      "role": "Sales Operations",
+      "company": "Financial Services"
+    },
+    {
+      "quote": "CRM integration is flawless. Agents have complete context instantly, customer satisfaction is at all-time high.",
+      "author": "Michael Brown",
+      "role": "IT Director",
+      "company": "Healthcare Services"
+    }
+  ],
+  "limits": [
+    {
+      "title": "API Rate Limits",
+      "description": "Bright Pattern APIs have rate limits based on your deployment. Implement appropriate throttling for high-volume scenarios."
+    },
+    {
+      "title": "Concurrent Interactions",
+      "description": "Limits depend on your license. Plan agent capacity and queue management to handle peak volumes efficiently."
+    },
+    {
+      "title": "Recording Storage",
+      "description": "Call recordings consume storage. Implement lifecycle policies to archive or delete old recordings per compliance requirements."
+    },
+    {
+      "title": "Channel Availability",
+      "description": "Some channels require additional licensing. Verify channel availability with your Bright Pattern subscription."
+    }
+  ],
+  "relatedQuestions": [
+    "How to set up IVR flows?",
+    "Can I use speech analytics?",
+    "What about workforce management?",
+    "How to handle after-hours?",
+    "Best practices for routing?"
+  ]
+}

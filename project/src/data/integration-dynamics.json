@@ -1,0 +1,201 @@
+{
+  "id": "dynamics",
+  "name": "Dynamics 365",
+  "logo": "/brand/integration-icons/microsoft-dynamics-365.svg",
+  "categories": ["CRM", "Productivity", "ERP"],
+  "hero": {
+    "heading": "Gapflow and Dynamics 365",
+    "subheading": "Explore the world of endless possibilities with purpose-built automation",
+    "image": "/brand/integration-icons/microsoft-dynamics-365.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {
+        "name": "Triggers",
+        "items": [
+          "New Account Created",
+          "Contact Updated",
+          "Opportunity Won",
+          "Case Resolved",
+          "Quote Generated"
+        ]
+      },
+      {
+        "name": "Actions",
+        "items": [
+          "Create Account",
+          "Update Contact",
+          "Create Opportunity",
+          "Search Entities",
+          "Bulk Data Import"
+        ]
+      },
+      {
+        "name": "Data Operations",
+        "items": [
+          "Fetch Accounts, Contacts & Opportunities",
+          "Implement Advanced Filters",
+          "Bulk Import/Export Operations",
+          "Sync Custom Entities",
+          "Update Field Relationships"
+        ]
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Account Synchronization",
+      "blocks": ["Dynamics Trigger", "Transform", "External System", "Update Record"]
+    },
+    {
+      "title": "Opportunity Pipeline Reporting",
+      "blocks": ["Schedule", "Dynamics Query", "Power BI", "Teams Notification"]
+    },
+    {
+      "title": "Customer Service Automation",
+      "blocks": ["Dynamics Trigger", "AI Analysis", "Route Case", "Update Status"]
+    },
+    {
+      "title": "Quote Generation Workflow",
+      "blocks": ["Dynamics Trigger", "Calculate", "Generate PDF", "Email Customer"]
+    },
+    {
+      "title": "Contact Enrichment",
+      "blocks": ["Dynamics Trigger", "Enrich Data", "Update Contact", "Log Activity"]
+    },
+    {
+      "title": "Sales Team Notifications",
+      "blocks": ["Dynamics Trigger", "Filter", "Teams Message", "Create Task"]
+    },
+    {
+      "title": "ERP Data Sync",
+      "blocks": ["Schedule", "Dynamics Export", "Transform", "ERP Import"]
+    },
+    {
+      "title": "Marketing Campaign Sync",
+      "blocks": ["Dynamics Trigger", "Segment", "Marketing Platform", "Track Results"]
+    },
+    {
+      "title": "Customer Health Score",
+      "blocks": ["Schedule", "Dynamics Analytics", "Calculate Score", "Update Account"]
+    },
+    {
+      "title": "Invoice Processing",
+      "blocks": ["Dynamics Trigger", "Validate", "Accounting System", "Update Status"]
+    }
+  ],
+  "documentation": [
+    {
+      "title": "Getting Started with Dynamics 365",
+      "description": "Connect your Dynamics 365 environment and configure your first automation workflow with Gapflow.",
+      "link": "/docs/dynamics/getting-started"
+    },
+    {
+      "title": "Working with Custom Entities",
+      "description": "Learn how to integrate custom entities and complex relationships in your Dynamics 365 workflows.",
+      "link": "/docs/dynamics/custom-entities"
+    },
+    {
+      "title": "Dynamics 365 Security & Permissions",
+      "description": "Understanding security roles, permissions, and best practices for secure integrations.",
+      "link": "/docs/dynamics/security"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "Automate Dynamics 365 with Gapflow",
+      "description": "Complete guide to building automated workflows that connect Dynamics 365 with your entire tech stack, from data enrichment to advanced reporting and notifications.",
+      "thumbnail": "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example1"
+    },
+    {
+      "title": "Power BI Integration with Dynamics 365",
+      "description": "Learn to create automated data pipelines that sync Dynamics 365 data to Power BI for real-time dashboards and advanced analytics capabilities.",
+      "thumbnail": "https://images.pexels.com/photos/590041/pexels-photo-590041.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example2"
+    },
+    {
+      "title": "Customer Service Excellence with AI",
+      "description": "Implement AI-powered customer service workflows that automatically categorize cases, suggest solutions, and route tickets to the right team members.",
+      "thumbnail": "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example3"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I connect to Dynamics 365?",
+      "answer": "Gapflow connects to Dynamics 365 using OAuth 2.0 and Azure AD authentication. You'll need to register an application in Azure AD and provide the necessary credentials in Gapflow."
+    },
+    {
+      "question": "Can I work with custom entities?",
+      "answer": "Yes! Gapflow fully supports custom entities in Dynamics 365. You can trigger workflows based on custom entity changes and perform all CRUD operations."
+    },
+    {
+      "question": "What about API throttling limits?",
+      "answer": "Dynamics 365 enforces service protection limits. Gapflow automatically handles throttling with retry logic and implements best practices to stay within limits."
+    },
+    {
+      "question": "Can I use both online and on-premises versions?",
+      "answer": "Gapflow supports Dynamics 365 Online (cloud). For on-premises deployments, you'll need to ensure proper network connectivity and use the appropriate authentication method."
+    },
+    {
+      "question": "How do security roles affect integrations?",
+      "answer": "The user account used for integration must have appropriate security roles and privileges. We recommend creating a dedicated integration user with specific permissions."
+    },
+    {
+      "question": "Can I sync data across multiple Dynamics environments?",
+      "answer": "Absolutely. You can connect multiple Dynamics 365 environments (production, sandbox, UAT) and create workflows that sync data between them."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Gapflow made our Dynamics 365 integration effortless. We're now fully automated.",
+      "author": "Emily Watson",
+      "role": "CRM Manager",
+      "company": "Global Enterprises"
+    },
+    {
+      "quote": "The Power BI integration saves our team 20 hours per week in manual reporting.",
+      "author": "James Anderson",
+      "role": "Business Intelligence Lead",
+      "company": "Data Insights Corp"
+    },
+    {
+      "quote": "Finally, a solution that understands complex Dynamics 365 environments.",
+      "author": "Lisa Martinez",
+      "role": "Solutions Architect",
+      "company": "Tech Innovators"
+    },
+    {
+      "quote": "Our customer service response time improved by 40% with automated workflows.",
+      "author": "Robert Kim",
+      "role": "Customer Success Director",
+      "company": "Service Excellence Inc"
+    }
+  ],
+  "limits": [
+    {
+      "title": "Service Protection Limits",
+      "description": "Dynamics 365 enforces service protection API limits to ensure optimal performance. Gapflow automatically handles throttling and retry logic."
+    },
+    {
+      "title": "Security Roles & Privileges",
+      "description": "Ensure the integration user has appropriate security roles and field-level security permissions for all entities used in workflows."
+    },
+    {
+      "title": "Concurrent Connections",
+      "description": "Be mindful of concurrent connection limits. For high-volume scenarios, consider implementing queue-based processing."
+    },
+    {
+      "title": "Custom Entity Limitations",
+      "description": "Some advanced features may have limitations with certain custom entity configurations. Test thoroughly in a sandbox environment."
+    }
+  ],
+  "relatedQuestions": [
+    "How to configure Azure AD authentication?",
+    "What are the differences between Sales and Customer Service modules?",
+    "How to handle plugin conflicts?",
+    "Can I use Dynamics workflows alongside Gapflow?",
+    "How to optimize API call usage?"
+  ]
+}

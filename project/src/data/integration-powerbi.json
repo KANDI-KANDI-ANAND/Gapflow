@@ -1,0 +1,201 @@
+{
+  "id": "powerbi",
+  "name": "Power BI",
+  "logo": "/brand/integration-icons/power-bi.svg",
+  "categories": ["Analytics", "Business Intelligence", "Reporting"],
+  "hero": {
+    "heading": "Gapflow and Power BI",
+    "subheading": "Explore the world of endless possibilities with purpose-built automation",
+    "image": "/brand/integration-icons/power-bi.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {
+        "name": "Triggers",
+        "items": [
+          "Dataset Refresh Completed",
+          "Report Published",
+          "Dashboard Updated",
+          "Alert Triggered",
+          "Workspace Modified"
+        ]
+      },
+      {
+        "name": "Actions",
+        "items": [
+          "Refresh Dataset",
+          "Publish Report",
+          "Export Dashboard",
+          "Create Workspace",
+          "Update Data Source"
+        ]
+      },
+      {
+        "name": "Data Operations",
+        "items": [
+          "Push Data to Dataset",
+          "Query Data from Reports",
+          "Schedule Automatic Refreshes",
+          "Export to Multiple Formats",
+          "Manage Row-Level Security"
+        ]
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Automated Report Distribution",
+      "blocks": ["Schedule", "Power BI Export", "Format Report", "Email Distribution"]
+    },
+    {
+      "title": "Real-Time Dashboard Updates",
+      "blocks": ["Data Source", "Transform", "Power BI Push", "Refresh Dataset"]
+    },
+    {
+      "title": "Alert-Based Notifications",
+      "blocks": ["Power BI Alert", "Filter", "Teams Notification", "Log Event"]
+    },
+    {
+      "title": "Cross-Platform Analytics",
+      "blocks": ["Multiple Sources", "Aggregate", "Power BI Dataset", "Publish Report"]
+    },
+    {
+      "title": "Executive Dashboard Automation",
+      "blocks": ["Schedule", "Query Data", "Power BI Update", "Slack Alert"]
+    },
+    {
+      "title": "Data Quality Monitoring",
+      "blocks": ["Power BI Query", "Validate", "Alert on Issues", "Create Ticket"]
+    },
+    {
+      "title": "Multi-Format Report Export",
+      "blocks": ["Power BI Trigger", "Export PDF", "Export Excel", "Store in Cloud"]
+    },
+    {
+      "title": "Workspace Management",
+      "blocks": ["Trigger", "Create Workspace", "Set Permissions", "Notify Team"]
+    },
+    {
+      "title": "KPI Tracking Alerts",
+      "blocks": ["Schedule", "Query KPIs", "Check Thresholds", "Alert Stakeholders"]
+    },
+    {
+      "title": "Dataset Synchronization",
+      "blocks": ["Source Update", "Transform Data", "Push to Power BI", "Refresh Views"]
+    }
+  ],
+  "documentation": [
+    {
+      "title": "Getting Started with Power BI",
+      "description": "Learn how to connect Power BI to Gapflow and automate your reporting workflows.",
+      "link": "/docs/powerbi/getting-started"
+    },
+    {
+      "title": "Advanced Power BI Automation",
+      "description": "Discover advanced techniques for dataset management, scheduled refreshes, and API optimization.",
+      "link": "/docs/powerbi/advanced"
+    },
+    {
+      "title": "Power BI Security Best Practices",
+      "description": "Understanding row-level security, workspace permissions, and secure data access patterns.",
+      "link": "/docs/powerbi/security"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "Automate Power BI Report Distribution",
+      "description": "Learn how to automatically generate and distribute Power BI reports to stakeholders via email, Teams, or Slack on a custom schedule with filtered data.",
+      "thumbnail": "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example1"
+    },
+    {
+      "title": "Real-Time Data Pipelines to Power BI",
+      "description": "Build streaming data pipelines that push real-time data from various sources into Power BI datasets for live dashboard updates.",
+      "thumbnail": "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example2"
+    },
+    {
+      "title": "Power BI Alert Management",
+      "description": "Set up intelligent alert systems that monitor KPIs, detect anomalies, and automatically notify teams through multiple channels when thresholds are breached.",
+      "thumbnail": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example3"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I authenticate with Power BI?",
+      "answer": "Use Azure AD OAuth 2.0 authentication. You'll register an app in Azure AD, grant Power BI permissions, and use the credentials in Gapflow."
+    },
+    {
+      "question": "Can I push real-time data to Power BI?",
+      "answer": "Yes! Gapflow supports Power BI streaming datasets and push datasets, allowing you to send real-time data that updates dashboards instantly."
+    },
+    {
+      "question": "What export formats are supported?",
+      "answer": "You can export Power BI reports in PDF, PowerPoint (PPTX), PNG, and Excel formats through Gapflow automation workflows."
+    },
+    {
+      "question": "How do I handle large datasets?",
+      "answer": "For large datasets, use incremental refresh in Power BI and batch processing in Gapflow. The API has rate limits, so implement pagination and throttling."
+    },
+    {
+      "question": "Can I manage workspaces programmatically?",
+      "answer": "Absolutely. Gapflow can create workspaces, manage permissions, deploy reports, and handle dataset configurations through the Power BI REST API."
+    },
+    {
+      "question": "What about row-level security?",
+      "answer": "Gapflow respects Power BI's row-level security settings. You can also programmatically manage RLS roles and memberships through workflows."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Automated reporting saved our team 30 hours per week. Power BI + Gapflow is magic.",
+      "author": "Mark Thompson",
+      "role": "BI Manager",
+      "company": "Analytics First"
+    },
+    {
+      "quote": "Real-time dashboards without the complexity. Exactly what we needed.",
+      "author": "Amanda Lee",
+      "role": "Data Analyst",
+      "company": "Insight Dynamics"
+    },
+    {
+      "quote": "The automated distribution feature transformed how we share insights.",
+      "author": "Chris Patel",
+      "role": "Business Intelligence Lead",
+      "company": "Decision Makers Inc"
+    },
+    {
+      "quote": "We reduced report generation time from hours to minutes.",
+      "author": "Nicole Garcia",
+      "role": "Analytics Director",
+      "company": "Data Driven Co"
+    }
+  ],
+  "limits": [
+    {
+      "title": "API Rate Limits",
+      "description": "Power BI enforces rate limits on API calls. Gapflow implements automatic throttling and retry logic to handle these limits gracefully."
+    },
+    {
+      "title": "Dataset Size Limits",
+      "description": "Be aware of dataset size limits based on your Power BI license (Pro, Premium, Embedded). Plan your data model accordingly."
+    },
+    {
+      "title": "Concurrent Refresh Limits",
+      "description": "Power BI limits concurrent dataset refreshes. Schedule workflows to avoid conflicts and optimize refresh timing."
+    },
+    {
+      "title": "Export Limitations",
+      "description": "Large reports may take time to export. For complex reports, consider using paginated reports or splitting into smaller sections."
+    }
+  ],
+  "relatedQuestions": [
+    "How to optimize dataset refresh performance?",
+    "What's the difference between streaming and push datasets?",
+    "How to implement row-level security?",
+    "Can I use Power BI Embedded with Gapflow?",
+    "How to troubleshoot authentication issues?"
+  ]
+}

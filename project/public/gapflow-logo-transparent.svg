@@ -1,0 +1,57 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="darkGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#065f46" />
+    </linearGradient>
+    <linearGradient id="medGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <linearGradient id="lightGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+    <linearGradient id="brightGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#6ee7b7" />
+    </linearGradient>
+    <linearGradient id="whiteHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#f0fdf4" stop-opacity="0.9" />
+    </linearGradient>
+  </defs>
+
+  <!-- Three-tiered platform base -->
+  <!-- Bottom tier - darkest -->
+  <path d="M 30 85 L 60 100 L 90 85 L 60 70 Z" fill="url(#darkGreen)"/>
+  <path d="M 30 85 L 60 70 L 90 85 L 90 88 L 60 103 L 30 88 Z" fill="#064e3b" opacity="0.8"/>
+
+  <!-- Middle tier -->
+  <path d="M 35 70 L 60 82 L 85 70 L 60 58 Z" fill="url(#medGreen)"/>
+  <path d="M 35 70 L 60 58 L 85 70 L 85 73 L 60 85 L 35 73 Z" fill="#047857" opacity="0.7"/>
+
+  <!-- Top tier -->
+  <path d="M 40 58 L 60 68 L 80 58 L 60 48 Z" fill="url(#lightGreen)"/>
+  <path d="M 40 58 L 60 48 L 80 58 L 80 60 L 60 70 L 40 60 Z" fill="#059669" opacity="0.6"/>
+
+  <!-- Central connecting piece -->
+  <path d="M 50 45 L 60 40 L 70 45 L 60 50 Z" fill="url(#brightGreen)"/>
+  <path d="M 50 45 L 60 50 L 70 45 L 70 42 L 60 37 L 50 42 Z" fill="#10b981"/>
+
+  <!-- Left curved ribbon -->
+  <!-- Left ribbon - dark green face -->
+  <path d="M 35 20 Q 32 25 35 30 L 45 35 Q 48 30 45 20 Z" fill="url(#medGreen)"/>
+  <!-- Left ribbon - light highlight face -->
+  <path d="M 45 20 Q 48 25 45 35 L 52 38 L 55 28 Q 52 20 48 18 Z" fill="url(#whiteHighlight)"/>
+  <!-- Left ribbon - connecting curve -->
+  <path d="M 45 35 L 52 38 L 55 42 L 50 45 L 45 40 Z" fill="url(#lightGreen)"/>
+
+  <!-- Right curved ribbon -->
+  <!-- Right ribbon - light highlight face -->
+  <path d="M 65 18 Q 62 20 65 28 L 68 38 L 75 35 Q 78 25 75 20 Z" fill="url(#whiteHighlight)"/>
+  <!-- Right ribbon - dark green face -->
+  <path d="M 75 20 Q 78 25 75 30 L 85 35 Q 88 30 85 20 Z" fill="url(#medGreen)"/>
+  <!-- Right ribbon - connecting curve -->
+  <path d="M 65 42 L 68 38 L 75 35 L 75 40 L 70 45 Z" fill="url(#lightGreen)"/>
+</svg>

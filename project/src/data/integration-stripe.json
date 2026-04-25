@@ -1,0 +1,70 @@
+{
+  "id": "stripe",
+  "name": "Stripe",
+  "logo": "/brand/integration-icons/stripe.svg",
+  "categories": ["Finance & Accounting", "Payments", "E-commerce"],
+  "hero": {
+    "heading": "Gapflow and Stripe",
+    "subheading": "Automate payments, subscriptions, and financial workflows",
+    "image": "/brand/integration-icons/stripe.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {
+        "name": "Triggers",
+        "items": ["Payment Succeeded", "Subscription Created", "Invoice Paid", "Refund Issued", "Customer Created"]
+      },
+      {
+        "name": "Actions",
+        "items": ["Create Customer", "Charge Payment", "Create Subscription", "Issue Refund", "Send Invoice"]
+      },
+      {
+        "name": "Advanced",
+        "items": ["Subscription Management", "Payment Links", "Connect Platforms", "Fraud Detection", "Revenue Recognition"]
+      }
+    ]
+  },
+  "useCases": [
+    {"title": "Subscription Lifecycle", "blocks": ["Subscription Created", "Send Welcome", "Track Usage", "Handle Renewal"]},
+    {"title": "Failed Payment Recovery", "blocks": ["Payment Failed", "Update Card", "Retry Charge", "Notify Customer"]},
+    {"title": "Revenue Reporting", "blocks": ["Payment Succeeded", "Calculate MRR", "Update Dashboard", "Generate Report"]},
+    {"title": "Customer Provisioning", "blocks": ["Payment Received", "Create Account", "Grant Access", "Send Credentials"]},
+    {"title": "Refund Processing", "blocks": ["Refund Request", "Process Stripe", "Update Records", "Notify Customer"]},
+    {"title": "Invoice Automation", "blocks": ["Billing Period", "Generate Invoice", "Send Email", "Track Payment"]},
+    {"title": "Churn Prevention", "blocks": ["Subscription Cancelled", "Send Offer", "Track Response", "Win Back"]},
+    {"title": "Usage Billing", "blocks": ["Usage Recorded", "Calculate Charges", "Create Invoice", "Collect Payment"]},
+    {"title": "Multi-currency Support", "blocks": ["Customer Location", "Set Currency", "Process Payment", "Convert Revenue"]},
+    {"title": "Fraud Monitoring", "blocks": ["Payment Attempt", "Check Fraud Score", "Block/Allow", "Log Decision"]}
+  ],
+  "documentation": [
+    {"title": "Getting Started with Stripe", "description": "Connect Stripe to Gapflow and automate payment processing, subscriptions, and financial workflows.", "link": "/docs/stripe/getting-started"},
+    {"title": "Subscription Management", "description": "Automate recurring billing, handle upgrades/downgrades, and manage subscription lifecycles.", "link": "/docs/stripe/subscriptions"},
+    {"title": "Webhooks & Events", "description": "Listen to Stripe events in real-time and trigger workflows for payments, invoices, and customer actions.", "link": "/docs/stripe/webhooks"}
+  ],
+  "tutorials": [
+    {"title": "Automated Subscription Onboarding", "description": "Build complete subscription workflows from sign-up to activation with payment processing and provisioning.", "thumbnail": "https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg", "videoUrl": "https://youtube.com/watch?v=example1"},
+    {"title": "Failed Payment Recovery", "description": "Create dunning workflows that recover failed payments with smart retries and customer communication.", "thumbnail": "https://images.pexels.com/photos/3943717/pexels-photo-3943717.jpeg", "videoUrl": "https://youtube.com/watch?v=example2"},
+    {"title": "Revenue Operations Dashboard", "description": "Set up automated revenue tracking, MRR calculations, and financial reporting from Stripe data.", "thumbnail": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg", "videoUrl": "https://youtube.com/watch?v=example3"}
+  ],
+  "faqs": [
+    {"question": "How do I connect Stripe?", "answer": "Use API keys (publishable and secret) from your Stripe dashboard. Restrict keys to necessary permissions for security."},
+    {"question": "Can I handle subscriptions?", "answer": "Yes! Create, update, cancel subscriptions. Handle trials, proration, upgrades, downgrades, and billing cycles automatically."},
+    {"question": "What about failed payments?", "answer": "Stripe Smart Retries handles initial attempts. Build workflows for additional recovery, customer notification, and grace periods."},
+    {"question": "How do I process refunds?", "answer": "Issue full or partial refunds automatically. Track refund reasons, update customer accounts, and maintain accurate reporting."},
+    {"question": "Can I support multiple currencies?", "answer": "Absolutely! Process payments in 135+ currencies. Handle currency conversion and display prices based on customer location."},
+    {"question": "What about fraud prevention?", "answer": "Stripe Radar provides fraud scores. Build rules to block suspicious payments, request verification, or flag for review."}
+  ],
+  "testimonials": [
+    {"quote": "Subscription automation handles 10K+ customers flawlessly. From sign-up to renewal, everything just works.", "author": "Rachel Green", "role": "Head of Finance", "company": "SaaS Platform"},
+    {"quote": "Failed payment recovery increased MRR 15%. Smart dunning workflows win back customers automatically.", "author": "James Wilson", "role": "Revenue Operations", "company": "Subscription Service"},
+    {"quote": "Revenue reporting is real-time. Finance team has instant visibility into ARR, MRR, churn, everything.", "author": "Maria Garcia", "role": "CFO", "company": "Tech Startup"},
+    {"quote": "Customer provisioning is instant. Payment completes, account activates in seconds. No manual work.", "author": "David Kumar", "role": "Engineering Lead", "company": "B2B Software"}
+  ],
+  "limits": [
+    {"title": "API Rate Limits", "description": "100 read requests and 100 write requests per second in live mode. Test mode has lower limits. Use webhooks for events."},
+    {"title": "Webhook Delivery", "description": "Webhooks retry with exponential backoff for up to 3 days. Ensure your endpoint is reliable and responds quickly."},
+    {"title": "Payment Methods", "description": "Support varies by region. Check Stripe docs for available payment methods in your target markets."},
+    {"title": "Subscription Complexity", "description": "Very complex subscription models may need careful design. Consider using Stripe Billing for advanced scenarios."}
+  ],
+  "relatedQuestions": ["How to handle taxes?", "Can I use payment links?", "What about Connect?", "How to track revenue?", "Best practices for security?"]
+}

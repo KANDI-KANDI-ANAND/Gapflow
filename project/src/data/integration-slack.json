@@ -1,0 +1,201 @@
+{
+  "id": "slack",
+  "name": "Slack",
+  "logo": "/brand/integration-icons/slack.svg",
+  "categories": ["Communication", "Productivity", "Team Collaboration"],
+  "hero": {
+    "heading": "Gapflow and Slack",
+    "subheading": "Explore the world of endless possibilities with purpose-built automation",
+    "image": "/brand/integration-icons/slack.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {
+        "name": "Triggers",
+        "items": [
+          "New Message in Channel",
+          "Reaction Added",
+          "File Shared",
+          "User Joined Channel",
+          "Message Pinned"
+        ]
+      },
+      {
+        "name": "Actions",
+        "items": [
+          "Send Message",
+          "Create Channel",
+          "Add User to Channel",
+          "Upload File",
+          "Update Message"
+        ]
+      },
+      {
+        "name": "Advanced",
+        "items": [
+          "Send Interactive Messages",
+          "Create Polls & Surveys",
+          "Build Custom Slash Commands",
+          "Manage User Groups",
+          "Schedule Messages"
+        ]
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Automated Team Notifications",
+      "blocks": ["System Trigger", "Format Message", "Slack Send", "Log Activity"]
+    },
+    {
+      "title": "Incident Response Workflow",
+      "blocks": ["Alert Trigger", "Create Channel", "Notify Team", "Track Resolution"]
+    },
+    {
+      "title": "Daily Standup Automation",
+      "blocks": ["Schedule", "Collect Updates", "Format Report", "Post to Slack"]
+    },
+    {
+      "title": "Customer Feedback Loop",
+      "blocks": ["Feedback Trigger", "Analyze Sentiment", "Route to Channel", "Create Task"]
+    },
+    {
+      "title": "Sales Pipeline Updates",
+      "blocks": ["CRM Trigger", "Format Deal Info", "Notify Channel", "Add Reaction"]
+    },
+    {
+      "title": "Code Deployment Notifications",
+      "blocks": ["GitHub Trigger", "Format Changes", "Post Update", "Thread Discussion"]
+    },
+    {
+      "title": "Meeting Scheduler",
+      "blocks": ["Slack Command", "Check Availability", "Create Event", "Confirm Meeting"]
+    },
+    {
+      "title": "Document Approval Workflow",
+      "blocks": ["Upload Trigger", "Send for Review", "Collect Feedback", "Finalize Document"]
+    },
+    {
+      "title": "Support Ticket Creation",
+      "blocks": ["Slack Message", "Parse Request", "Create Ticket", "Send Confirmation"]
+    },
+    {
+      "title": "Performance Metrics Dashboard",
+      "blocks": ["Schedule", "Fetch Metrics", "Generate Chart", "Post to Channel"]
+    }
+  ],
+  "documentation": [
+    {
+      "title": "Getting Started with Slack",
+      "description": "Connect your Slack workspace and learn how to build your first automated notification workflow.",
+      "link": "/docs/slack/getting-started"
+    },
+    {
+      "title": "Interactive Messages & Workflows",
+      "description": "Create engaging interactive messages with buttons, dropdowns, and forms to build powerful workflow automations.",
+      "link": "/docs/slack/interactive-messages"
+    },
+    {
+      "title": "Slack Bot Best Practices",
+      "description": "Learn best practices for building Slack bots that your team will love, including proper formatting and timing.",
+      "link": "/docs/slack/best-practices"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "Build Your First Slack Bot",
+      "description": "Create a smart notification bot that monitors your systems and automatically alerts your team in Slack with rich, formatted messages and actionable buttons.",
+      "thumbnail": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example1"
+    },
+    {
+      "title": "Automated Incident Management",
+      "description": "Set up a complete incident response system that creates dedicated channels, notifies the right teams, and tracks resolution all through Slack.",
+      "thumbnail": "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example2"
+    },
+    {
+      "title": "Interactive Approval Workflows",
+      "description": "Build approval workflows with interactive buttons that let team members approve or reject requests directly from Slack messages.",
+      "thumbnail": "https://images.pexels.com/photos/3861943/pexels-photo-3861943.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example3"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I connect my Slack workspace?",
+      "answer": "Click 'Connect to Slack' in the integration settings. You'll be redirected to Slack to authorize Gapflow. Make sure you have admin permissions in your workspace."
+    },
+    {
+      "question": "Can I send messages to private channels?",
+      "answer": "Yes, but the Gapflow bot must be invited to the private channel first. Use /invite @GapflowBot in the channel to add it."
+    },
+    {
+      "question": "What about rate limits?",
+      "answer": "Slack enforces rate limits on API calls. Gapflow automatically handles these with intelligent throttling and retry logic to ensure message delivery."
+    },
+    {
+      "question": "Can I use interactive components?",
+      "answer": "Absolutely! Gapflow supports buttons, dropdowns, date pickers, and other interactive components. Build rich, interactive workflows your team can engage with."
+    },
+    {
+      "question": "How do I format messages?",
+      "answer": "Use Slack's Block Kit for rich formatting. Gapflow provides a visual builder for creating beautifully formatted messages with text, images, and interactive elements."
+    },
+    {
+      "question": "Can I schedule messages?",
+      "answer": "Yes! Schedule messages to be sent at specific times. Perfect for reminders, announcements, and recurring updates that need to go out at optimal times."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Our team's response time improved 60% with automated Slack notifications. Essential tool.",
+      "author": "Ryan Cooper",
+      "role": "DevOps Lead",
+      "company": "Cloud Services Inc"
+    },
+    {
+      "quote": "The incident management workflow is a lifesaver. Everything's coordinated through Slack now.",
+      "author": "Emma Davis",
+      "role": "IT Director",
+      "company": "Enterprise Solutions"
+    },
+    {
+      "quote": "Automated standups save 30 minutes every day. The team loves the async updates.",
+      "author": "Kevin Nguyen",
+      "role": "Engineering Manager",
+      "company": "Tech Startup"
+    },
+    {
+      "quote": "Customer feedback now goes straight to Slack. We respond 3x faster than before.",
+      "author": "Sophie Martin",
+      "role": "Customer Success Manager",
+      "company": "SaaS Company"
+    }
+  ],
+  "limits": [
+    {
+      "title": "Message Rate Limits",
+      "description": "Slack enforces rate limits on message posting. For high-volume scenarios, implement batching or use Slack's incoming webhooks for better performance."
+    },
+    {
+      "title": "Message Size Limits",
+      "description": "Messages are limited to 40,000 characters. Large content should be split across multiple messages or uploaded as files."
+    },
+    {
+      "title": "File Upload Limits",
+      "description": "Free workspaces have storage limits. Consider file sizes when automating file uploads and implement cleanup strategies for old files."
+    },
+    {
+      "title": "App Permissions",
+      "description": "Ensure the Gapflow Slack app has appropriate permissions for your workflows. Some features require additional scopes to be granted."
+    }
+  ],
+  "relatedQuestions": [
+    "How to format rich messages?",
+    "Can I use slash commands?",
+    "How to handle user mentions?",
+    "What are Block Kit components?",
+    "How to debug message delivery?"
+  ]
+}

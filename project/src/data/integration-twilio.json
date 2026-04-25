@@ -1,0 +1,61 @@
+{
+  "id": "twilio",
+  "name": "Twilio",
+  "logo": "/brand/integration-icons/twilio.svg",
+  "categories": ["Communication", "SMS", "Voice", "Video"],
+  "hero": {
+    "heading": "Gapflow and Twilio",
+    "subheading": "Automate SMS, voice, video, and programmable communications",
+    "image": "/brand/integration-icons/twilio.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {"name": "Triggers", "items": ["Message Received", "Call Completed", "Recording Ready", "Number Purchased", "Status Callback"]},
+      {"name": "Actions", "items": ["Send SMS", "Make Call", "Send WhatsApp", "Send Email", "Create Video Room"]},
+      {"name": "Advanced", "items": ["Programmable Voice", "Video API", "Verify API", "Conversations API", "SendGrid Integration"]}
+    ]
+  },
+  "useCases": [
+    {"title": "SMS Notifications", "blocks": ["Trigger Event", "Format Message", "Send SMS", "Track Delivery"]},
+    {"title": "Two-Factor Authentication", "blocks": ["Login Attempt", "Generate Code", "Send via Twilio Verify", "Validate"]},
+    {"title": "Voice Alerts", "blocks": ["Critical Event", "Generate Speech", "Make Call", "Log Result"]},
+    {"title": "Customer Communication", "blocks": ["Support Ticket", "Send SMS", "Track Response", "Update CRM"]},
+    {"title": "WhatsApp Business", "blocks": ["Customer Message", "Process Intent", "Send WhatsApp", "Log Conversation"]},
+    {"title": "Call Center Integration", "blocks": ["Inbound Call", "Route to Agent", "Record Call", "Transcribe"]},
+    {"title": "Appointment Reminders", "blocks": ["Schedule Check", "Send SMS", "Confirm Response", "Update Calendar"]},
+    {"title": "Video Conferencing", "blocks": ["Meeting Request", "Create Room", "Send Invites", "Track Participants"]},
+    {"title": "Order Notifications", "blocks": ["Order Placed", "Send SMS", "Track Delivery", "Request Feedback"]},
+    {"title": "Emergency Alerts", "blocks": ["Alert Triggered", "Send Mass SMS", "Make Calls", "Log Responses"]}
+  ],
+  "documentation": [
+    {"title": "Getting Started with Twilio", "description": "Connect Twilio to Gapflow and automate SMS, voice, video, and messaging workflows.", "link": "/docs/twilio/getting-started"},
+    {"title": "Programmable Messaging", "description": "Send SMS, MMS, and WhatsApp messages programmatically with delivery tracking and webhooks.", "link": "/docs/twilio/messaging"},
+    {"title": "Voice & Video APIs", "description": "Build voice calling and video conferencing features with Twilio's programmable communications.", "link": "/docs/twilio/voice-video"}
+  ],
+  "tutorials": [
+    {"title": "SMS Notification System", "description": "Build a complete SMS notification system with delivery tracking and two-way messaging.", "thumbnail": "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg", "videoUrl": "https://youtube.com/watch?v=example1"},
+    {"title": "Two-Factor Authentication", "description": "Implement secure 2FA using Twilio Verify for user authentication workflows.", "thumbnail": "https://images.pexels.com/photos/8849295/pexels-photo-8849295.jpeg", "videoUrl": "https://youtube.com/watch?v=example2"},
+    {"title": "Voice IVR System", "description": "Create an interactive voice response system with call routing and recording.", "thumbnail": "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg", "videoUrl": "https://youtube.com/watch?v=example3"}
+  ],
+  "faqs": [
+    {"question": "How do I connect Twilio?", "answer": "Use your Account SID and Auth Token from the Twilio Console. Purchase phone numbers for SMS and voice capabilities."},
+    {"question": "What messaging channels are supported?", "answer": "SMS, MMS, WhatsApp Business, Facebook Messenger, and more. Each channel has specific requirements and pricing."},
+    {"question": "Can I send international messages?", "answer": "Yes! Twilio supports SMS delivery to 180+ countries. Check country-specific regulations and carrier requirements."},
+    {"question": "How does pricing work?", "answer": "Pay-as-you-go for messages and calls. Pricing varies by destination country. No monthly fees, pay only for usage."},
+    {"question": "What about compliance?", "answer": "Twilio handles TCPA, GDPR, and carrier compliance. Use verified sender IDs and respect opt-out requests."},
+    {"question": "Can I use custom phone numbers?", "answer": "Purchase local, toll-free, or short code numbers. Support for vanity numbers and number porting available."}
+  ],
+  "testimonials": [
+    {"quote": "SMS notifications reach customers instantly. 98% delivery rate and sub-second latency worldwide.", "author": "Maria Rodriguez", "role": "Customer Success", "company": "Delivery Platform"},
+    {"quote": "Two-factor authentication reduced fraud 90%. Twilio Verify handles everything seamlessly.", "author": "Dr. James Chen", "role": "Security Engineer", "company": "FinTech Startup"},
+    {"quote": "Voice IVR handles 50K+ calls daily. Intelligent routing and perfect call quality.", "author": "Amanda Foster", "role": "Operations Director", "company": "Support Center"},
+    {"quote": "WhatsApp Business API transformed customer engagement. Rich media and interactive messages work perfectly.", "author": "Carlos Martinez", "role": "Marketing Director", "company": "E-commerce Brand"}
+  ],
+  "limits": [
+    {"title": "API Rate Limits", "description": "Generous rate limits for most endpoints. Enterprise accounts get higher limits. Use queuing for burst traffic."},
+    {"title": "Message Throughput", "description": "Varies by number type: Long code (1 msg/sec), Toll-free (3 msg/sec), Short code (100+ msg/sec)."},
+    {"title": "International Delivery", "description": "Regulations and carrier restrictions vary by country. Some countries require sender registration."},
+    {"title": "Concurrent Calls", "description": "Default: 100 concurrent calls per account. Request increases for higher capacity needs."}
+  ],
+  "relatedQuestions": ["How to handle opt-outs?", "Can I use voice AI?", "What about call recording?", "How to track delivery?", "Best practices for compliance?"]
+}

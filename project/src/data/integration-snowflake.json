@@ -1,0 +1,61 @@
+{
+  "id": "snowflake",
+  "name": "Snowflake",
+  "logo": "/brand/integration-icons/snowflake.svg",
+  "categories": ["Data & Storage", "Data Warehouse"],
+  "hero": {
+    "heading": "Gapflow and Snowflake",
+    "subheading": "Automate cloud data warehouse operations",
+    "image": "/brand/integration-icons/snowflake.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {"name": "Triggers", "items": ["New Record", "Record Updated", "Record Deleted", "Event Occurred", "Schedule Met"]},
+      {"name": "Actions", "items": ["Create Record", "Update Record", "Delete Record", "Send Data", "Run Process"]},
+      {"name": "Advanced", "items": ["Batch Operations", "Custom Fields", "Webhooks", "API Access", "Automation Rules"]}
+    ]
+  },
+  "useCases": [
+    {"title": "Data Synchronization", "blocks": ["Record Changed", "Transform Data", "Update Target", "Log Result"]},
+    {"title": "Automated Workflows", "blocks": ["Trigger Event", "Process Data", "Execute Action", "Notify Team"]},
+    {"title": "Report Generation", "blocks": ["Schedule", "Query Data", "Generate Report", "Distribute Results"]},
+    {"title": "Real-time Updates", "blocks": ["Change Detected", "Validate Data", "Sync Systems", "Confirm Success"]},
+    {"title": "Bulk Processing", "blocks": ["Schedule", "Extract Records", "Transform", "Load Destination"]},
+    {"title": "Notification System", "blocks": ["Event Occurs", "Format Message", "Send Alert", "Track Delivery"]},
+    {"title": "Data Enrichment", "blocks": ["Record Created", "Fetch Additional Data", "Merge Information", "Update Record"]},
+    {"title": "Backup Automation", "blocks": ["Schedule", "Export Data", "Store Securely", "Verify Backup"]},
+    {"title": "Compliance Tracking", "blocks": ["Action Taken", "Log Event", "Check Rules", "Generate Audit Trail"]},
+    {"title": "Customer Onboarding", "blocks": ["New User", "Setup Account", "Send Welcome", "Track Progress"]}
+  ],
+  "documentation": [
+    {"title": "Getting Started with Snowflake", "description": "Connect Snowflake to Gapflow and learn how to automate workflows, sync data, and streamline operations.", "link": "/docs/snowflake/getting-started"},
+    {"title": "API Integration", "description": "Master Snowflake API integration for advanced automation and custom workflow development.", "link": "/docs/snowflake/api"},
+    {"title": "Best Practices", "description": "Learn best practices for Snowflake automation, optimization tips, and common patterns.", "link": "/docs/snowflake/best-practices"}
+  ],
+  "tutorials": [
+    {"title": "Automated Data Sync", "description": "Build a complete data synchronization workflow that keeps Snowflake in sync with other systems automatically.", "thumbnail": "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg", "videoUrl": "https://youtube.com/watch?v=example1"},
+    {"title": "Workflow Automation", "description": "Create intelligent workflows that automate repetitive tasks and streamline your Snowflake operations.", "thumbnail": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg", "videoUrl": "https://youtube.com/watch?v=example2"},
+    {"title": "Advanced Integration", "description": "Set up sophisticated integrations that connect Snowflake with your entire tech stack for unified operations.", "thumbnail": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg", "videoUrl": "https://youtube.com/watch?v=example3"}
+  ],
+  "faqs": [
+    {"question": "How do I connect Snowflake?", "answer": "Use API credentials or OAuth authentication to securely connect Snowflake to Gapflow. Follow our setup guide for detailed instructions."},
+    {"question": "Can I automate complex workflows?", "answer": "Yes! Build sophisticated workflows with conditional logic, loops, error handling, and multi-step processes."},
+    {"question": "What about data security?", "answer": "All data is encrypted in transit and at rest. Connections use secure authentication and you control access permissions."},
+    {"question": "How do I handle errors?", "answer": "Built-in error handling with retries, fallbacks, and notifications. Monitor workflow health and get alerted to issues."},
+    {"question": "Can I sync large datasets?", "answer": "Yes! Bulk operations and batch processing handle large volumes efficiently. Schedule syncs during off-peak hours."},
+    {"question": "What about rate limits?", "answer": "Gapflow automatically handles API rate limits with intelligent throttling and queuing to ensure reliable operation."}
+  ],
+  "testimonials": [
+    {"quote": "Snowflake automation transformed our operations. Tasks that took hours now complete in minutes.", "author": "Sarah Johnson", "role": "Operations Manager", "company": "Tech Company"},
+    {"quote": "Data synchronization is flawless. Everything stays in perfect sync across all our systems automatically.", "author": "Michael Chen", "role": "IT Director", "company": "Enterprise Corp"},
+    {"quote": "We saved 20+ hours per week automating Snowflake workflows. ROI was immediate and substantial.", "author": "Emily Rodriguez", "role": "Process Manager", "company": "Growing Startup"},
+    {"quote": "Integration was seamless and automation is rock solid. Best decision we made for operational efficiency.", "author": "David Kumar", "role": "CTO", "company": "SaaS Platform"}
+  ],
+  "limits": [
+    {"title": "API Rate Limits", "description": "API rate limits vary by plan and endpoint. Gapflow automatically handles throttling and retries for reliable operation."},
+    {"title": "Data Volume", "description": "Large datasets may require batch processing. Use pagination and incremental syncs for optimal performance."},
+    {"title": "Sync Frequency", "description": "Real-time syncs available via webhooks. Scheduled syncs can run as frequently as needed based on your requirements."},
+    {"title": "Field Mapping", "description": "Complex field mappings supported with transformations. Custom logic available for specialized data processing needs."}
+  ],
+  "relatedQuestions": ["How to optimize performance?", "Can I use webhooks?", "What about custom fields?", "How to monitor workflows?", "Best practices for automation?"]
+}

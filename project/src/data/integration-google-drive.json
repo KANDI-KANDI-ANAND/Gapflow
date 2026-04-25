@@ -1,0 +1,201 @@
+{
+  "id": "google-drive",
+  "name": "Google Drive",
+  "logo": "/brand/integration-icons/google-drive.svg",
+  "categories": ["Data & Storage", "Productivity", "Cloud Storage"],
+  "hero": {
+    "heading": "Gapflow and Google Drive",
+    "subheading": "Automate file storage, sharing, and collaboration in Google's cloud",
+    "image": "/brand/integration-icons/google-drive.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {
+        "name": "Triggers",
+        "items": [
+          "New File Created",
+          "File Modified",
+          "Folder Created",
+          "File Shared",
+          "Comment Added"
+        ]
+      },
+      {
+        "name": "Actions",
+        "items": [
+          "Upload File",
+          "Create Folder",
+          "Share File",
+          "Move File",
+          "Copy File"
+        ]
+      },
+      {
+        "name": "Advanced",
+        "items": [
+          "Batch Operations",
+          "Permission Management",
+          "Search Files",
+          "Export Formats",
+          "Metadata Updates"
+        ]
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Automated Backup",
+      "blocks": ["File Changed", "Copy File", "Upload to Drive", "Organize Folders"]
+    },
+    {
+      "title": "Document Processing",
+      "blocks": ["New Upload", "Extract Text", "Process Content", "Move to Archive"]
+    },
+    {
+      "title": "Team Collaboration",
+      "blocks": ["File Created", "Share with Team", "Set Permissions", "Notify Members"]
+    },
+    {
+      "title": "Report Distribution",
+      "blocks": ["Generate Report", "Upload to Drive", "Create Share Link", "Email Team"]
+    },
+    {
+      "title": "File Synchronization",
+      "blocks": ["External Update", "Download File", "Upload to Drive", "Update Database"]
+    },
+    {
+      "title": "Approval Workflows",
+      "blocks": ["Document Upload", "Notify Approver", "Track Comments", "Move to Approved"]
+    },
+    {
+      "title": "Media Management",
+      "blocks": ["Photo Upload", "Optimize Image", "Store in Drive", "Generate Thumbnail"]
+    },
+    {
+      "title": "Client Portal",
+      "blocks": ["Client Request", "Prepare Files", "Share Folder", "Send Access Link"]
+    },
+    {
+      "title": "Document Conversion",
+      "blocks": ["Upload File", "Convert Format", "Save to Drive", "Notify User"]
+    },
+    {
+      "title": "Compliance Archive",
+      "blocks": ["Schedule Check", "Find Old Files", "Archive to Drive", "Update Records"]
+    }
+  ],
+  "documentation": [
+    {
+      "title": "Getting Started with Google Drive",
+      "description": "Connect Google Drive to Gapflow and learn how to automate file uploads, downloads, and folder organization.",
+      "link": "/docs/google-drive/getting-started"
+    },
+    {
+      "title": "Sharing & Permissions",
+      "description": "Manage file and folder permissions programmatically with automated sharing links and access control.",
+      "link": "/docs/google-drive/permissions"
+    },
+    {
+      "title": "Advanced File Operations",
+      "description": "Master search, batch operations, file conversion, and metadata management for powerful Drive workflows.",
+      "link": "/docs/google-drive/advanced-operations"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "Automated Document Backup",
+      "description": "Build a comprehensive backup system that organizes files in Google Drive with automated folder structures and versioning.",
+      "thumbnail": "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example1"
+    },
+    {
+      "title": "Team Collaboration System",
+      "description": "Create workflows for team document sharing with automatic permission management and real-time notifications.",
+      "thumbnail": "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example2"
+    },
+    {
+      "title": "Document Processing Pipeline",
+      "description": "Set up automated document intake that processes uploads, extracts data, and organizes files intelligently in Drive.",
+      "thumbnail": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example3"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I connect Google Drive?",
+      "answer": "Sign in with your Google account and authorize Gapflow. Works with personal Gmail accounts and Google Workspace accounts."
+    },
+    {
+      "question": "Can I access shared drives?",
+      "answer": "Yes! Access Shared Drives (formerly Team Drives) in Google Workspace. Perfect for team and organizational file management."
+    },
+    {
+      "question": "What file types are supported?",
+      "answer": "All file types including Google Docs, Sheets, Slides, and native formats. Convert between Google and Microsoft formats."
+    },
+    {
+      "question": "How do sharing links work?",
+      "answer": "Create shareable links with specific permissions (view/comment/edit), expiration dates, and optional password protection."
+    },
+    {
+      "question": "Can I search for files?",
+      "answer": "Yes! Search by name, content, type, owner, modified date, and custom metadata. Build sophisticated file discovery workflows."
+    },
+    {
+      "question": "What about storage limits?",
+      "answer": "15GB free with Google account, unlimited with some Workspace plans. Monitor usage and implement cleanup policies as needed."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Automated backup to Google Drive protects all our critical files. Organization is perfect, recovery is instant.",
+      "author": "Jennifer Lee",
+      "role": "Operations Manager",
+      "company": "Small Business"
+    },
+    {
+      "quote": "Client file sharing is effortless. Upload, share, notify - all happens automatically with perfect permissions.",
+      "author": "David Martinez",
+      "role": "Account Director",
+      "company": "Agency"
+    },
+    {
+      "quote": "Document processing handles 500+ files daily. Extract, analyze, organize - all automated through Drive.",
+      "author": "Sarah Chen",
+      "role": "Document Manager",
+      "company": "Legal Firm"
+    },
+    {
+      "quote": "Team collaboration improved dramatically. Everyone has access to the right files with perfect organization.",
+      "author": "Michael Torres",
+      "role": "Project Lead",
+      "company": "Consulting"
+    }
+  ],
+  "limits": [
+    {
+      "title": "Storage Quota",
+      "description": "15GB for free accounts, up to unlimited for Workspace. Monitor usage and implement archival strategies for large volumes."
+    },
+    {
+      "title": "File Size Limits",
+      "description": "Individual files limited to 5TB. Google Docs, Sheets, and Slides have specific size limits. Use appropriate file types."
+    },
+    {
+      "title": "API Rate Limits",
+      "description": "Google Drive API has per-user quotas. Implement batching and exponential backoff for high-volume operations."
+    },
+    {
+      "title": "Sharing Limits",
+      "description": "Limits on concurrent editors and total shares per file. Plan collaboration strategies for high-traffic files."
+    }
+  ],
+  "relatedQuestions": [
+    "How to sync with Dropbox?",
+    "Can I use OCR on images?",
+    "What about file encryption?",
+    "How to handle versions?",
+    "Best practices for organization?"
+  ]
+}

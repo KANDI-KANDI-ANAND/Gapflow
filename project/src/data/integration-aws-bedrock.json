@@ -1,0 +1,70 @@
+{
+  "id": "aws-bedrock",
+  "name": "AWS Bedrock",
+  "logo": "/brand/integration-icons/aws-bedrock.svg",
+  "categories": ["AI", "Language Models", "AWS"],
+  "hero": {
+    "heading": "Gapflow and AWS Bedrock",
+    "subheading": "Build generative AI applications with foundation models from leading AI companies",
+    "image": "/brand/integration-icons/aws-bedrock.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {
+        "name": "Triggers",
+        "items": ["Inference Request", "Model Updated", "Batch Job Complete", "Custom Model Ready", "Guardrails Event"]
+      },
+      {
+        "name": "Actions",
+        "items": ["Generate Text", "Create Embeddings", "Run Inference", "Fine-tune Model", "Apply Guardrails"]
+      },
+      {
+        "name": "Advanced",
+        "items": ["RAG Applications", "Model Customization", "Knowledge Bases", "Agents", "Prompt Management"]
+      }
+    ]
+  },
+  "useCases": [
+    {"title": "Chatbot Development", "blocks": ["User Message", "Generate Response", "Apply Guardrails", "Return Answer"]},
+    {"title": "Content Generation", "blocks": ["Content Brief", "Generate Draft", "Review Quality", "Publish"]},
+    {"title": "Document Summarization", "blocks": ["Upload Document", "Extract Text", "Summarize", "Store Summary"]},
+    {"title": "Code Generation", "blocks": ["Requirements", "Generate Code", "Test Output", "Deploy"]},
+    {"title": "Semantic Search", "blocks": ["Query", "Generate Embedding", "Search Vector DB", "Return Results"]},
+    {"title": "Data Analysis", "blocks": ["Dataset", "Analyze Patterns", "Generate Insights", "Create Report"]},
+    {"title": "Image Generation", "blocks": ["Text Prompt", "Generate Image", "Moderate Content", "Store Result"]},
+    {"title": "Q&A Systems", "blocks": ["Question", "Search Knowledge Base", "Generate Answer", "Cite Sources"]},
+    {"title": "Translation", "blocks": ["Source Text", "Detect Language", "Translate", "Validate Output"]},
+    {"title": "Sentiment Analysis", "blocks": ["Customer Feedback", "Analyze Sentiment", "Score Result", "Route Ticket"]}
+  ],
+  "documentation": [
+    {"title": "Getting Started with AWS Bedrock", "description": "Connect AWS Bedrock to Gapflow and access foundation models from Anthropic, Meta, Stability AI, and more.", "link": "/docs/aws-bedrock/getting-started"},
+    {"title": "RAG Applications", "description": "Build Retrieval Augmented Generation systems with Knowledge Bases for accurate, grounded responses.", "link": "/docs/aws-bedrock/rag"},
+    {"title": "Model Customization", "description": "Fine-tune foundation models on your data for improved performance on specific tasks.", "link": "/docs/aws-bedrock/customization"}
+  ],
+  "tutorials": [
+    {"title": "Enterprise Chatbot with Guardrails", "description": "Build a production chatbot with content filtering, PII detection, and topic restrictions.", "thumbnail": "https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg", "videoUrl": "https://youtube.com/watch?v=example1"},
+    {"title": "RAG Knowledge Base", "description": "Create a knowledge base that retrieves and generates accurate answers from your documents.", "thumbnail": "https://images.pexels.com/photos/5905857/pexels-photo-5905857.jpeg", "videoUrl": "https://youtube.com/watch?v=example2"},
+    {"title": "Multi-Modal Content Pipeline", "description": "Set up automated content creation with text and image generation for marketing workflows.", "thumbnail": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg", "videoUrl": "https://youtube.com/watch?v=example3"}
+  ],
+  "faqs": [
+    {"question": "How do I connect AWS Bedrock?", "answer": "Use AWS IAM credentials with Bedrock permissions. Best practice: use IAM roles for production workloads."},
+    {"question": "Which models are available?", "answer": "Claude (Anthropic), Llama (Meta), Titan (Amazon), Stable Diffusion (Stability AI), Jurassic (AI21), and more."},
+    {"question": "What are Guardrails?", "answer": "Built-in content filtering, PII detection, topic restrictions, and word filters for safe AI applications."},
+    {"question": "Can I fine-tune models?", "answer": "Yes! Customize models with your data through continued pre-training or fine-tuning for better performance."},
+    {"question": "What about Knowledge Bases?", "answer": "Managed RAG service that handles document ingestion, chunking, embeddings, and vector search automatically."},
+    {"question": "How does pricing work?", "answer": "Pay per token for inference. On-demand and provisioned throughput options available for different workloads."}
+  ],
+  "testimonials": [
+    {"quote": "Bedrock Knowledge Bases revolutionized our support. Accurate answers from 10K+ documents instantly.", "author": "Amanda Stevens", "role": "VP Customer Success", "company": "Enterprise SaaS"},
+    {"quote": "Guardrails give us confidence to deploy AI widely. Content filtering catches everything problematic.", "author": "Dr. James Park", "role": "AI Safety Lead", "company": "FinTech Company"},
+    {"quote": "Model choice flexibility is crucial. Switch between Claude, Llama, Titan based on task requirements.", "author": "Maria Gonzalez", "role": "ML Engineer", "company": "AI Startup"},
+    {"quote": "Fine-tuning on our data improved accuracy 40%. Custom models understand our domain perfectly.", "author": "Robert Chen", "role": "Data Science Lead", "company": "Legal Tech"}
+  ],
+  "limits": [
+    {"title": "Token Limits", "description": "Context windows vary by model (8K-200K tokens). Choose models based on your input size needs."},
+    {"title": "Throughput", "description": "On-demand has rate limits. Provisioned throughput guarantees capacity for consistent, high-volume use."},
+    {"title": "Model Availability", "description": "Models available in specific AWS regions. Check region availability for your chosen models."},
+    {"title": "Fine-tuning", "description": "Training data requirements and time vary. Larger datasets produce better results but take longer."}
+  ],
+  "relatedQuestions": ["How to choose a model?", "Can I use streaming?", "What about cost optimization?", "How to monitor performance?", "Best practices for prompts?"]
+}

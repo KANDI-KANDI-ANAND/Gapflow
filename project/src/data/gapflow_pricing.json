@@ -1,0 +1,263 @@
+{
+  "meta": {
+    "id": "ef51c5eb-5cc0-41ce-9a94-7bf45f5f42f1",
+    "name": "Gapflow.ai — Pricing Page",
+    "version": "0.1.0",
+    "created_at": "2025-11-06T13:00:06.908234",
+    "viewport_strategy": "desktop-first-responsive",
+    "theme_ref": "gapflow_theme.css",
+    "page": "pricing"
+  },
+  "layout": {
+    "container": {
+      "max_width": 1200,
+      "padding_x": "xl"
+    },
+    "grid": {
+      "columns": 12,
+      "gutter": "lg"
+    },
+    "section_defaults": {
+      "padding_y": "section"
+    }
+  },
+  "sections": [
+    {
+      "id": "pricing-hero",
+      "type": "section",
+      "style": {
+        "background": "gradient-dark",
+        "align": "center"
+      },
+      "container": true,
+      "content": {
+        "eyebrow": {
+          "type": "pill",
+          "tone": "accent",
+          "text": "Pricing"
+        },
+        "heading": {
+          "type": "h1",
+          "text": "Simple, scalable pricing"
+        },
+        "subheading": {
+          "type": "p",
+          "variant": "body-lg",
+          "text": "Start free. Upgrade when you’re ready to scale."
+        },
+        "ctas": [
+          {
+            "type": "button",
+            "variant": "primary",
+            "size": "lg",
+            "label": "Start Free",
+            "action": "/app/signup"
+          },
+          {
+            "type": "button",
+            "variant": "secondary",
+            "size": "lg",
+            "label": "Talk to Sales",
+            "action": "/contact/sales"
+          }
+        ]
+      }
+    },
+    {
+      "id": "plans",
+      "type": "section",
+      "style": {
+        "background": "white"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "Choose your plan"
+        },
+        "plans": [
+          {
+            "name": "Starter",
+            "price": "Free",
+            "unit": "/mo",
+            "badge": "Best for trying",
+            "features": [
+              "Core builder",
+              "Popular connectors",
+              "100 runs/mo",
+              "Community support"
+            ],
+            "cta": {
+              "label": "Start Free",
+              "action": "/app/signup"
+            }
+          },
+          {
+            "name": "Pro",
+            "price": "$49",
+            "unit": "/user/mo",
+            "badge": "Most popular",
+            "features": [
+              "Unlimited flows & runs",
+              "All connectors",
+              "AI actions",
+              "Email support"
+            ],
+            "cta": {
+              "label": "Start Trial",
+              "action": "/app/signup?plan=pro"
+            }
+          },
+          {
+            "name": "Enterprise",
+            "price": "Custom",
+            "unit": "",
+            "badge": "For scale",
+            "features": [
+              "SSO/RBAC",
+              "Private cloud / on‑prem",
+              "SLA & onboarding",
+              "Dedicated success"
+            ],
+            "cta": {
+              "label": "Contact Sales",
+              "action": "/contact/sales"
+            }
+          }
+        ],
+        "toggle_billing": {
+          "options": [
+            "Monthly",
+            "Yearly"
+          ],
+          "default": "Monthly",
+          "note": "Yearly saves 20%"
+        }
+      }
+    },
+    {
+      "id": "compare",
+      "type": "section",
+      "style": {
+        "background": "light"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "Plan comparison"
+        },
+        "table": {
+          "columns": [
+            "Feature",
+            "Starter",
+            "Pro",
+            "Enterprise"
+          ],
+          "rows": [
+            [
+              "Flows",
+              "Up to 3",
+              "Unlimited",
+              "Unlimited"
+            ],
+            [
+              "Runs/month",
+              "100",
+              "Unlimited",
+              "Unlimited"
+            ],
+            [
+              "Connectors",
+              "Popular",
+              "All",
+              "All"
+            ],
+            [
+              "AI actions",
+              "Basic",
+              "Advanced",
+              "Advanced"
+            ],
+            [
+              "SSO/RBAC",
+              "—",
+              "—",
+              "✔"
+            ],
+            [
+              "On‑prem/private cloud",
+              "—",
+              "—",
+              "✔"
+            ],
+            [
+              "SLA/support",
+              "Community",
+              "Email",
+              "Priority + CSM"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "faq",
+      "type": "section",
+      "style": {
+        "background": "white"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "Frequently asked questions"
+        },
+        "qa": [
+          {
+            "q": "What counts as a run?",
+            "a": "Each completed execution of a flow is counted as one run."
+          },
+          {
+            "q": "Can I self‑host?",
+            "a": "Yes. Enterprise offers private cloud or on‑prem deployment options."
+          },
+          {
+            "q": "Do you offer discounts?",
+            "a": "Annual billing saves 20%. Volume and startup discounts available—contact sales."
+          }
+        ]
+      }
+    },
+    {
+      "id": "pricing-final-cta",
+      "type": "section",
+      "style": {
+        "background": "light-gradient"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "Ready to automate?"
+        },
+        "ctas": [
+          {
+            "type": "button",
+            "variant": "primary",
+            "size": "lg",
+            "label": "Get Started",
+            "action": "/app/signup"
+          },
+          {
+            "type": "button",
+            "variant": "ghost",
+            "size": "lg",
+            "label": "Talk to Sales",
+            "action": "/contact/sales"
+          }
+        ]
+      }
+    }
+  ]
+}

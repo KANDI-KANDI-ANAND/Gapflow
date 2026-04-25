@@ -1,0 +1,628 @@
+{
+  "templates": [
+    {
+      "id": "bright-pattern-list-delete",
+      "title": "Bright Pattern List Management - Delete All Records",
+      "slug": "bright-pattern-list-delete",
+      "categories": ["Contact Centre", "Customer Support", "AI & Automation", "Productivity"],
+      "integrations": ["bright-pattern", "genesys-cloud", "microsoft-365-email", "aws-s3"],
+      "description": "Automates complete cleanup of Bright Pattern dialling lists, allowing contact centre teams to safely reuse lists without manual intervention.",
+      "longDescription": "The Bright Pattern List Management: Delete All Records flow automates the complete cleanup of a Bright Pattern dialling list, allowing contact centre teams to safely reuse the same list without manual intervention or risk of residual data.\n\nThis workflow is designed to run on a scheduled basis (daily or weekly) or on demand, ensuring lists are cleared at a defined time and ready for the next operational cycle.\n\n**How the workflow works:**\n• Uses a Bright Pattern Delete Records block where users select a preconfigured Bright Pattern integration\n• The dialling list is selected visually from a real-time dropdown, removing the need to remember or hardcode list names\n• All records in the selected list are deleted in a single automated operation\n• An Office 365 (Graph) Email block captures the execution result and notifies relevant stakeholders of success or failure\n\n**Key capabilities and extensions:**\n• Eliminates manual CSV handling and spreadsheet-based list resets\n• Reduces compliance and privacy risks by removing customer PII such as names, phone numbers, and sensitive messages (for example, debt collection details)\n• Can be extended to log a ticket in ServiceNow, export execution details to Amazon S3 or Microsoft OneDrive as a spreadsheet, or trigger inter-workflows based on success or failure to fetch fresh data for next-day dialling operations",
+      "thumbnails": [
+        "/templates/bright-pattern-list-management-delete-all-records/bp_list_bulk_delete_overview.jpg",
+        "/templates/bright-pattern-list-management-delete-all-records/bp_block_properties1.jpg",
+        "/templates/bright-pattern-list-management-delete-all-records/office365_properties-1.jpg"
+      ],
+      "useCaseBlocks": [
+        "Schedule Workflow",
+        "Select Bright Pattern List",
+        "Delete All Records",
+        "Capture Results",
+        "Send Email Notification",
+        "Optional: Log to ServiceNow"
+      ],
+      "benefits": [
+        "Eliminate manual CSV handling and list resets",
+        "Reduce compliance risks by removing customer PII",
+        "Schedule daily or weekly automated cleanups",
+        "Extend with ServiceNow tickets or S3 exports"
+      ],
+      "howToSteps": [
+        {
+          "title": "Configure Bright Pattern Integration",
+          "description": "Add your Bright Pattern account credentials to Gapflow. Navigate to Integrations and authenticate your Bright Pattern instance with API credentials."
+        },
+        {
+          "title": "Add the Delete Records Block",
+          "description": "Drag the Bright Pattern Delete Records block onto the canvas. In the Operation dropdown, select 'Delete All Records'. Choose your preconfigured Bright Pattern account from the integration dropdown."
+        },
+        {
+          "title": "Select the Target List",
+          "description": "From the 'Select List' dropdown, choose the dialling list you want to clear. The dropdown populates in real-time from your Bright Pattern instance, showing all available lists."
+        },
+        {
+          "title": "Configure Email Notification",
+          "description": "Add an Office 365 Email block after the delete operation. Configure it to send success or failure notifications to relevant stakeholders. Use dynamic fields to include execution details."
+        },
+        {
+          "title": "Set Up Scheduling (Optional)",
+          "description": "Add a Schedule trigger to run this workflow daily or weekly at a specific time. Configure the schedule based on your operational needs."
+        },
+        {
+          "title": "Add Extensions (Optional)",
+          "description": "Extend the workflow by adding ServiceNow ticket creation, S3 export for audit logs, or inter-workflow triggers to fetch fresh data for next-day operations."
+        }
+      ],
+      "lastUpdated": "2025-12-27",
+      "difficulty": "Intermediate",
+      "estimatedSetupTime": "15 minutes",
+      "tags": ["bright-pattern", "contact-centre", "list-management", "data-cleanup", "compliance", "gdpr", "automation"],
+      "videoUrl": ""
+    },
+    {
+      "id": "salesforce-lead-creation-from-website-webhook",
+      "title": "Salesforce: Lead Creation from Website using Webhook",
+      "slug": "salesforce-lead-creation-from-website-webhook",
+      "categories": [
+        "Sales",
+        "Marketing",
+        "Communication",
+        "Productivity"
+      ],
+      "integrations": [
+        "salesforce",
+        "twilio-sms",
+        "microsoft-365-email",
+        "google-gmail"
+      ],
+      "description": "Creates Salesforce leads in real time from website form submissions using a webhook, with automated SMS notifications and email alerts to managers.",
+      "longDescription": "This workflow enables real-time lead creation in Salesforce when a customer submits a form on a website.\n\nIt is designed for businesses that want to eliminate manual lead entry, respond faster to inbound enquiries, and automatically notify sales teams or managers when a new lead is created.\n\n**How the workflow works:**\n• The workflow is triggered by a webhook connected to a website form\n• Form data is received and validated through the Start block\n• A Salesforce Create Record block creates a new Lead using the submitted details\n• An SMS notification is sent to the lead or internal team using an SMS gateway\n• An email notification is sent to a manager using Microsoft 365 Email or Gmail\n\n**Key capabilities:**\n• Real-time lead capture without polling or scheduled jobs\n• Direct mapping of website form fields to Salesforce Lead fields\n• Immediate outbound communication via SMS and email\n• Works with any website or form provider capable of calling a webhook\n\nAll workflow executions and errors are logged automatically, ensuring visibility and traceability of inbound lead activity.",
+      "thumbnails": [
+        "Webhook trigger receiving website form submission",
+        "Salesforce Create Lead block with field mapping",
+        "SMS and email notification configuration"
+      ],
+      "useCaseBlocks": [
+        "Start – Webhook Trigger",
+        "Salesforce – Create Record (Lead)",
+        "SMS Gateway – Send SMS",
+        "Email – Send (Microsoft 365 or Gmail)"
+      ],
+      "benefits": [
+        "Eliminates manual lead entry by creating Salesforce leads instantly from website forms.",
+        "Improves response times with immediate SMS and email notifications.",
+        "Ensures consistent and accurate data capture directly into Salesforce.",
+        "Enables real-time visibility of inbound leads for sales managers."
+      ],
+      "howToSteps": [
+        {
+          "title": "Configure the webhook trigger",
+          "description": "Create a webhook Start block and connect it to the website form so that form submissions are sent directly into the workflow."
+        },
+        {
+          "title": "Create the Salesforce lead",
+          "description": "Map incoming form fields to Salesforce Lead fields using the Create Record block and submit the data to Salesforce."
+        },
+        {
+          "title": "Send notifications",
+          "description": "Send an SMS using the SMS gateway and notify the manager via Microsoft 365 Email or Gmail with the newly created lead details."
+        }
+      ],
+      "lastUpdated": "03/Jan/2026",
+      "difficulty": "Beginner",
+      "estimatedSetupTime": "15 minutes",
+      "tags": [
+        "Salesforce",
+        "Lead Creation",
+        "Webhook",
+        "Website Forms",
+        "SMS",
+        "Email Automation"
+      ],
+      "videoUrl": ""
+    },
+    {
+      "id": "salesforce-search-map-opportunities-with-accounts-outbound-reach",
+      "title": "Salesforce – Search and Map Opportunities with Accounts to Automate Outbound Reach",
+      "slug": "salesforce-search-map-opportunities-with-accounts-outbound-reach",
+      "categories": ["Sales", "Productivity", "Customer Support", "Communication"],
+      "integrations": ["salesforce", "microsoft-365-email", "google-gmail", "bright-pattern", "genesys-cloud", "twilio-sms", "onedrive", "aws-s3", "asknicely", "surveymonkey"],
+      "description": "Automatically retrieves Salesforce opportunities based on defined criteria, maps them to their associated accounts, and enables proactive outbound engagement through email, contact centre campaigns, or downstream systems.",
+      "longDescription": "This workflow enables businesses to proactively identify and act on Salesforce opportunities that meet specific business criteria, such as opportunity stage, amount, probability percentage, close date, or creation date.\n\nIt is designed for teams that want to automate follow-ups, chase high-value opportunities, or drive consistent outbound engagement without manual CRM searches or spreadsheet exports.\n\n**How the workflow works:**\n• Runs automatically on a defined schedule, such as every morning at 9am, using the organisation's local timezone\n• Retrieves opportunity records from Salesforce using visual field selection and configurable filter conditions\n• Uses a Field Mapper block to map opportunity fields to account identifiers, enabling relationship-based lookups\n• Retrieves associated account records in bulk using mapped identifiers\n• Delivers the combined opportunity and account data via email to supervisors or stakeholders\n\n**Outbound and engagement extensions:**\n• Send proactive emails using Microsoft 365 Email or Gmail\n• Trigger SMS outreach using supported SMS gateways\n• Add records to outbound campaigns in contact centre platforms such as Bright Pattern or Genesys\n• Export data to OneDrive or AWS S3 for tracking, audit, or reporting\n• Pass data to survey platforms such as SurveyMonkey or AskNicely for customer feedback campaigns\n\nAll executions and errors are logged automatically, providing visibility and traceability across scheduled runs.",
+      "thumbnails": [
+        "/templates/salesforce-search-and-map-opportunities-with-accounts-outbound-reach/1_sf-search_and_map_overview.jpg",
+        "/templates/salesforce-search-and-map-opportunities-with-accounts-outbound-reach/2_sf-search_and_map_-sf_block.jpg",
+        "/templates/salesforce-search-and-map-opportunities-with-accounts-outbound-reach/3_sf-search_and_map_-fieldmapper.jpg",
+        "/templates/salesforce-search-and-map-opportunities-with-accounts-outbound-reach/4_sf-search_and_map_-sf-mappedrecords.jpg"
+      ],
+      "useCaseBlocks": [
+        "Start / Schedule Trigger",
+        "Salesforce – Retrieve Records (Opportunities)",
+        "Field Mapper",
+        "Salesforce – Retrieve Records (Accounts)",
+        "Email – Send (Microsoft 365 or Gmail)",
+        "Optional: SMS Gateway – Send SMS",
+        "Optional: Contact Centre – Add to Outbound List",
+        "Optional: Survey Tool – Trigger Survey",
+        "Optional: OneDrive / AWS S3 – Export Records"
+      ],
+      "benefits": [
+        "Enables proactive outreach by automatically identifying opportunities that require follow-up.",
+        "Eliminates manual CRM searches and repetitive list preparation for sales and support teams.",
+        "Ensures consistent and timely engagement through scheduled, automated execution.",
+        "Creates a single workflow that connects CRM data to email, contact centre, and communication tools."
+      ],
+      "howToSteps": [
+        {
+          "title": "Schedule the workflow execution",
+          "description": "Configure the workflow to run automatically at a defined time, such as every morning, using the organisation's local timezone settings."
+        },
+        {
+          "title": "Retrieve Salesforce opportunity records",
+          "description": "Select the Salesforce account and Opportunities object, visually choose required fields, and apply filter conditions such as amount, stage, probability, or close date."
+        },
+        {
+          "title": "Map opportunities to accounts",
+          "description": "Use the Field Mapper block to map the Opportunity AccountId field to the Account Id field, enabling relationship-based record retrieval."
+        },
+        {
+          "title": "Retrieve associated account records",
+          "description": "Fetch account details in bulk using the mapped identifiers to enrich opportunity data with account-level information."
+        },
+        {
+          "title": "Trigger outbound actions",
+          "description": "Send emails, initiate SMS outreach, add records to outbound contact centre campaigns, or export the data for reporting and follow-up."
+        }
+      ],
+      "lastUpdated": "03/Jan/2026",
+      "difficulty": "Beginner",
+      "estimatedSetupTime": "15 minutes",
+      "tags": ["Salesforce", "Opportunities", "Outbound Engagement", "Email Automation", "Contact Centre", "Sales Automation"],
+      "videoUrl": ""
+    },
+    {
+      "id": "bright-pattern-completed-record-retrieval",
+      "title": "Bright Pattern List Management: Completed Record Retrieval",
+      "slug": "bright-pattern-completed-record-retrieval",
+      "categories": ["Contact Centre", "Customer Support", "AI & Automation", "Productivity"],
+      "integrations": ["bright-pattern", "genesys-cloud", "microsoft-365-email", "aws-s3", "onedrive"],
+      "description": "Automatically retrieves completed records from Bright Pattern campaigns and delivers structured results via email or downstream systems for reporting, auditing, and automation.",
+      "longDescription": "The Bright Pattern List Management: Completed Record Retrieval flow automates the extraction of completed campaign records from Bright Pattern, removing the need for manual report downloads, CSV handling, or ad-hoc API usage.\n\nThis workflow supports manual, scheduled, or event-driven execution and enables users to reliably retrieve completed records by selecting both the dialling list and its associated campaign through real-time dropdowns.\n\n**How the workflow works:**\n• Uses the Bright Pattern Get Records block configured for completed records\n• Users select a preconfigured Bright Pattern integration\n• Dialling list and associated campaign are selected visually\n• Start and end time, record fetch limit, cursor, and attempt extraction are configured\n• Completed records are retrieved using the campaign-based API\n• Results are sent via Office 365 email with a JSON attachment and optional inline preview\n\n**Outputs and extensions:**\n• Default output sends a summary email with completed records attached in JSON format\n• Pagination cursors are automatically reused for subsequent runs\n• Can be extended to upload data to Amazon S3 or OneDrive, create ServiceNow tickets, or trigger downstream workflows\n\nAll executions and failures are captured in workflow execution logs, with optional failure notifications or service desk logging.",
+      "thumbnails": [
+        "/templates/bright-pattern-list-management-completed-record-retrieval/bp-retreive_records_overview.jpg",
+        "/templates/bright-pattern-list-management-completed-record-retrieval/bp-retreive_records_block_properties1.jpg",
+        "/templates/bright-pattern-list-management-completed-record-retrieval/bp-retreive_records-emailblock1.jpg"
+      ],
+      "useCaseBlocks": [
+        "Bright Pattern – Get Records (Completed Records)",
+        "Optional: Data Transform (JSON)",
+        "Office 365 – Send Email",
+        "Optional: Amazon S3 – Upload File",
+        "Optional: OneDrive – Upload File",
+        "Optional: ServiceNow – Create Ticket"
+      ],
+      "benefits": [
+        "Provides continuous visibility into list and campaign performance",
+        "Automates completed record extraction and reporting without manual effort",
+        "Helps keep dialling lists clean and monitored over time",
+        "Reduces compliance risk by handling customer data through controlled, auditable workflows"
+      ],
+      "howToSteps": [
+        {
+          "title": "Configure Bright Pattern Get Records",
+          "description": "Select the Bright Pattern integration, choose the dialling list and its associated campaign, and configure the completed records options including time range, fetch limit, cursor, and attempt extraction."
+        },
+        {
+          "title": "Process and format retrieved data",
+          "description": "Optionally use a Data Transform block to structure or format the completed records in JSON for reporting or downstream use."
+        },
+        {
+          "title": "Deliver results and extend the workflow",
+          "description": "Send the completed records via Office 365 email and optionally extend the workflow to upload data to S3 or OneDrive, create ServiceNow tickets, or trigger additional workflows."
+        }
+      ],
+      "lastUpdated": "2025-12-27",
+      "difficulty": "Beginner",
+      "estimatedSetupTime": "10 minutes",
+      "tags": ["bright-pattern", "completed-records", "outbound-reporting", "automation", "compliance", "office-365"],
+      "videoUrl": "https://youtu.be/GDawOPbgB3s?si=0xTTIbmCWHRGpwBW"
+    },
+    {
+      "id": "bright-pattern-filterout-selective-campaign-records-to-sql",
+      "title": "Bright Pattern Campaign Records: Filtered Retrieval to SQL",
+      "slug": "bright-pattern-filterout-selective-campaign-records-to-sql",
+      "categories": ["Contact Centre", "AI & Automation", "Productivity", "List Management"],
+      "integrations": ["bright-pattern", "genesys-cloud", "mysql", "aws-s3", "onedrive"],
+      "description": "Retrieves all Bright Pattern campaign records, filters dialled contacts using JSON rules, and stores the selected data in a SQL database for reporting, analysis, or downstream automation.",
+      "longDescription": "This workflow retrieves all campaign records from Bright Pattern and gives users fine-grained control to filter and persist only the data that matters.\n\nIt is designed for scenarios where teams want to analyse or reuse campaign activity data, such as contacts that have been dialled at least once, without exporting reports manually or handling raw files.\n\n**How the workflow works:**\n• Uses the Bright Pattern Get Records block configured to retrieve all campaign records\n• Users select the Bright Pattern integration, dialling list, and associated campaign from real-time dropdowns\n• All campaign records are fetched using the campaign-based API\n• A JSON Filter block is applied to filter records based on dialling criteria (for example, contacts dialled one or more times)\n• Filtered records are inserted into a SQL database table for structured storage and reuse\n\n**Outputs and extensions:**\n• Filtered data is stored in a SQL database for reporting, analytics, or operational reuse\n• Optionally export the filtered dataset to Amazon S3 or OneDrive as CSV or JSON\n• Optionally create a ServiceNow ticket for audit, tracking, or exception handling\n\nAll executions and failures are captured in workflow execution logs, ensuring traceability and operational visibility.",
+      "thumbnails": [
+        "/templates/bright-pattern-campaign-records-filtered-retrieval-to-sql/1_filtered_retrieval_to_sql_overview.jpg",
+        "/templates/bright-pattern-campaign-records-filtered-retrieval-to-sql/2_filtered_retrieval_to_sql-bp_block.jpg",
+        "/templates/bright-pattern-campaign-records-filtered-retrieval-to-sql/3_filtered_retrieval_to_sql-db_block_with_query.jpg"
+      ],
+      "useCaseBlocks": [
+        "Bright Pattern – Get Records (Retrieve All Campaign Records)",
+        "JSON Filter – Dialled Contacts (≥ 1 attempt)",
+        "SQL – Insert Records",
+        "Optional: Amazon S3 – Upload File",
+        "Optional: OneDrive – Upload File",
+        "Optional: ServiceNow – Create Ticket"
+      ],
+      "benefits": [
+        "Allows users to selectively filter campaign data instead of processing entire datasets",
+        "Automates extraction and filtering of dialled contacts without manual reports",
+        "Stores campaign activity data in SQL for structured analysis and reuse",
+        "Reduces data handling and compliance risk through controlled, auditable workflows"
+      ],
+      "howToSteps": [
+        {
+          "title": "Retrieve campaign records from Bright Pattern",
+          "description": "Select the Bright Pattern integration, choose the dialling list and associated campaign, and retrieve all available campaign records using the Get Records block."
+        },
+        {
+          "title": "Filter dialled contacts",
+          "description": "Apply the JSON Filter block to select only records that meet the required criteria, such as contacts that have been dialled at least once."
+        },
+        {
+          "title": "Persist filtered data to SQL",
+          "description": "Insert the filtered records into a configured SQL database table and optionally extend the workflow with file exports or service desk logging."
+        }
+      ],
+      "lastUpdated": "2025-12-27",
+      "difficulty": "Beginner",
+      "estimatedSetupTime": "15 minutes",
+      "tags": ["bright-pattern", "campaign-records", "data-filtering", "sql", "automation", "outbound-dialling"],
+      "videoUrl": ""
+    },
+    {
+      "id": "salesforce-conditional-record-retrieval",
+      "title": "Salesforce: Conditional Record Retrieval",
+      "slug": "salesforce-conditional-record-retrieval",
+      "categories": ["Sales", "Productivity", "Customer Support"],
+      "integrations": ["salesforce", "microsoft-365-email", "onedrive", "twilio-sms", "bright-pattern", "asknicely", "surveymonkey"],
+      "description": "Retrieves Salesforce records based on dynamic conditions such as creation date, age, or follow-up status, enabling targeted emails, SMS outreach, or handoff to contact centre systems for proactive engagement.",
+      "longDescription": "This template helps teams automatically retrieve Salesforce CRM records based on conditional logic and workflow triggers.\n\nIt is commonly used to power follow-up processes such as checking for newly created leads, identifying cases older than a specific number of days, or pulling records that require action based on status changes.\n\n**How the workflow works:**\n• Uses the Salesforce Retrieve Records block with visual field selection\n• Applies inbuilt filters to retrieve only the records matching your conditions (for example, lead created today, case older than 5 days, or follow-up status required)\n• Sends targeted outreach using the retrieved record fields (such as email address or phone number)\n• Optionally hands off records to a contact centre platform for outbound calling using list management APIs\n\n**Default downstream actions:**\n• Send an email using Office 365 based on the retrieved email field\n• Add retrieved records into Bright Pattern using the native list connector\n\n**Extensions and examples:**\n• Send SMS messages via supported SMS gateways\n• Export retrieved records to OneDrive for tracking or audit\n• Integrate with other contact centre platforms via APIs (for example, Genesys) where list management endpoints are available\n\nAll executions and failures are captured in workflow execution logs, ensuring traceability and operational visibility.",
+      "thumbnails": [
+        "/templates/salesforce-conditional-record-retrieval/1conditional_record_overview.jpg",
+        "/templates/salesforce-conditional-record-retrieval/2conditional_record-salesforce_retrieve.jpg",
+        "/templates/salesforce-conditional-record-retrieval/3conditional_record-bp-add_records.jpg"
+      ],
+      "useCaseBlocks": [
+        "Salesforce – Retrieve Records (Conditional Filters)",
+        "Office 365 – Send Email",
+        "Optional: SMS Gateways – Send SMS",
+        "Optional: Bright Pattern – List Management (Add Records)",
+        "Optional: OneDrive – Upload File"
+      ],
+      "benefits": [
+        "Automates CRM follow-ups by retrieving only records that require action.",
+        "Improves response times by triggering emails, SMS, or calling workflows automatically.",
+        "Reduces manual list building and repetitive CRM searches for sales and support teams.",
+        "Enables scalable outreach by integrating with contact centre platforms through native connectors or APIs."
+      ],
+      "howToSteps": [
+        {
+          "title": "Configure Salesforce record retrieval",
+          "description": "Select the Salesforce object and choose the fields you need, then apply the conditional filters to retrieve only records matching your criteria (such as lead created date, case age, or follow-up status)."
+        },
+        {
+          "title": "Choose the outreach or handoff action",
+          "description": "Use the retrieved record fields to send targeted email via Office 365, send SMS via an SMS gateway, or prepare records for contact centre handoff."
+        },
+        {
+          "title": "Optional: Export or push to contact centre lists",
+          "description": "Optionally export the retrieved dataset to OneDrive for tracking or push the records into Bright Pattern using the list management connector. Other contact centre systems can be supported via APIs where list management endpoints exist."
+        }
+      ],
+      "lastUpdated": "2025-12-27",
+      "difficulty": "Beginner",
+      "estimatedSetupTime": "15 minutes",
+      "tags": ["Salesforce", "Conditional Retrieval", "Follow-ups", "Email Automation", "SMS", "Contact Centre"],
+      "videoUrl": ""
+    },
+    {
+      "id": "brightpattern-weekly-list-backup-cleanup",
+      "title": "BP: Weekly List Backup & Cleanup",
+      "slug": "brightpattern-weekly-list-backup-cleanup",
+      "categories": [
+        "Contact Centre",
+        "Customer Support",
+        "AI & Automation",
+        "Productivity",
+        "List Management"
+      ],
+      "integrations": [
+        "bright-pattern",
+        "microsoft-365-email",
+        "google-gmail",
+        "aws-s3"
+      ],
+      "description": "Weekly Bright Pattern list backup via email, then cleanup by deleting all records from the same list.",
+      "longDescription": "This workflow automates weekly list management for Bright Pattern by backing up list records and then cleaning up the same list.\n\n**Purpose:**\n• Retrieve records from a selected Bright Pattern list (default 100 records; user-configurable)\n• Email the retrieved data to recipients as the backup snapshot\n• Wait 10 seconds (customisable) before proceeding\n• Delete all records from the same Bright Pattern list\n• Send a final email confirming deletion\n\n**Execution flow:**\n• Start: manual run or scheduled weekly (e.g., Mondays)\n• Bright Pattern - Get Records: select list visually and retrieve records (default limit 100)\n• Office 365 Email: send \"Retrieve data\" email with retrieved records\n• Checkpoint (optional): delay 10 seconds (customisable)\n• Bright Pattern - Delete Records: delete all records from the same list\n• Office 365 Email: send \"Records are deleted\" confirmation\n\n**Notes:**\n• Additional logic can be added using IF blocks and Error nodes to ensure data is backed up before deleting records.",
+      "thumbnails": [
+        "/templates/brightpattern-weekly-list-backup-cleanup/brightpattern-weekly-backup-overview.jpg",
+        "/templates/brightpattern-weekly-list-backup-cleanup/brightpattern-get-records-block.jpg",
+        "/templates/brightpattern-weekly-list-backup-cleanup/checkpoint-block.jpg"
+      ],
+      "useCaseBlocks": [
+        "Start (Scheduled/Manual)",
+        "Bright Pattern - Get Records",
+        "Office 365 Email - Send Backup",
+        "Checkpoint (Delay)",
+        "Bright Pattern - Delete Records",
+        "Office 365 Email - Confirm Deletion"
+      ],
+      "benefits": [
+        "Automates weekly backup and cleanup of a Bright Pattern list in a repeatable flow.",
+        "Default 100-record retrieval limit with user-configurable control during setup.",
+        "Reduces manual admin effort by standardising backup and cleanup steps.",
+        "Adds clear notifications at key points (backup sent, deletion completed)."
+      ],
+      "howToSteps": [
+        {
+          "title": "Configure the Start trigger",
+          "description": "Set the workflow to run manually or on a weekly schedule (e.g., Mondays)."
+        },
+        {
+          "title": "Retrieve records from Bright Pattern",
+          "description": "In Bright Pattern - Get Records, choose the Bright Pattern credential and select the target list visually. Set the limit (default 100; configurable by the user)."
+        },
+        {
+          "title": "Send the backup email",
+          "description": "Use Office 365 Email (Graph) to send an email to recipients with subject \"Retrieve data\" and include the retrieved records in the email body."
+        },
+        {
+          "title": "Add a short delay before deletion",
+          "description": "Add the Checkpoint block (optional) and set a waiting time of 10 seconds (customisable) before proceeding."
+        },
+        {
+          "title": "Delete all records from the list",
+          "description": "Use Bright Pattern - Delete Records to delete all records from the same selected list."
+        },
+        {
+          "title": "Send deletion confirmation",
+          "description": "Send a second Office 365 email to recipients with subject \"Records are deleted\" and include deletion status/details."
+        }
+      ],
+      "lastUpdated": "07-Jan-2026",
+      "difficulty": "Beginner",
+      "estimatedSetupTime": "20 minutes",
+      "tags": [
+        "Bright Pattern",
+        "List backup",
+        "List cleanup",
+        "Weekly schedule",
+        "Office 365",
+        "Automation"
+      ],
+      "videoUrl": ""
+    },
+    {
+      "id": "bp-list-cleanup-selective-record-filtering-updating-different-list",
+      "title": "BP: List Cleanup with Selective Record Filtering and Updating a Different List",
+      "slug": "bp-list-cleanup-selective-record-filtering-updating-different-list",
+      "categories": [
+        "Contact Centre",
+        "Customer Support",
+        "Productivity",
+        "List Management"
+      ],
+      "integrations": [
+        "bright-pattern",
+        "microsoft-365-email",
+        "google-gmail",
+        "aws-s3",
+        "onedrive"
+      ],
+      "description": "Cleans and filters records from a Bright Pattern list based on defined conditions and updates the filtered records into a new list, with notification and optional file export.",
+      "longDescription": "This workflow automates list cleanup and selective record updating within Bright Pattern. It extracts records from a source list, applies conditional filtering using JSON-based rules, and uploads the filtered records into a different Bright Pattern list.\n\n**Purpose and main functionality:**\n• Extract records from a Bright Pattern list and its associated campaign\n• Filter records based on dialling result and record status (for example, Connection Status = Not Reachable)\n• Upload filtered records into a new Bright Pattern list using mapped primary keys\n• Send a notification email upon successful upload\n• Optionally export filtered records to Microsoft OneDrive or AWS S3 for backup or reporting\n\n**Scheduling:**\n• Runs on a configurable schedule\n• Example: hourly on Mondays starting at 9:00 AM (Australia/Sydney timezone)\n• Schedule is fully customisable during setup",
+      "thumbnails": [
+        "/templates/bp-list-cleanup-selective-record-filtering-updating-different-list/1_selective_record_filtering_-_overview.jpg",
+        "/templates/bp-list-cleanup-selective-record-filtering-updating-different-list/2_selective_record_filtering_-fetch_records_.jpg",
+        "/templates/bp-list-cleanup-selective-record-filtering-updating-different-list/3_selective_record_filtering_-filter_query_.jpg",
+        "/templates/bp-list-cleanup-selective-record-filtering-updating-different-list/4_selective_record_filtering_-bplistupdate.jpg"
+      ],
+      "useCaseBlocks": [
+        "Start (Scheduled)",
+        "Bright Pattern - Get Records",
+        "Bright Pattern - Upload Records",
+        "Office 365 Email",
+        "optional: Google Gmail",
+        "optional: AWS S3"
+      ],
+      "benefits": [
+        "Automates Bright Pattern list cleanup without manual exports or spreadsheets.",
+        "Ensures to move relevant records are moved in timely fashion using clear, rule-based filtering.",
+        "Provides the ability to reuse the list and retain the list rules, avoid duplication.",
+        "Provides visibility through regular email notifications and optional file exports."
+      ],
+      "howToSteps": [
+        {
+          "title": "Configure the schedule and trigger",
+          "description": "Set the Start block to run on a schedule. You can configure it to run hourly, daily, or weekly. Example configuration: hourly on Mondays starting at 9:00 AM (Australia/Sydney). This schedule is fully customisable."
+        },
+        {
+          "title": "Extract records from Bright Pattern",
+          "description": "Use the Bright Pattern - Get Records block to retrieve records from a selected Bright Pattern list. Set the operation to retrieve all records from the defined list and its associated campaign. Select the list visually using the dropdown."
+        },
+        {
+          "title": "Filter records using JSON rules",
+          "description": "Add a JSON Filter block to clean the fetched records. Configure the filter using list column names. Example filter:\n[{\"field\":\"Connection Status\",\"operator\":\"equals\",\"value\":\"Not Reachable\"}]\nThis ensures only records matching the defined condition are passed to the next step."
+        },
+        {
+          "title": "Upload filtered records into a new list",
+          "description": "Use the Bright Pattern - Upload Records block to insert the filtered records into a different Bright Pattern list. Map the primary key from the filtered data (for example, Phone Number) to the target list field (for example, Phone no.)."
+        },
+        {
+          "title": "Send upload confirmation",
+          "description": "Use the Office 365 Email block to notify recipients of the successful upload. Include details of the uploaded records in the email body."
+        },
+        {
+          "title": "Optional file export",
+          "description": "Optionally add Microsoft OneDrive or AWS S3 blocks to upload the filtered records as a file for backup, auditing, or reporting purposes."
+        }
+      ],
+      "lastUpdated": "08-Jan-2026",
+      "difficulty": "Beginner",
+      "estimatedSetupTime": "20 minutes",
+      "tags": [
+        "Bright Pattern",
+        "List cleanup",
+        "Selective filtering",
+        "JSON filter",
+        "Upload records",
+        "Automation"
+      ],
+      "videoUrl": ""
+    },
+    {
+      "id": "bp-list-cleanup-selective-record-filtering-updating-deleting-using-primary-key",
+      "title": "BP: Selective List Cleanup, Backup, and Delete Using Primary-Key Mapping",
+      "slug": "bp-list-cleanup-selective-record-filtering-updating-deleting-using-primary-key",
+      "categories": [
+        "Contact Centre",
+        "Customer Support",
+        "Productivity",
+        "List Management",
+        "Bright Pattern"
+      ],
+      "integrations": [
+        "bright-pattern",
+        "microsoft-365-email",
+        "google-gmail",
+        "aws-s3",
+        "onedrive",
+        "microsoft-365-excel"
+      ],
+      "description": "Extracts records from a Bright Pattern list, filters them, updates a different list and OneDrive in parallel, then deletes matching records from the source list using primary-key mapping.",
+      "longDescription": "This workflow automates Bright Pattern list cleanup by extracting records from a source list, filtering them using rule-based conditions, writing the filtered output to both a new Bright Pattern list and an existing OneDrive file, then deleting the corresponding records from the source list using primary-key mapping.\n\n**Purpose and main functionality:**\n• Extract records from a Bright Pattern list (Get Records)\n• Filter records based on list columns such as dialling result / record status (example: Connection Status = Not Reachable)\n• In parallel:\n  • Upload filtered records into a different Bright Pattern list\n  • Upload filtered records into an existing OneDrive file\n• Use a Checkpoint (Wait for all) to ensure both parallel updates complete before proceeding\n• Send a confirmation email after the Checkpoint\n• Map primary keys using Field Mapper to reliably identify which source records to delete\n• Delete records from the source Bright Pattern list using the mapped list key field to keep the source list clean\n\n**Scheduling:**\n• Uses the same Start block scheduling approach as the base template\n• Scheduling is configurable during setup (example schedules are illustrative only)",
+      "thumbnails": [
+        "/templates/bp-selective-list-cleanup-backup-delete-primary-key-mapping/1._fetch_and_delete-overview.jpg",
+        "/templates/bp-selective-list-cleanup-backup-delete-primary-key-mapping/2_fetch_and_delete-record_fetch.jpg",
+        "/templates/bp-selective-list-cleanup-backup-delete-primary-key-mapping/3_fetch_and_delete-filter_records.jpg",
+        "/templates/bp-selective-list-cleanup-backup-delete-primary-key-mapping/4_fetch_and_delete-checkpoint.jpg",
+        "/templates/bp-selective-list-cleanup-backup-delete-primary-key-mapping/5_fetch_and_delete-filedmapping.jpg"
+      ],
+      "useCaseBlocks": [
+        "Start (Scheduled)",
+        "Bright Pattern - Get Records",
+        "JSON Filter",
+        "Bright Pattern - Upload Records",
+        "Microsoft OneDrive - Upload to Existing File",
+        "Checkpoint (Wait for all)",
+        "Office 365 Email - Confirmation",
+        "Field Mapper",
+        "Bright Pattern - Delete Records"
+      ],
+      "benefits": [
+        "Automates Bright Pattern list cleanup without manual exports or spreadsheets.",
+        "Ensures relevant records are moved in a timely fashion using clear, rule-based filtering.",
+        "Provides the ability to reuse the list and retain the list rules, avoid duplication.",
+        "Provides visibility through regular email notifications and optional file exports."
+      ],
+      "howToSteps": [
+        {
+          "title": "Configure the Start trigger",
+          "description": "Set up the Start block with a scheduled trigger. The schedule is fully configurable and can be adapted to operational requirements."
+        },
+        {
+          "title": "Retrieve records from the source Bright Pattern list",
+          "description": "Use Bright Pattern - Get Records to extract records from the selected list and associated campaign. Select the list visually and apply the same retrieval conditions used in the base configuration."
+        },
+        {
+          "title": "Filter records using JSON rules",
+          "description": "Add a JSON Filter block to filter records based on list column conditions. Example filter:\n[{\"field\":\"Connection Status\",\"operator\":\"equals\",\"value\":\"Not Reachable\"}]\nThe filtered dataset will be reused by multiple downstream blocks."
+        },
+        {
+          "title": "Upload filtered records to a different Bright Pattern list",
+          "description": "Connect JSON Filter to Bright Pattern - Upload Records. Set the input to the JSON Filter output (for example: <jsonfilter1.response.data>) and map the required fields to the destination list."
+        },
+        {
+          "title": "Upload filtered records to OneDrive",
+          "description": "In parallel, connect JSON Filter to Microsoft OneDrive to upload the filtered records into an existing file using the same JSON Filter output as input."
+        },
+        {
+          "title": "Synchronise parallel updates using Checkpoint",
+          "description": "Connect both the Bright Pattern Upload Records block and the OneDrive block to a Checkpoint block. Set the Checkpoint mode to **Wait for all** to ensure both updates complete before continuing."
+        },
+        {
+          "title": "Send confirmation email",
+          "description": "After the Checkpoint, send a confirmation email using Office 365 Email (Graph). The email content can reference outputs from the JSON Filter or Checkpoint block."
+        },
+        {
+          "title": "Map fields for deletion using Field Mapper",
+          "description": "Use a Field Mapper block to map fields from the JSON Filter output. This mapping identifies the source and destination primary keys required to safely delete records from the source list."
+        },
+        {
+          "title": "Delete records from the source list",
+          "description": "Connect Field Mapper to Bright Pattern - Delete Records. Configure the deletion to use the mapped list key field to remove only the records that were processed, keeping the source list clean."
+        }
+      ],
+      "lastUpdated": "08-Jan-2026",
+      "difficulty": "Expert",
+      "estimatedSetupTime": "30 minutes",
+      "tags": [
+        "Bright Pattern",
+        "List cleanup",
+        "Primary key deletion",
+        "JSON filtering",
+        "Field mapping",
+        "Checkpoint",
+        "Automation"
+      ],
+      "videoUrl": ""
+    },
+    {
+      "id": "bp-create-new-calling-list-using-existing-list-schema",
+      "title": "BP: Create New Calling List Using Existing List Schema",
+      "slug": "bp-create-new-calling-list-using-existing-list-schema",
+      "categories": [
+        "Contact Centre",
+        "Customer Support",
+        "Productivity",
+        "List Management",
+        "Bright Pattern"
+      ],
+      "integrations": [
+        "bright-pattern"
+      ],
+      "description": "Creates a new Bright Pattern calling list using an existing list format/schema for fast, consistent list setup.",
+      "longDescription": "This workflow creates a new calling list in Bright Pattern using an existing list format/schema to ensure consistent structure and faster setup.\n\n**Blocks:**\n• Start\n• Bright Pattern - Create List\n\n**Create List block definition:**\nCreate new calling lists in Bright Pattern using existing list formats, or delete an existing list. When deleting, all records are archived and orphaned formats may be removed.\n\n**How it works:**\n• Start triggers the workflow (manual or scheduled, configurable)\n• Bright Pattern - Create List creates a new calling list based on an existing list schema/format\n\n**Note:**\nThis template focuses on creating a new list using an existing schema. (Delete functionality is not used in this template.)",
+      "thumbnails": [
+        "/templates/bp-create-new-calling-list-using-existing-list-schema/image.png",
+        "/templates/bp-create-new-calling-list-using-existing-list-schema/1_create_list.jpg"
+      ],
+      "useCaseBlocks": [
+        "Start",
+        "Bright Pattern - Create List"
+      ],
+      "benefits": [
+        "Creates a new calling list quickly using an existing schema/format.",
+        "Keeps list structure consistent across campaigns and teams.",
+        "Reduces manual setup effort and configuration mistakes.",
+        "Standardises list creation for repeatable operations."
+      ],
+      "howToSteps": [
+        {
+          "title": "Trigger the workflow",
+          "description": "Run the workflow manually or configure a schedule in the Start block based on operational needs."
+        },
+        {
+          "title": "Create the new list using an existing schema",
+          "description": "In Bright Pattern - Create List, select the existing list format/schema to copy from, provide the new list name/details, and execute the block to create the list in Bright Pattern."
+        }
+      ],
+      "lastUpdated": "08-Jan-2026",
+      "difficulty": "Beginner",
+      "estimatedSetupTime": "5 minutes",
+      "tags": [
+        "Bright Pattern",
+        "Calling list",
+        "List creation",
+        "Schema",
+        "Automation"
+      ],
+      "videoUrl": ""
+    }
+  ]
+}

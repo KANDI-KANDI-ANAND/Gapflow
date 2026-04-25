@@ -1,0 +1,201 @@
+{
+  "id": "onedrive",
+  "name": "OneDrive",
+  "logo": "/brand/integration-icons/onedrive.svg",
+  "categories": ["Data & Storage", "Productivity", "Cloud Storage"],
+  "hero": {
+    "heading": "Gapflow and OneDrive",
+    "subheading": "Automate file management and collaboration workflows in Microsoft's cloud",
+    "image": "/brand/integration-icons/onedrive.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {
+        "name": "Triggers",
+        "items": [
+          "New File Uploaded",
+          "File Modified",
+          "Folder Created",
+          "File Shared",
+          "File Deleted"
+        ]
+      },
+      {
+        "name": "Actions",
+        "items": [
+          "Upload File",
+          "Download File",
+          "Create Folder",
+          "Move File",
+          "Share File"
+        ]
+      },
+      {
+        "name": "Advanced",
+        "items": [
+          "Batch File Operations",
+          "Permission Management",
+          "Version Control",
+          "File Search",
+          "Metadata Updates"
+        ]
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Automated Backup",
+      "blocks": ["File Changed", "Copy File", "Upload to OneDrive", "Verify Upload"]
+    },
+    {
+      "title": "Document Processing",
+      "blocks": ["New File", "Extract Text", "Process Content", "Move to Archive"]
+    },
+    {
+      "title": "Team Collaboration",
+      "blocks": ["File Uploaded", "Notify Team", "Set Permissions", "Track Activity"]
+    },
+    {
+      "title": "Report Distribution",
+      "blocks": ["Generate Report", "Upload to OneDrive", "Share Link", "Send Email"]
+    },
+    {
+      "title": "File Synchronization",
+      "blocks": ["External Update", "Download File", "Upload to OneDrive", "Log Sync"]
+    },
+    {
+      "title": "Document Approval",
+      "blocks": ["File Uploaded", "Notify Approver", "Collect Feedback", "Move to Approved"]
+    },
+    {
+      "title": "Media Management",
+      "blocks": ["Image Upload", "Resize/Optimize", "Store in OneDrive", "Update Database"]
+    },
+    {
+      "title": "Compliance Archival",
+      "blocks": ["Schedule Check", "Fetch Old Files", "Archive to OneDrive", "Update Index"]
+    },
+    {
+      "title": "Client Portal",
+      "blocks": ["Client Request", "Prepare Files", "Upload to Shared", "Send Access Link"]
+    },
+    {
+      "title": "Version Management",
+      "blocks": ["File Updated", "Create Version", "Store in OneDrive", "Notify Team"]
+    }
+  ],
+  "documentation": [
+    {
+      "title": "Getting Started with OneDrive",
+      "description": "Connect OneDrive to Gapflow and learn how to automate file uploads, downloads, and folder management.",
+      "link": "/docs/onedrive/getting-started"
+    },
+    {
+      "title": "File Permission Management",
+      "description": "Control access to files and folders programmatically with automated permission updates and sharing links.",
+      "link": "/docs/onedrive/permissions"
+    },
+    {
+      "title": "Advanced File Operations",
+      "description": "Master batch operations, version control, and metadata management for sophisticated file workflows.",
+      "link": "/docs/onedrive/advanced-operations"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "Automated Document Backup",
+      "description": "Build a system that automatically backs up important documents to OneDrive with version history and organization.",
+      "thumbnail": "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example1"
+    },
+    {
+      "title": "Team Document Workflow",
+      "description": "Create a collaborative workflow where team members can upload, review, and approve documents with automated notifications.",
+      "thumbnail": "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example2"
+    },
+    {
+      "title": "Automated Report Distribution",
+      "description": "Set up scheduled report generation that uploads to OneDrive, creates sharing links, and emails stakeholders.",
+      "thumbnail": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example3"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I connect OneDrive?",
+      "answer": "Sign in with your Microsoft account and authorize Gapflow. You can connect personal OneDrive or OneDrive for Business accounts."
+    },
+    {
+      "question": "Can I access shared files?",
+      "answer": "Yes! Access files shared with you, shared folders, and SharePoint document libraries connected to OneDrive."
+    },
+    {
+      "question": "What file size limits exist?",
+      "answer": "Personal accounts support files up to 250GB. OneDrive for Business supports up to 100GB per file depending on SharePoint configuration."
+    },
+    {
+      "question": "How do I manage permissions?",
+      "answer": "Create sharing links with specific permissions (view/edit), set expiration dates, and manage access for individuals or groups."
+    },
+    {
+      "question": "Can I work with file versions?",
+      "answer": "Yes! OneDrive maintains version history. You can access previous versions, restore files, and track changes over time."
+    },
+    {
+      "question": "What about rate limits?",
+      "answer": "Microsoft Graph API has throttling limits. Gapflow manages these automatically with intelligent batching and retry logic."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Automated document backup to OneDrive gives us peace of mind. Everything's secure and organized automatically.",
+      "author": "Robert Chen",
+      "role": "IT Manager",
+      "company": "Professional Services"
+    },
+    {
+      "quote": "Client file sharing is seamless. Upload, generate link, send email - all happens in seconds automatically.",
+      "author": "Sarah Mitchell",
+      "role": "Account Manager",
+      "company": "Consulting Firm"
+    },
+    {
+      "quote": "Report distribution is fully automated. Generated, uploaded to OneDrive, and shared with stakeholders daily.",
+      "author": "Michael Torres",
+      "role": "Business Analyst",
+      "company": "Data Analytics"
+    },
+    {
+      "quote": "Team collaboration improved 50%. Document workflows with automatic notifications keep everyone in sync.",
+      "author": "Emily Parker",
+      "role": "Project Manager",
+      "company": "Creative Agency"
+    }
+  ],
+  "limits": [
+    {
+      "title": "Storage Capacity",
+      "description": "Storage limits vary by plan (5GB free, 1TB with Microsoft 365). Monitor usage and implement archival strategies for large volumes."
+    },
+    {
+      "title": "File Size Limits",
+      "description": "Large file uploads may take time and can be interrupted. Use resumable uploads for files over 100MB for better reliability."
+    },
+    {
+      "title": "API Throttling",
+      "description": "Microsoft Graph API has rate limits. Implement batching for bulk operations and respect retry-after headers."
+    },
+    {
+      "title": "Sharing Limits",
+      "description": "Files and folders have limits on the number of sharing links and permissions. Plan your sharing strategy accordingly."
+    }
+  ],
+  "relatedQuestions": [
+    "How to sync with SharePoint?",
+    "Can I use for backups?",
+    "What about file encryption?",
+    "How to restore deleted files?",
+    "Best practices for organization?"
+  ]
+}

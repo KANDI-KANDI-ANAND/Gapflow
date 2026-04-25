@@ -1,0 +1,201 @@
+{
+  "id": "aws-s3",
+  "name": "AWS S3",
+  "logo": "/brand/integration-icons/aws.svg",
+  "categories": ["Data & Storage", "Cloud Storage", "Infrastructure"],
+  "hero": {
+    "heading": "Gapflow and AWS S3",
+    "subheading": "Automate scalable cloud storage operations with Amazon's object storage service",
+    "image": "/brand/integration-icons/aws.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {
+        "name": "Triggers",
+        "items": [
+          "Object Created",
+          "Object Updated",
+          "Object Deleted",
+          "Bucket Event",
+          "Multipart Upload Complete"
+        ]
+      },
+      {
+        "name": "Actions",
+        "items": [
+          "Upload Object",
+          "Download Object",
+          "Delete Object",
+          "Copy Object",
+          "List Objects"
+        ]
+      },
+      {
+        "name": "Advanced",
+        "items": [
+          "Bucket Operations",
+          "Access Control (ACL/IAM)",
+          "Lifecycle Management",
+          "Versioning Control",
+          "Multipart Uploads"
+        ]
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Automated Backups",
+      "blocks": ["Schedule Trigger", "Compress Data", "Upload to S3", "Set Lifecycle"]
+    },
+    {
+      "title": "Media Processing",
+      "blocks": ["File Uploaded", "Process Media", "Store in S3", "Generate CDN URL"]
+    },
+    {
+      "title": "Data Lake Ingestion",
+      "blocks": ["Data Generated", "Transform Format", "Store in S3", "Trigger Analytics"]
+    },
+    {
+      "title": "Static Website Hosting",
+      "blocks": ["Build Complete", "Upload Assets", "Configure S3", "Invalidate CDN"]
+    },
+    {
+      "title": "Log Archival",
+      "blocks": ["Log Generated", "Compress Logs", "Upload to S3", "Set Glacier Policy"]
+    },
+    {
+      "title": "File Distribution",
+      "blocks": ["Content Ready", "Upload to S3", "Generate Presigned URL", "Send to Users"]
+    },
+    {
+      "title": "Disaster Recovery",
+      "blocks": ["Database Backup", "Encrypt Data", "Store in S3", "Replicate Region"]
+    },
+    {
+      "title": "Video Transcoding",
+      "blocks": ["Video Upload", "Store Original", "Transcode Video", "Store Variants"]
+    },
+    {
+      "title": "Document Storage",
+      "blocks": ["Document Upload", "Extract Metadata", "Store in S3", "Index Search"]
+    },
+    {
+      "title": "ETL Pipeline",
+      "blocks": ["Data Extracted", "Store Raw S3", "Transform Data", "Load Warehouse"]
+    }
+  ],
+  "documentation": [
+    {
+      "title": "Getting Started with AWS S3",
+      "description": "Connect AWS S3 to Gapflow and learn how to automate object uploads, downloads, and bucket management.",
+      "link": "/docs/aws-s3/getting-started"
+    },
+    {
+      "title": "Security & Access Control",
+      "description": "Implement IAM policies, bucket policies, and presigned URLs for secure access to S3 objects.",
+      "link": "/docs/aws-s3/security"
+    },
+    {
+      "title": "Lifecycle & Storage Classes",
+      "description": "Automate cost optimization with lifecycle policies and intelligent tiering across S3 storage classes.",
+      "link": "/docs/aws-s3/lifecycle"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "Automated Backup Pipeline",
+      "description": "Build a comprehensive backup system that compresses data, uploads to S3, and manages lifecycle policies automatically.",
+      "thumbnail": "https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example1"
+    },
+    {
+      "title": "Media Processing Workflow",
+      "description": "Create an automated media pipeline that processes images/videos on upload, stores in S3, and delivers via CloudFront CDN.",
+      "thumbnail": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example2"
+    },
+    {
+      "title": "Data Lake Architecture",
+      "description": "Set up a scalable data lake with automated ingestion, organization, and lifecycle management in S3.",
+      "thumbnail": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example3"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I connect AWS S3?",
+      "answer": "Provide AWS Access Key ID and Secret Access Key with appropriate S3 permissions. Use IAM roles for enhanced security."
+    },
+    {
+      "question": "What are the storage classes?",
+      "answer": "S3 offers Standard, Intelligent-Tiering, Standard-IA, One Zone-IA, Glacier, and Glacier Deep Archive. Choose based on access patterns."
+    },
+    {
+      "question": "How do presigned URLs work?",
+      "answer": "Generate temporary URLs that grant time-limited access to private objects. Perfect for secure file sharing and downloads."
+    },
+    {
+      "question": "Can I enable versioning?",
+      "answer": "Yes! Bucket versioning preserves all versions of objects. Protect against accidental deletions and enable rollback capabilities."
+    },
+    {
+      "question": "What about encryption?",
+      "answer": "S3 supports server-side encryption (SSE-S3, SSE-KMS, SSE-C) and client-side encryption. Choose based on security requirements."
+    },
+    {
+      "question": "How do I optimize costs?",
+      "answer": "Use lifecycle policies to transition objects to cheaper storage classes, delete old data, and leverage S3 Intelligent-Tiering."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Our entire backup infrastructure runs on S3 automation. 10TB+ backed up daily with zero manual intervention.",
+      "author": "Kevin Zhang",
+      "role": "DevOps Engineer",
+      "company": "Tech Startup"
+    },
+    {
+      "quote": "Media processing pipeline handles 100K+ uploads daily. S3 integration is rock solid and scales effortlessly.",
+      "author": "Amanda Foster",
+      "role": "Platform Engineer",
+      "company": "Media Company"
+    },
+    {
+      "quote": "Data lake automation reduced costs 60% with intelligent lifecycle policies. Perfect for analytics workflows.",
+      "author": "Marcus Chen",
+      "role": "Data Architect",
+      "company": "Analytics Firm"
+    },
+    {
+      "quote": "Static site deployment is instant. Build, upload to S3, invalidate CDN - all automated and lightning fast.",
+      "author": "Lisa Rodriguez",
+      "role": "Frontend Lead",
+      "company": "Web Agency"
+    }
+  ],
+  "limits": [
+    {
+      "title": "Request Rate",
+      "description": "S3 supports 3,500 PUT/COPY/POST/DELETE and 5,500 GET/HEAD requests per second per prefix. Design key structure accordingly."
+    },
+    {
+      "title": "Object Size",
+      "description": "Maximum object size is 5TB. Use multipart upload for objects larger than 100MB for better performance and reliability."
+    },
+    {
+      "title": "Bucket Limits",
+      "description": "100 buckets per account by default. Request limit increases if needed. Plan bucket strategy for organizational needs."
+    },
+    {
+      "title": "API Throttling",
+      "description": "Implement exponential backoff for retries. Use CloudWatch metrics to monitor request rates and optimize access patterns."
+    }
+  ],
+  "relatedQuestions": [
+    "How to set up CloudFront?",
+    "Can I replicate across regions?",
+    "What about data transfer costs?",
+    "How to implement lifecycle?",
+    "Best practices for security?"
+  ]
+}

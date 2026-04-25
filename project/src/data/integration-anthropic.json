@@ -1,0 +1,70 @@
+{
+  "id": "anthropic",
+  "name": "Anthropic",
+  "logo": "/brand/integration-icons/anthropic.svg",
+  "categories": ["AI", "Language Models", "Claude"],
+  "hero": {
+    "heading": "Gapflow and Anthropic",
+    "subheading": "Build with Claude AI for advanced reasoning, analysis, and conversation",
+    "image": "/brand/integration-icons/anthropic.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {
+        "name": "Triggers",
+        "items": ["Message Received", "Document Uploaded", "Analysis Request", "Batch Job Ready", "Vision Input"]
+      },
+      {
+        "name": "Actions",
+        "items": ["Generate Response", "Analyze Document", "Process Vision", "Classify Content", "Extract Data"]
+      },
+      {
+        "name": "Advanced",
+        "items": ["200K Context Window", "Vision Capabilities", "Tool Use", "Streaming", "JSON Mode"]
+      }
+    ]
+  },
+  "useCases": [
+    {"title": "Advanced Customer Support", "blocks": ["Ticket Created", "Analyze Context", "Generate Response", "Review Quality"]},
+    {"title": "Document Analysis", "blocks": ["Upload Document", "Extract Information", "Summarize Findings", "Structure Data"]},
+    {"title": "Code Review", "blocks": ["Code Submitted", "Analyze Quality", "Suggest Improvements", "Generate Report"]},
+    {"title": "Research Assistant", "blocks": ["Research Query", "Analyze Sources", "Synthesize Findings", "Create Summary"]},
+    {"title": "Content Creation", "blocks": ["Content Brief", "Generate Draft", "Refine Output", "Format Content"]},
+    {"title": "Data Extraction", "blocks": ["Unstructured Data", "Extract Entities", "Validate Format", "Store Results"]},
+    {"title": "Visual Analysis", "blocks": ["Image Upload", "Analyze Content", "Extract Text", "Describe Scene"]},
+    {"title": "Legal Review", "blocks": ["Contract Upload", "Analyze Clauses", "Flag Risks", "Suggest Edits"]},
+    {"title": "Technical Writing", "blocks": ["Technical Input", "Generate Documentation", "Review Accuracy", "Publish"]},
+    {"title": "Multi-Step Reasoning", "blocks": ["Complex Query", "Break Down Problem", "Solve Steps", "Synthesize Answer"]}
+  ],
+  "documentation": [
+    {"title": "Getting Started with Anthropic", "description": "Connect Claude AI to Gapflow and leverage advanced reasoning for complex tasks.", "link": "/docs/anthropic/getting-started"},
+    {"title": "Vision Capabilities", "description": "Process images and documents with Claude's multimodal capabilities for comprehensive analysis.", "link": "/docs/anthropic/vision"},
+    {"title": "Tool Use & Function Calling", "description": "Enable Claude to use tools and call functions for dynamic, interactive workflows.", "link": "/docs/anthropic/tools"}
+  ],
+  "tutorials": [
+    {"title": "AI Research Assistant", "description": "Build an intelligent research assistant that analyzes documents, synthesizes information, and provides insights.", "thumbnail": "https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg", "videoUrl": "https://youtube.com/watch?v=example1"},
+    {"title": "Document Processing Pipeline", "description": "Create automated document analysis workflows that extract, validate, and structure complex information.", "thumbnail": "https://images.pexels.com/photos/8849295/pexels-photo-8849295.jpeg", "videoUrl": "https://youtube.com/watch?v=example2"},
+    {"title": "Intelligent Code Assistant", "description": "Set up code review and generation workflows with advanced reasoning and best practice enforcement.", "thumbnail": "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg", "videoUrl": "https://youtube.com/watch?v=example3"}
+  ],
+  "faqs": [
+    {"question": "How do I connect Anthropic?", "answer": "Use your Anthropic API key from the console. Start with Claude 3.5 Sonnet for best balance of capability and speed."},
+    {"question": "What is the context window?", "answer": "Claude supports up to 200K tokens context window - process entire books, long documents, and extensive conversations."},
+    {"question": "Can Claude process images?", "answer": "Yes! Claude has vision capabilities to analyze images, extract text from screenshots, and understand visual content."},
+    {"question": "What about tool use?", "answer": "Claude can call functions and use tools dynamically. Build agentic workflows that interact with external systems."},
+    {"question": "How accurate is Claude?", "answer": "Claude excels at complex reasoning, nuanced understanding, and following detailed instructions with high accuracy."},
+    {"question": "What models are available?", "answer": "Claude 3.5 Sonnet (best), Claude 3 Opus (most capable), Claude 3 Sonnet (balanced), Claude 3 Haiku (fastest)."}
+  ],
+  "testimonials": [
+    {"quote": "Claude's reasoning ability is unmatched. Handles complex legal analysis that other AI models miss.", "author": "Jennifer Morrison", "role": "Legal Tech Lead", "company": "Law Firm"},
+    {"quote": "200K context window changed everything. Process entire codebases and documentation in one request.", "author": "Alex Chen", "role": "Engineering Manager", "company": "Dev Tools Startup"},
+    {"quote": "Vision capabilities are incredible. Extract data from any document format with perfect accuracy.", "author": "Dr. Sarah Martinez", "role": "AI Product Manager", "company": "Document AI"},
+    {"quote": "Tool use enables true agentic workflows. Claude makes decisions and takes actions autonomously.", "author": "Michael Roberts", "role": "AI Engineer", "company": "Automation Platform"}
+  ],
+  "limits": [
+    {"title": "Rate Limits", "description": "Vary by tier and model. Higher tiers offer increased limits. Enterprise: custom limits for production scale."},
+    {"title": "Token Limits", "description": "200K input tokens max, 4K output tokens. Use Claude 3 models for different speed/capability tradeoffs."},
+    {"title": "Image Processing", "description": "Supports common formats (PNG, JPEG, GIF, WebP). Size limits apply - optimize large images before upload."},
+    {"title": "Streaming", "description": "Streaming available for real-time responses. Improves user experience for long-form generation."}
+  ],
+  "relatedQuestions": ["How to optimize prompts?", "Can I fine-tune Claude?", "What about safety?", "How to reduce costs?", "Best practices for tool use?"]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "hubspot",
+  "name": "HubSpot",
+  "logo": "/brand/integration-icons/hubspot.svg",
+  "categories": ["CRM", "Marketing", "Sales"],
+  "hero": {
+    "heading": "Gapflow and HubSpot",
+    "subheading": "Automate your complete inbound marketing and sales platform",
+    "image": "/brand/integration-icons/hubspot.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {
+        "name": "Triggers",
+        "items": ["Contact Created", "Deal Updated", "Form Submitted", "Email Opened", "Workflow Enrolled"]
+      },
+      {
+        "name": "Actions",
+        "items": ["Create Contact", "Update Deal", "Send Email", "Add to List", "Create Task"]
+      },
+      {
+        "name": "Advanced",
+        "items": ["Custom Objects", "Workflows", "Score Contacts", "Email Sequences", "Meeting Scheduling"]
+      }
+    ]
+  },
+  "useCases": [
+    {"title": "Lead Qualification", "blocks": ["Form Submit", "Score Lead", "Assign Rep", "Send Email"]},
+    {"title": "Deal Automation", "blocks": ["Deal Stage", "Update Properties", "Notify Team", "Create Tasks"]},
+    {"title": "Marketing Campaigns", "blocks": ["Campaign Start", "Add to List", "Send Sequence", "Track Engagement"]},
+    {"title": "Contact Enrichment", "blocks": ["Contact Created", "Fetch Data", "Update HubSpot", "Score Contact"]},
+    {"title": "Sales Pipeline", "blocks": ["Opportunity Created", "Assign Owner", "Send Resources", "Track Progress"]},
+    {"title": "Customer Onboarding", "blocks": ["Deal Closed", "Create Tasks", "Send Welcome", "Schedule Training"]},
+    {"title": "Support Tickets", "blocks": ["Ticket Created", "Route to Team", "Update Contact", "Track Resolution"]},
+    {"title": "Revenue Tracking", "blocks": ["Deal Won", "Calculate Revenue", "Update Forecast", "Notify Finance"]},
+    {"title": "Email Sequences", "blocks": ["Contact Qualified", "Enroll Sequence", "Track Opens", "Score Engagement"]},
+    {"title": "Event Registration", "blocks": ["Form Submit", "Create Contact", "Add to Event", "Send Confirmation"]}
+  ],
+  "documentation": [
+    {"title": "Getting Started with HubSpot", "description": "Connect HubSpot to Gapflow and automate contacts, deals, marketing campaigns, and sales workflows.", "link": "/docs/hubspot/getting-started"},
+    {"title": "Custom Objects & Properties", "description": "Work with custom objects and properties to extend HubSpot for your unique business processes.", "link": "/docs/hubspot/custom-objects"},
+    {"title": "Workflow Automation", "description": "Integrate HubSpot workflows with external systems for sophisticated cross-platform automation.", "link": "/docs/hubspot/workflows"}
+  ],
+  "tutorials": [
+    {"title": "Lead Scoring & Routing", "description": "Build intelligent lead scoring that automatically routes qualified leads to the right sales reps.", "thumbnail": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg", "videoUrl": "https://youtube.com/watch?v=example1"},
+    {"title": "Marketing Campaign Automation", "description": "Create end-to-end marketing campaigns that nurture leads from first touch to closed deal.", "thumbnail": "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg", "videoUrl": "https://youtube.com/watch?v=example2"},
+    {"title": "Revenue Operations Workflow", "description": "Set up RevOps automation that connects marketing, sales, and customer success seamlessly.", "thumbnail": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg", "videoUrl": "https://youtube.com/watch?v=example3"}
+  ],
+  "faqs": [
+    {"question": "How do I connect HubSpot?", "answer": "Use OAuth authentication or a private app access token. OAuth is recommended for team-wide integrations with better security."},
+    {"question": "Can I sync custom objects?", "answer": "Yes! Work with any custom object in HubSpot. Create, update, and query custom objects for specialized business processes."},
+    {"question": "What about deal stages?", "answer": "Automate deal stage transitions, trigger actions when deals move stages, and keep your pipeline flowing automatically."},
+    {"question": "How do I handle contacts?", "answer": "Create contacts, update properties, add to lists, enroll in sequences, and track all engagement automatically."},
+    {"question": "Can I automate emails?", "answer": "Absolutely! Send one-off emails, enroll in sequences, track opens/clicks, and trigger follow-ups based on engagement."},
+    {"question": "What about reporting?", "answer": "Pull data from HubSpot for custom reports, dashboards, and analytics in your preferred tools."}
+  ],
+  "testimonials": [
+    {"quote": "Lead routing is instant. Qualified leads reach sales reps within seconds of form submission.", "author": "Jennifer Martinez", "role": "VP of Sales", "company": "SaaS Company"},
+    {"quote": "Marketing automation handles our entire funnel. Leads are nurtured perfectly from awareness to purchase.", "author": "Michael Chen", "role": "CMO", "company": "Tech Startup"},
+    {"quote": "Revenue operations finally unified. Marketing, sales, customer success all working from one source of truth.", "author": "Sarah Thompson", "role": "RevOps Director", "company": "B2B Platform"},
+    {"quote": "Customer onboarding is seamless. Deal closes trigger entire workflow automatically.", "author": "David Kumar", "role": "Customer Success Lead", "company": "Enterprise SaaS"}
+  ],
+  "limits": [
+    {"title": "API Rate Limits", "description": "100 requests per 10 seconds for most endpoints. Use batch endpoints and webhooks to stay within limits."},
+    {"title": "Bulk Operations", "description": "Batch endpoints allow up to 100 records per request. Use for efficient bulk operations on contacts and deals."},
+    {"title": "Custom Properties", "description": "Limits on custom properties vary by plan. Enterprise plans support more custom fields and objects."},
+    {"title": "Workflow Complexity", "description": "Very complex workflows may need simplification. Break into multiple workflows for better performance and maintenance."}
+  ],
+  "relatedQuestions": ["How to score contacts?", "Can I use sequences?", "What about custom objects?", "How to track revenue?", "Best practices for lists?"]
+}

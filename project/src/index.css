@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth !important;
+  }
+
+  /* Suppress default highlight on mobile */
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Provide tactile feedback across the site */
+  button:active,
+  a.button:active {
+    transform: scale(0.96);
+    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Enforce standard touch accessibility minimums */
+  @media (max-width: 768px) {
+
+    button,
+    a.btn,
+    .touch-target {
+      min-height: 48px;
+    }
+  }
+
+  body {
+    @apply bg-white text-slate-900 antialiased overflow-x-hidden;
+  }
+}
+
+@layer base {
+  :root {
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+}
+
+@keyframes floatSlow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.hover-pause-animation:hover {
+  animation-play-state: paused;
+}

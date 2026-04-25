@@ -1,0 +1,70 @@
+{
+  "id": "cohere",
+  "name": "Cohere",
+  "logo": "/brand/integration-icons/cohere.svg",
+  "categories": ["AI", "Language Models", "NLP"],
+  "hero": {
+    "heading": "Gapflow and Cohere",
+    "subheading": "Automate natural language processing with enterprise-grade AI models",
+    "image": "/brand/integration-icons/cohere.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {
+        "name": "Triggers",
+        "items": ["Text Input Received", "Document Uploaded", "Batch Request", "Scheduled Analysis", "Webhook Event"]
+      },
+      {
+        "name": "Actions",
+        "items": ["Generate Text", "Classify Content", "Extract Entities", "Semantic Search", "Summarize Text"]
+      },
+      {
+        "name": "Advanced",
+        "items": ["Custom Models", "Embeddings API", "Multilingual Support", "RAG Systems", "Fine-tuning"]
+      }
+    ]
+  },
+  "useCases": [
+    {"title": "Content Moderation", "blocks": ["User Input", "Classify Content", "Check Policy", "Take Action"]},
+    {"title": "Customer Support", "blocks": ["Ticket Created", "Extract Intent", "Route Ticket", "Suggest Response"]},
+    {"title": "Document Analysis", "blocks": ["Document Upload", "Extract Info", "Categorize", "Store Results"]},
+    {"title": "Semantic Search", "blocks": ["Query Input", "Generate Embedding", "Search Index", "Return Results"]},
+    {"title": "Text Generation", "blocks": ["Trigger Event", "Generate Content", "Review Quality", "Publish"]},
+    {"title": "Sentiment Analysis", "blocks": ["Feedback Received", "Analyze Sentiment", "Tag Record", "Alert Team"]},
+    {"title": "FAQ Automation", "blocks": ["Question Asked", "Search Knowledge", "Generate Answer", "Track Accuracy"]},
+    {"title": "Content Summarization", "blocks": ["Long Document", "Generate Summary", "Extract Key Points", "Distribute"]},
+    {"title": "Language Translation", "blocks": ["Text Input", "Detect Language", "Translate", "Format Output"]},
+    {"title": "Data Extraction", "blocks": ["Unstructured Text", "Extract Entities", "Validate Data", "Update Database"]}
+  ],
+  "documentation": [
+    {"title": "Getting Started with Cohere", "description": "Connect Cohere AI to Gapflow and start building intelligent language processing workflows.", "link": "/docs/cohere/getting-started"},
+    {"title": "Embeddings & Semantic Search", "description": "Build powerful semantic search systems using Cohere embeddings for accurate information retrieval.", "link": "/docs/cohere/embeddings"},
+    {"title": "Classification & Extraction", "description": "Automate content classification and entity extraction for intelligent document processing.", "link": "/docs/cohere/classification"}
+  ],
+  "tutorials": [
+    {"title": "Intelligent Support Ticket Routing", "description": "Build an AI-powered ticket routing system that automatically categorizes and routes customer inquiries.", "thumbnail": "https://images.pexels.com/photos/8867482/pexels-photo-8867482.jpeg", "videoUrl": "https://youtube.com/watch?v=example1"},
+    {"title": "Semantic Knowledge Base", "description": "Create a semantic search system for your knowledge base with natural language understanding.", "thumbnail": "https://images.pexels.com/photos/5905857/pexels-photo-5905857.jpeg", "videoUrl": "https://youtube.com/watch?v=example2"},
+    {"title": "Automated Content Moderation", "description": "Set up real-time content moderation that detects and handles policy violations automatically.", "thumbnail": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg", "videoUrl": "https://youtube.com/watch?v=example3"}
+  ],
+  "faqs": [
+    {"question": "How do I connect Cohere?", "answer": "Use your Cohere API key from the dashboard. Generate production keys for live workflows and trial keys for testing."},
+    {"question": "What languages are supported?", "answer": "Cohere supports 100+ languages including English, Spanish, French, German, Japanese, Korean, Arabic, and many more."},
+    {"question": "Can I fine-tune models?", "answer": "Yes! Fine-tune models on your specific data for improved accuracy on domain-specific tasks."},
+    {"question": "How does pricing work?", "answer": "Pay per API call based on tokens processed. Different model tiers offer various capabilities and pricing."},
+    {"question": "What about data privacy?", "answer": "Your data is not used to train models. Enterprise plans offer additional security and compliance features."},
+    {"question": "Can I use custom embeddings?", "answer": "Absolutely! Generate custom embeddings for semantic search, clustering, and similarity matching use cases."}
+  ],
+  "testimonials": [
+    {"quote": "Support ticket routing accuracy improved 95%. AI understands customer intent perfectly and routes instantly.", "author": "Jennifer Park", "role": "Head of Support", "company": "SaaS Platform"},
+    {"quote": "Knowledge base search is incredible. Users find answers in seconds with natural language queries.", "author": "Marcus Chen", "role": "Product Manager", "company": "Tech Company"},
+    {"quote": "Content moderation handles 100K+ items daily. False positive rate dropped to nearly zero.", "author": "Sarah Williams", "role": "Community Manager", "company": "Social Platform"},
+    {"quote": "Document processing speed increased 10x. Extract structured data from any document automatically.", "author": "David Kumar", "role": "Engineering Lead", "company": "FinTech Startup"}
+  ],
+  "limits": [
+    {"title": "API Rate Limits", "description": "Rate limits vary by plan (Trial: 100/min, Production: 10K/min+). Contact sales for enterprise limits."},
+    {"title": "Token Limits", "description": "Max tokens per request vary by model (2K-128K). Use chunking for longer documents."},
+    {"title": "Batch Processing", "description": "Async batch endpoints available for processing large volumes efficiently with lower costs."},
+    {"title": "Model Availability", "description": "Different models optimized for different tasks (generation, classification, embeddings). Choose appropriately."}
+  ],
+  "relatedQuestions": ["How to optimize for speed?", "Can I cache results?", "What about embeddings?", "How to handle long documents?", "Best practices for prompts?"]
+}

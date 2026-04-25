@@ -1,0 +1,72 @@
+{
+  "id": "bp-list-cleanup-selective-record-filtering-updating-different-list",
+  "title": "BP: List Cleanup with Selective Record Filtering and Updating a Different List",
+  "slug": "bp-list-cleanup-selective-record-filtering-updating-different-list",
+  "categories": [
+    "Contact Centre",
+    "Customer Support",
+    "Productivity",
+    "List Management"
+  ],
+  "integrations": [
+    "Bright Pattern",
+    "Office 365 Email (Graph)",
+    "Google Gmail",
+    "AWS S3",
+    "Microsoft OneDrive"
+  ],
+  "description": "Cleans and filters records from a Bright Pattern list based on defined conditions and updates the filtered records into a new list, with notification and optional file export.",
+  "longDescription": "This workflow automates list cleanup and selective record updating within Bright Pattern. It extracts records from a source list, applies conditional filtering using JSON-based rules, and uploads the filtered records into a different Bright Pattern list.\n\n**Purpose and main functionality:**\n• Extract records from a Bright Pattern list and its associated campaign\n• Filter records based on dialling result and record status (for example, Connection Status = Not Reachable)\n• Upload filtered records into a new Bright Pattern list using mapped primary keys\n• Send a notification email upon successful upload\n• Optionally export filtered records to Microsoft OneDrive or AWS S3 for backup or reporting\n\n**Scheduling:**\n• Runs on a configurable schedule\n• Example: hourly on Mondays starting at 9:00 AM (Australia/Sydney timezone)\n• Schedule is fully customisable during setup",
+  "thumbnails": [],
+  "useCaseBlocks": [
+    "Start (Scheduled)",
+    "Bright Pattern - Get Records",
+    "Bright Pattern - Upload Records",
+    "Office 365 Email",
+    "optional: Google Gmail",
+    "optional: AWS S3"
+  ],
+  "benefits": [
+    "Automates Bright Pattern list cleanup without manual exports or spreadsheets.",
+    "Ensures to move relevant records are moved in timely fashion using clear, rule-based filtering.",
+    "Provides the ability to reuse the list and retain the list rules, avoid duplication.",
+    "Provides visibility through regular email notifications and optional file exports."
+  ],
+  "howToSteps": [
+    {
+      "title": "Configure the schedule and trigger",
+      "description": "Set the Start block to run on a schedule. You can configure it to run hourly, daily, or weekly. Example configuration: hourly on Mondays starting at 9:00 AM (Australia/Sydney). This schedule is fully customisable."
+    },
+    {
+      "title": "Extract records from Bright Pattern",
+      "description": "Use the Bright Pattern - Get Records block to retrieve records from a selected Bright Pattern list. Set the operation to retrieve all records from the defined list and its associated campaign. Select the list visually using the dropdown."
+    },
+    {
+      "title": "Filter records using JSON rules",
+      "description": "Add a JSON Filter block to clean the fetched records. Configure the filter using list column names. Example filter:\n[{\"field\":\"Connection Status\",\"operator\":\"equals\",\"value\":\"Not Reachable\"}]\nThis ensures only records matching the defined condition are passed to the next step."
+    },
+    {
+      "title": "Upload filtered records into a new list",
+      "description": "Use the Bright Pattern - Upload Records block to insert the filtered records into a different Bright Pattern list. Map the primary key from the filtered data (for example, Phone Number) to the target list field (for example, Phone no.)."
+    },
+    {
+      "title": "Send upload confirmation",
+      "description": "Use the Office 365 Email block to notify recipients of the successful upload. Include details of the uploaded records in the email body."
+    },
+    {
+      "title": "Optional file export",
+      "description": "Optionally add Microsoft OneDrive or AWS S3 blocks to upload the filtered records as a file for backup, auditing, or reporting purposes."
+    }
+  ],
+  "lastUpdated": "08-Jan-2026",
+  "difficulty": "Beginner",
+  "estimatedSetupTime": "20 minutes",
+  "tags": [
+    "Bright Pattern",
+    "List cleanup",
+    "Selective filtering",
+    "JSON filter",
+    "Upload records",
+    "Automation"
+  ]
+}

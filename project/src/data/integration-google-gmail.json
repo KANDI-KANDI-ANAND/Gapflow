@@ -1,0 +1,201 @@
+{
+  "id": "google-gmail",
+  "name": "Gmail",
+  "logo": "/brand/integration-icons/gmail.svg",
+  "categories": ["Communication", "Email", "Productivity"],
+  "hero": {
+    "heading": "Gapflow and Gmail",
+    "subheading": "Automate email workflows and communication processes with Google's email service",
+    "image": "/brand/integration-icons/gmail.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {
+        "name": "Triggers",
+        "items": [
+          "New Email Received",
+          "Email with Label",
+          "Attachment Received",
+          "Email Starred",
+          "Thread Updated"
+        ]
+      },
+      {
+        "name": "Actions",
+        "items": [
+          "Send Email",
+          "Reply to Email",
+          "Add Label",
+          "Archive Email",
+          "Mark as Read"
+        ]
+      },
+      {
+        "name": "Advanced",
+        "items": [
+          "Batch Email Operations",
+          "Email Parsing",
+          "Attachment Processing",
+          "Template Management",
+          "Thread Management"
+        ]
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Automated Responses",
+      "blocks": ["Email Received", "Parse Content", "Generate Reply", "Send Response"]
+    },
+    {
+      "title": "Email-to-Ticket",
+      "blocks": ["Support Email", "Extract Info", "Create Ticket", "Send Confirmation"]
+    },
+    {
+      "title": "Lead Capture",
+      "blocks": ["Inquiry Email", "Parse Details", "Add to CRM", "Notify Sales"]
+    },
+    {
+      "title": "Invoice Processing",
+      "blocks": ["Invoice Email", "Extract Data", "Save Attachment", "Update Books"]
+    },
+    {
+      "title": "Newsletter Automation",
+      "blocks": ["Schedule Trigger", "Fetch Content", "Personalize Email", "Send Campaign"]
+    },
+    {
+      "title": "Email Backup",
+      "blocks": ["Important Email", "Save to Drive", "Log Metadata", "Create Archive"]
+    },
+    {
+      "title": "Receipt Management",
+      "blocks": ["Receipt Email", "Extract Data", "Categorize Expense", "Add to Sheet"]
+    },
+    {
+      "title": "Attachment Processing",
+      "blocks": ["File Received", "Download Attachment", "Process File", "Store in Cloud"]
+    },
+    {
+      "title": "Email Classification",
+      "blocks": ["Email Arrives", "Analyze Content", "Apply Labels", "Route to Folder"]
+    },
+    {
+      "title": "Follow-up Automation",
+      "blocks": ["Email Sent", "Wait Period", "Check Response", "Send Reminder"]
+    }
+  ],
+  "documentation": [
+    {
+      "title": "Getting Started with Gmail",
+      "description": "Connect Gmail to Gapflow and learn how to automate email sending, filtering, and processing workflows.",
+      "link": "/docs/gmail/getting-started"
+    },
+    {
+      "title": "Email Parsing & Data Extraction",
+      "description": "Extract structured data from emails using templates, regex patterns, and AI-powered content analysis.",
+      "link": "/docs/gmail/parsing"
+    },
+    {
+      "title": "Advanced Email Automation",
+      "description": "Master thread management, batch operations, and sophisticated email workflows for business automation.",
+      "link": "/docs/gmail/advanced-automation"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "Automated Support Ticketing",
+      "description": "Build a system that converts support emails into tickets, routes by priority, and sends automatic acknowledgments.",
+      "thumbnail": "https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example1"
+    },
+    {
+      "title": "Lead Capture & Nurture",
+      "description": "Create workflows that capture leads from email inquiries, enrich data, and trigger automated follow-up sequences.",
+      "thumbnail": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example2"
+    },
+    {
+      "title": "Invoice & Receipt Processing",
+      "description": "Set up automated processing for financial emails that extracts data, stores attachments, and updates accounting systems.",
+      "thumbnail": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg",
+      "videoUrl": "https://youtube.com/watch?v=example3"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I connect Gmail?",
+      "answer": "Sign in with your Google account and authorize Gapflow. Works with personal Gmail and Google Workspace accounts."
+    },
+    {
+      "question": "Can I send emails from my address?",
+      "answer": "Yes! Send emails that appear from your Gmail address. Perfect for automated responses and notifications that look personal."
+    },
+    {
+      "question": "How do I filter specific emails?",
+      "answer": "Use triggers based on sender, subject, labels, attachments, or content. Build sophisticated filters with multiple conditions."
+    },
+    {
+      "question": "What about attachments?",
+      "answer": "Download, process, and save attachments automatically. Extract data from PDFs, parse spreadsheets, and handle any file type."
+    },
+    {
+      "question": "Can I use email templates?",
+      "answer": "Yes! Create reusable email templates with variables, personalization, and dynamic content for consistent messaging."
+    },
+    {
+      "question": "What are the sending limits?",
+      "answer": "Gmail has daily sending limits (500 for free, 2000 for Workspace). Implement queuing and scheduling for high-volume needs."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Support ticket creation is fully automated. Every email becomes a tracked ticket instantly with no manual work.",
+      "author": "Rachel Green",
+      "role": "Support Manager",
+      "company": "SaaS Company"
+    },
+    {
+      "quote": "Lead capture increased 40%. Every inquiry is in our CRM within seconds with complete email history.",
+      "author": "Tom Anderson",
+      "role": "Sales Director",
+      "company": "B2B Services"
+    },
+    {
+      "quote": "Invoice processing used to take hours. Now it's automatic - extract, categorize, and log in 30 seconds.",
+      "author": "Maria Santos",
+      "role": "Finance Manager",
+      "company": "Small Business"
+    },
+    {
+      "quote": "Email automation handles 1000+ messages daily. Routing, labeling, responding - all happens perfectly.",
+      "author": "Kevin Park",
+      "role": "Operations Lead",
+      "company": "E-commerce"
+    }
+  ],
+  "limits": [
+    {
+      "title": "Sending Limits",
+      "description": "500 emails/day for free Gmail, 2000 for Workspace. Implement rate limiting and queuing for bulk sending operations."
+    },
+    {
+      "title": "Attachment Size",
+      "description": "25MB per email including attachments. Large files should be shared via Drive links instead of direct attachments."
+    },
+    {
+      "title": "API Quotas",
+      "description": "Gmail API has per-user quotas for requests. Use batch operations and implement appropriate throttling for efficiency."
+    },
+    {
+      "title": "Storage Space",
+      "description": "15GB shared across Gmail, Drive, and Photos for free accounts. Monitor usage and implement archival strategies."
+    }
+  ],
+  "relatedQuestions": [
+    "How to parse email content?",
+    "Can I use HTML templates?",
+    "What about spam filtering?",
+    "How to handle bounces?",
+    "Best practices for automation?"
+  ]
+}

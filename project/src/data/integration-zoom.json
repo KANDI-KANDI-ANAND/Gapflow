@@ -1,0 +1,70 @@
+{
+  "id": "zoom",
+  "name": "Zoom",
+  "logo": "/brand/integration-icons/zoom.svg",
+  "categories": ["Communication", "Video Conferencing", "Collaboration"],
+  "hero": {
+    "heading": "Gapflow and Zoom",
+    "subheading": "Automate video meetings, webinars, and virtual events",
+    "image": "/brand/integration-icons/zoom.svg"
+  },
+  "possibilities": {
+    "tabs": [
+      {
+        "name": "Triggers",
+        "items": ["Meeting Started", "Participant Joined", "Meeting Ended", "Recording Ready", "Webinar Registered"]
+      },
+      {
+        "name": "Actions",
+        "items": ["Create Meeting", "Update Meeting", "Add Registrant", "Send Invitation", "Start Recording"]
+      },
+      {
+        "name": "Advanced",
+        "items": ["Webinar Management", "Breakout Rooms", "Live Transcription", "Cloud Recording", "Analytics"]
+      }
+    ]
+  },
+  "useCases": [
+    {"title": "Auto Meeting Creation", "blocks": ["Calendar Event", "Create Zoom", "Send Invites", "Update Calendar"]},
+    {"title": "Webinar Registration", "blocks": ["Form Submit", "Add Registrant", "Send Confirmation", "Add to CRM"]},
+    {"title": "Recording Processing", "blocks": ["Recording Ready", "Download File", "Transcribe", "Share Links"]},
+    {"title": "Attendance Tracking", "blocks": ["Meeting Ended", "Get Participants", "Log Attendance", "Update Records"]},
+    {"title": "Follow-up Automation", "blocks": ["Meeting Ended", "Send Survey", "Create Tasks", "Schedule Follow-up"]},
+    {"title": "Event Management", "blocks": ["Registration", "Create Sessions", "Send Reminders", "Track Attendance"]},
+    {"title": "Sales Meetings", "blocks": ["Deal Stage", "Schedule Demo", "Send Invite", "Log Activity"]},
+    {"title": "Customer Support", "blocks": ["Ticket Created", "Schedule Call", "Send Link", "Follow Up"]},
+    {"title": "Training Sessions", "blocks": ["Schedule", "Create Webinar", "Add Attendees", "Share Materials"]},
+    {"title": "Team Standups", "blocks": ["Daily Schedule", "Create Meeting", "Notify Team", "Record Session"]}
+  ],
+  "documentation": [
+    {"title": "Getting Started with Zoom", "description": "Connect Zoom to Gapflow and automate meetings, webinars, and video conferencing workflows.", "link": "/docs/zoom/getting-started"},
+    {"title": "Webinar Automation", "description": "Create and manage webinars with automated registration, reminders, and follow-up sequences.", "link": "/docs/zoom/webinars"},
+    {"title": "Recording & Transcription", "description": "Automatically process recordings, generate transcripts, and distribute content after meetings.", "link": "/docs/zoom/recordings"}
+  ],
+  "tutorials": [
+    {"title": "Automated Webinar Funnel", "description": "Build a complete webinar system with registration, reminders, attendance tracking, and follow-up automation.", "thumbnail": "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg", "videoUrl": "https://youtube.com/watch?v=example1"},
+    {"title": "Sales Demo Workflow", "description": "Create automated demo scheduling that integrates with CRM, sends invites, and logs all activity.", "thumbnail": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg", "videoUrl": "https://youtube.com/watch?v=example2"},
+    {"title": "Meeting Recording Pipeline", "description": "Set up automatic recording processing with transcription, highlights extraction, and content distribution.", "thumbnail": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg", "videoUrl": "https://youtube.com/watch?v=example3"}
+  ],
+  "faqs": [
+    {"question": "How do I connect Zoom?", "answer": "Create a Zoom App or use OAuth authentication. Server-to-Server OAuth is recommended for automation workflows."},
+    {"question": "Can I create recurring meetings?", "answer": "Yes! Create one-time or recurring meetings with full control over schedule, settings, and participants."},
+    {"question": "What about webinars?", "answer": "Automate webinar creation, registration, reminders, and follow-ups. Track attendance and engagement automatically."},
+    {"question": "How do I access recordings?", "answer": "Get notified when recordings are ready, download files, generate transcripts, and share links automatically."},
+    {"question": "Can I track attendance?", "answer": "Absolutely! Get participant lists, track join/leave times, attention tracking, and engagement metrics."},
+    {"question": "What about breakout rooms?", "answer": "Create and manage breakout rooms programmatically. Assign participants and control room settings automatically."}
+  ],
+  "testimonials": [
+    {"quote": "Webinar automation increased registrations 300%. Entire funnel runs on autopilot from sign-up to follow-up.", "author": "Amanda Foster", "role": "Marketing Director", "company": "EdTech Startup"},
+    {"quote": "Demo scheduling is seamless. Sales reps never touch Zoom manually, everything syncs with Salesforce.", "author": "Carlos Rivera", "role": "Sales Operations", "company": "B2B SaaS"},
+    {"quote": "Recording processing is magic. Transcripts and highlights ready within minutes of meeting end.", "author": "Dr. Emily Chen", "role": "Learning & Development", "company": "Corporate Training"},
+    {"quote": "Event coordination simplified. 500-person virtual conference managed with automated workflows.", "author": "Marcus Johnson", "role": "Event Manager", "company": "Conference Organizer"}
+  ],
+  "limits": [
+    {"title": "API Rate Limits", "description": "Varies by endpoint and account type. Pro/Business: medium limits, Enterprise: higher limits. Use webhooks for real-time updates."},
+    {"title": "Concurrent Meetings", "description": "Meeting limits based on plan. Pro: 1 meeting, Business: varies, Enterprise: custom. Plan accordingly for automation."},
+    {"title": "Recording Storage", "description": "Cloud recording storage based on plan. Free: 40min limit. Paid: 1GB per license. Consider external storage for archives."},
+    {"title": "Participant Limits", "description": "Max participants vary by plan (100/300/500/1000). Large meetings may need Enterprise licensing."}
+  ],
+  "relatedQuestions": ["How to customize meetings?", "Can I use waiting rooms?", "What about polls?", "How to manage registrants?", "Best practices for webinars?"]
+}

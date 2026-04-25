@@ -1,0 +1,2799 @@
+{
+  "meta": {
+    "id": "5adfe9ed-973e-4ae3-b349-d81621be9e72",
+    "name": "Gapflow.ai — Integrations Page",
+    "version": "0.1.0",
+    "created_at": "2025-11-06T13:00:06.908234",
+    "viewport_strategy": "desktop-first-responsive",
+    "theme_ref": "gapflow_theme.css",
+    "page": "integrations"
+  },
+  "layout": {
+    "container": {
+      "max_width": 1200,
+      "padding_x": "xl"
+    },
+    "grid": {
+      "columns": 12,
+      "gutter": "lg"
+    },
+    "section_defaults": {
+      "padding_y": "section"
+    }
+  },
+  "sections": [
+    {
+      "id": "integrations-hero",
+      "type": "section",
+      "style": {
+        "background": "gradient-dark",
+        "align": "center"
+      },
+      "container": true,
+      "content": {
+        "eyebrow": {
+          "type": "pill",
+          "tone": "accent",
+          "text": "Integrations"
+        },
+        "heading": {
+          "type": "h1",
+          "text": "Connect Gapflow to your stack"
+        },
+        "subheading": {
+          "type": "p",
+          "variant": "body-lg",
+          "text": "CRMs, BI, communications, databases, and more."
+        },
+        "ctas": [
+          {
+            "type": "button",
+            "variant": "primary",
+            "size": "lg",
+            "label": "Browse All",
+            "action": "#catalog"
+          },
+          {
+            "type": "button",
+            "variant": "secondary",
+            "size": "lg",
+            "label": "Request a Connector",
+            "action": "/integrations/request"
+          }
+        ]
+      }
+    },
+    {
+      "id": "categories",
+      "type": "section",
+      "style": {
+        "background": "white"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "Categories"
+        },
+        "grid": [
+          {
+            "icon": "plug",
+            "title": "AI Models",
+            "desc": "OpenAI, Anthropic, ElevenLabs, Vapi"
+          },
+          {
+            "icon": "users",
+            "title": "CRM & Sales",
+            "desc": "Salesforce, HubSpot, Shopify, Stripe"
+          },
+          {
+            "icon": "message-square",
+            "title": "Communication",
+            "desc": "Zendesk, Intercom, Slack, WhatsApp"
+          },
+          {
+            "icon": "database",
+            "title": "Data & Storage",
+            "desc": "BigQuery, Snowflake, PostgreSQL, AWS S3"
+          },
+          {
+            "icon": "bar-chart",
+            "title": "Analytics",
+            "desc": "Power BI, Google Analytics, Mixpanel"
+          },
+          {
+            "icon": "check-square",
+            "title": "Productivity",
+            "desc": "Asana, Notion, Jira, ClickUp"
+          },
+          {
+            "icon": "code",
+            "title": "Development",
+            "desc": "GitHub, GitLab, Vercel, Netlify"
+          },
+          {
+            "icon": "file-text",
+            "title": "Content & Forms",
+            "desc": "WordPress, Typeform, Contentful, DocuSign"
+          },
+          {
+            "icon": "credit-card",
+            "title": "Finance",
+            "desc": "QuickBooks, Xero, Stripe, PayPal"
+          },
+          {
+            "icon": "terminal",
+            "title": "Developer Tools",
+            "desc": "Zapier, Make, n8n, Webhooks"
+          }
+        ]
+      }
+    },
+    {
+      "id": "catalog",
+      "type": "section",
+      "style": {
+        "background": "white"
+      },
+      "container": true,
+      "content": {
+        "controls": {
+          "search": {
+            "placeholder": "Search connectors…",
+            "aria_label": "Search connectors"
+          },
+          "filters": [
+            "All",
+            "AI",
+            "CRM",
+            "Sales",
+            "Communication",
+            "Data & Storage",
+            "Analytics",
+            "Productivity",
+            "Development",
+            "Content Management",
+            "Forms & Surveys",
+            "Document Management",
+            "Finance & Accounting",
+            "Marketing",
+            "Developer Tools"
+          ],
+          "sort": [
+            "A‑Z",
+            "Newest",
+            "Popular"
+          ]
+        },
+        "grid_spec": {
+          "columns": 4,
+          "gap": "lg"
+        },
+        "cards": [
+          {
+            "logo": "https://us1.discourse-cdn.com/openai1/original/4X/3/2/1/321a1ba297482d3d4060d114860de1aa5610f8a9.png",
+            "title": "OpenAI",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/openai"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Anthropic",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/anthropic"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Salesforce",
+            "tags": [
+              "CRM"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/salesforce"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "HubSpot",
+            "tags": [
+              "CRM"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/hubspot"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Dynamics 365",
+            "tags": [
+              "CRM"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/dynamics"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Bright Pattern",
+            "tags": [
+              "Comms",
+              "Contact Centre"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/bright-pattern"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Twilio",
+            "tags": [
+              "Comms"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/twilio"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "WhatsApp",
+            "tags": [
+              "Comms"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/whatsapp"
+              }
+            ]
+          },
+          {
+            "logo": "https://cdn.prod.website-files.com/657af0bb92ac84fc855f9510/66044f2255a990d193470da4_5f5572c2.jpeg",
+            "title": "Power BI",
+            "tags": [
+              "BI",
+              "Analytics"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/powerbi"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "BigQuery",
+            "tags": [
+              "Data"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/bigquery"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Snowflake",
+            "tags": [
+              "Data"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/snowflake"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "PostgreSQL",
+            "tags": [
+              "Data"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/postgresql"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Google Vertex AI",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/vertex-ai"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Microsoft Azure AI",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/azure-ai"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "AWS Bedrock",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/aws-bedrock"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Cohere",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/cohere"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Hugging Face",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/hugging-face"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Stability AI",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/stability-ai"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Perplexity AI",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/perplexity-ai"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "DataRobot",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/datarobot"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "MonkeyLearn",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/monkeylearn"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Pinecone",
+            "tags": [
+              "AI",
+              "Data"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/pinecone"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "LangChain",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/langchain"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "HubSpot",
+            "tags": [
+              "CRM"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/hubspot"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Zoho CRM",
+            "tags": [
+              "CRM"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/zoho-crm"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Pipedrive",
+            "tags": [
+              "CRM"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/pipedrive"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Dynamics 365",
+            "tags": [
+              "CRM"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/dynamics-365"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Freshsales",
+            "tags": [
+              "CRM"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/freshsales"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Insightly",
+            "tags": [
+              "CRM"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/insightly"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Copper CRM",
+            "tags": [
+              "CRM"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/copper-crm"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Keap",
+            "tags": [
+              "CRM"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/keap"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Close",
+            "tags": [
+              "CRM"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/close"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Nimble",
+            "tags": [
+              "CRM"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/nimble"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Capsule CRM",
+            "tags": [
+              "CRM"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/capsule-crm"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Zendesk Sell",
+            "tags": [
+              "CRM"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/zendesk-sell"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Google Analytics 4",
+            "tags": [
+              "Analytics"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/google-analytics-4"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Mixpanel",
+            "tags": [
+              "Analytics"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/mixpanel"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Amplitude",
+            "tags": [
+              "Analytics"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/amplitude"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Databox",
+            "tags": [
+              "Analytics"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/databox"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Tableau",
+            "tags": [
+              "Analytics"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/tableau"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Looker Studio",
+            "tags": [
+              "Analytics"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/looker-studio"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "AWS Athena",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/aws-athena"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "AWS QuickSight",
+            "tags": [
+              "Analytics"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/aws-quicksight"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "BigQuery",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/bigquery"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Snowflake",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/snowflake"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Redshift",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/redshift"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Sisense",
+            "tags": [
+              "Analytics"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/sisense"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Mode Analytics",
+            "tags": [
+              "Analytics"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/mode-analytics"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Google Drive",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/google-drive"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Google Cloud Storage",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/google-cloud-storage"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "AWS S3",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/aws-s3"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Dropbox",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/dropbox"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Box",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/box"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "OneDrive",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/onedrive"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "SharePoint",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/sharepoint"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Wasabi",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/wasabi"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Backblaze B2",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/backblaze-b2"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "DigitalOcean Spaces",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/digitalocean-spaces"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Google Sheets",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/google-sheets"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Microsoft Excel",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/microsoft-excel"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Airtable",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/airtable"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Smartsheet",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/smartsheet"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Notion Database",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/notion-database"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Coda",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/coda"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "ClickUp Tables",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/clickup-tables"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "PostgreSQL",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/postgresql"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "MySQL",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/mysql"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "MongoDB",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/mongodb"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Firebase",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/firebase"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Supabase",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/supabase"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Google Ads",
+            "tags": [
+              "Marketing"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/google-ads"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Meta Ads",
+            "tags": [
+              "Marketing"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/meta-ads"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "LinkedIn Ads",
+            "tags": [
+              "Marketing"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/linkedin-ads"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "TikTok Ads",
+            "tags": [
+              "Marketing"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/tiktok-ads"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Klaviyo",
+            "tags": [
+              "Marketing"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/klaviyo"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Mailchimp",
+            "tags": [
+              "Marketing"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/mailchimp"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "ActiveCampaign",
+            "tags": [
+              "Marketing"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/activecampaign"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "SendGrid",
+            "tags": [
+              "Marketing"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/sendgrid"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "ConvertKit",
+            "tags": [
+              "Marketing"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/convertkit"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Campaign Monitor",
+            "tags": [
+              "Marketing"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/campaign-monitor"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Brevo (Sendinblue)",
+            "tags": [
+              "Marketing"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/brevo"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Slack",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/slack"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Microsoft Teams",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/microsoft-teams"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Discord",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/discord"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Zoom",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/zoom"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Google Chat",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/google-chat"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Telegram",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/telegram"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "WhatsApp",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/whatsapp"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Twilio SMS",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/twilio-sms"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "MessageBird",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/messagebird"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "RingCentral",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/ringcentral"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Bright Pattern",
+            "tags": [
+              "Communication",
+              "Contact Centre"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/bright-pattern"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Genesys Cloud",
+            "tags": [
+              "Communication",
+              "Contact Centre"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/genesys-cloud"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Aircall",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/aircall"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Calendly",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/calendly"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Google Calendar",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/google-calendar"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Outlook Calendar",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/outlook-calendar"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Clockify",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/clockify"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Asana",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/asana"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Trello",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/trello"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Monday.com",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/monday-com"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "ClickUp",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/clickup"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Wrike",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/wrike"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Todoist",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/todoist"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Notion",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/notion"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Evernote",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/evernote"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Google Tasks",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/google-tasks"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Shopify",
+            "tags": [
+              "Sales"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/shopify"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "WooCommerce",
+            "tags": [
+              "Sales"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/woocommerce"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "BigCommerce",
+            "tags": [
+              "Sales"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/bigcommerce"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Magento",
+            "tags": [
+              "Sales"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/magento"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Stripe",
+            "tags": [
+              "Finance & Accounting"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/stripe"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "PayPal",
+            "tags": [
+              "Finance & Accounting"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/paypal"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Square",
+            "tags": [
+              "Finance & Accounting"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/square"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Afterpay",
+            "tags": [
+              "Finance & Accounting"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/afterpay"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Chargebee",
+            "tags": [
+              "Finance & Accounting"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/chargebee"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Recurly",
+            "tags": [
+              "Finance & Accounting"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/recurly"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "QuickBooks Online",
+            "tags": [
+              "Finance & Accounting"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/quickbooks-online"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Xero",
+            "tags": [
+              "Finance & Accounting"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/xero"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Wave Accounting",
+            "tags": [
+              "Finance & Accounting"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/wave-accounting"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Zendesk",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/zendesk"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Freshdesk",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/freshdesk"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Intercom",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/intercom"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Help Scout",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/help-scout"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Front",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/front"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Zoho Desk",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/zoho-desk"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "LiveAgent",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/liveagent"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Drift",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/drift"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Crisp",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/crisp"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Tawk.to",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/tawk-to"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Twilio Flex",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/twilio-flex"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "GitHub",
+            "tags": [
+              "Development"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/github"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "GitLab",
+            "tags": [
+              "Development"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/gitlab"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Bitbucket",
+            "tags": [
+              "Development"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/bitbucket"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Jira",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/jira"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Confluence",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/confluence"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Linear",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/linear"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Toggl Track",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/toggl-track"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Zapier Webhooks",
+            "tags": [
+              "Developer Tools"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/zapier-webhooks"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Make Webhooks",
+            "tags": [
+              "Developer Tools"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/make-webhooks"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "n8n",
+            "tags": [
+              "Developer Tools"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/n8n"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Vercel",
+            "tags": [
+              "Development"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/vercel"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Netlify",
+            "tags": [
+              "Development"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/netlify"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Heroku",
+            "tags": [
+              "Development"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/heroku"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "WordPress",
+            "tags": [
+              "Content Management"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/wordpress"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Webflow",
+            "tags": [
+              "Content Management"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/webflow"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Wix",
+            "tags": [
+              "Content Management"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/wix"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Squarespace",
+            "tags": [
+              "Content Management"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/squarespace"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Bubble.io",
+            "tags": [
+              "Content Management"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/bubble-io"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Framer",
+            "tags": [
+              "Content Management"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/framer"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Ghost",
+            "tags": [
+              "Content Management"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/ghost"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Contentful",
+            "tags": [
+              "Content Management"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/contentful"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Sanity",
+            "tags": [
+              "Content Management"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/sanity"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Strapi",
+            "tags": [
+              "Content Management"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/strapi"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Shopify Hydrogen",
+            "tags": [
+              "Sales"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/shopify-hydrogen"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Microsoft Business Central",
+            "tags": [
+              "Finance & Accounting"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/microsoft-business-central"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "SAP Business One",
+            "tags": [
+              "Finance & Accounting"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/sap-business-one"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Oracle NetSuite",
+            "tags": [
+              "Finance & Accounting"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/oracle-netsuite"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Odoo",
+            "tags": [
+              "Finance & Accounting"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/odoo"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Zoho Books",
+            "tags": [
+              "Finance & Accounting"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/zoho-books"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "QuickBooks",
+            "tags": [
+              "Finance & Accounting"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/quickbooks"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Sage Intacct",
+            "tags": [
+              "Finance & Accounting"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/sage-intacct"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Tally Prime",
+            "tags": [
+              "Finance & Accounting"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/tally-prime"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "FreshBooks",
+            "tags": [
+              "Finance & Accounting"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/freshbooks"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Typeform",
+            "tags": [
+              "Forms & Surveys"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/typeform"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Google Forms",
+            "tags": [
+              "Forms & Surveys"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/google-forms"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Jotform",
+            "tags": [
+              "Forms & Surveys"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/jotform"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Formstack",
+            "tags": [
+              "Forms & Surveys"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/formstack"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Paperform",
+            "tags": [
+              "Forms & Surveys"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/paperform"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Gravity Forms",
+            "tags": [
+              "Forms & Surveys"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/gravity-forms"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Wufoo",
+            "tags": [
+              "Forms & Surveys"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/wufoo"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "SurveyMonkey",
+            "tags": [
+              "Forms & Surveys"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/surveymonkey"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "AskNicely",
+            "tags": [
+              "Forms & Surveys",
+              "Customer Support"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/asknicely"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "DocuSign",
+            "tags": [
+              "Document Management"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/docusign"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "HelloSign",
+            "tags": [
+              "Document Management"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/hellosign"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "PDF.co",
+            "tags": [
+              "Document Management"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/pdf-co"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "PDFMonkey",
+            "tags": [
+              "Document Management"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/pdfmonkey"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Vapi",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/vapi"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Replicate AI",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/replicate-ai"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "ElevenLabs",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/elevenlabs"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Copy AI",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/copy-ai"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Eden AI",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/eden-ai"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Browse AI",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/browse-ai"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Retell AI",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/retell-ai"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "DeepSeek AI",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/deepseek-ai"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Maybe* Your AI",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/maybe-your-ai"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "OpenRouter",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/openrouter"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "nele.ai",
+            "tags": [
+              "AI"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/nele-ai"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Microsoft 365 Email (Outlook)",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/microsoft-365-email"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Microsoft 365 Excel",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/microsoft-365-excel"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Microsoft SharePoint Online",
+            "tags": [
+              "Content Management"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/microsoft-sharepoint-online"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Microsoft 365 Calendar",
+            "tags": [
+              "Productivity"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/microsoft-365-calendar"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Microsoft Teams",
+            "tags": [
+              "Communication"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/microsoft-teams"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Microsoft SQL Server",
+            "tags": [
+              "Data & Storage"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/microsoft-sql-server"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Microsoft Entra ID",
+            "tags": [
+              "Developer Tools"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/microsoft-entra-id"
+              }
+            ]
+          },
+          {
+            "logo": null,
+            "title": "Microsoft Power Automate",
+            "tags": [
+              "Developer Tools"
+            ],
+            "actions": [
+              {
+                "label": "View",
+                "action": "/integrations/microsoft-power-automate"
+              }
+            ]
+          }
+        ],
+        "pagination": {
+          "page": 1,
+          "page_size": 24,
+          "total": 120
+        }
+      }
+    },
+    {
+      "id": "build-connector",
+      "type": "section",
+      "style": {
+        "background": "light"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "Need something specific?"
+        },
+        "subheading": {
+          "type": "p",
+          "variant": "body",
+          "text": "Our SDK lets you build custom connectors or request one from our team."
+        },
+        "ctas": [
+          {
+            "type": "button",
+            "variant": "secondary",
+            "label": "Open Connector SDK",
+            "action": "/docs/connectors"
+          },
+          {
+            "type": "button",
+            "variant": "ghost",
+            "label": "Request a connector",
+            "action": "/integrations/request"
+          }
+        ]
+      }
+    },
+    {
+      "id": "integrations-final-cta",
+      "type": "section",
+      "style": {
+        "background": "light-gradient"
+      },
+      "container": true,
+      "content": {
+        "heading": {
+          "type": "h2",
+          "text": "Plug in and go"
+        },
+        "ctas": [
+          {
+            "type": "button",
+            "variant": "primary",
+            "size": "lg",
+            "label": "Start Building",
+            "action": "/app/signup"
+          },
+          {
+            "type": "button",
+            "variant": "ghost",
+            "size": "lg",
+            "label": "Explore Templates",
+            "action": "/templates"
+          }
+        ]
+      }
+    }
+  ]
+}
