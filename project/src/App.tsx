@@ -4,11 +4,11 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useInteractions } from './hooks/useInteractions';
 import Header from './components/Header';
 import Footer from './sections/Footer';
-import ParticleBackground from './components/ParticleBackground';
-import CircuitBackground from './components/CircuitBackground';
-import FlowThread from './components/FlowThread';
-import CursorPlasma from './components/CursorPlasma';
-import FloatingAgent from './components/FloatingAgent';
+// import ParticleBackground from './components/ParticleBackground';
+// import CircuitBackground from './components/CircuitBackground';
+// import FlowThread from './components/FlowThread';
+// import CursorPlasma from './components/CursorPlasma';
+// import FloatingAgent from './components/FloatingAgent';
 
 const Home = lazy(() => import('./pages/Home'));
 const Features = lazy(() => import('./pages/Features'));
@@ -20,36 +20,22 @@ const ConnectorDetail = lazy(() => import('./pages/ConnectorDetail'));
 const Pricing = lazy(() => import('./pages/Pricing'));
 
 const LoadingFallback = () => (
-  <div className="min-h-screen bg-white flex items-center justify-center relative overflow-hidden">
-    <div className="absolute inset-0 flex items-center justify-center">
-      <div className="w-64 h-64 bg-[#10B981]/10 rounded-full blur-[80px] animate-pulse"></div>
-    </div>
-    <div className="text-center relative z-10">
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          rotate: [0, 180, 360]
-        }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        className="mx-auto w-16 h-16 border-4 border-[#10B981] border-t-transparent rounded-xl shadow-[0_0_30px_rgba(16,185,129,0.4)]"
-      ></motion.div>
-      <motion.p
-        animate={{ opacity: [0.5, 1, 0.5] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-        className="mt-6 text-[#10B981] font-bold tracking-widest uppercase text-sm"
-      >
-        Initializing AI Data
-      </motion.p>
+  <div className="min-h-screen bg-white flex items-center justify-center">
+    <div className="text-center">
+      <div className="mx-auto w-10 h-10 border-2 border-slate-900 border-t-transparent rounded-full animate-spin"></div>
+      <p className="mt-4 text-slate-500 font-bold tracking-widest uppercase text-xs">
+        Loading Gapflow
+      </p>
     </div>
   </div>
 );
 
 const PageWrapper = ({ children }: { children: React.ReactNode }) => (
   <motion.div
-    initial={{ opacity: 0, filter: "blur(10px)", scale: 0.98 }}
-    animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
-    exit={{ opacity: 0, filter: "blur(10px)", scale: 0.98 }}
-    transition={{ duration: 0.4, ease: "easeOut" }}
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.3 }}
   >
     {children}
   </motion.div>
@@ -60,23 +46,11 @@ function AppContent() {
   const location = useLocation();
 
   useEffect(() => {
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        document.title = 'Gapflow Agents are waiting...';
-      } else {
-        document.title = 'Gapflow | The AI Engine';
-      }
-    };
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+    document.title = 'Gapflow | AI Workflow Automation';
   }, []);
 
   return (
     <div className="relative isolate min-h-screen">
-      <ParticleBackground />
-      <CircuitBackground />
-      <FlowThread />
-      <CursorPlasma />
       <Header />
       <main id="main-content" role="main">
         <Suspense fallback={<LoadingFallback />}>
@@ -95,7 +69,6 @@ function AppContent() {
         </Suspense>
       </main>
       <Footer />
-      <FloatingAgent />
     </div>
   );
 }

@@ -1,160 +1,89 @@
-import React, { useState, useRef } from 'react';
-import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'framer-motion';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Cloud, MessageSquare, Database, Bot, GitMerge, Layers } from 'lucide-react';
-import BlueprintPreview from './BlueprintPreview';
-
-interface TemplateCardProps {
-    template: {
-        id: string;
-        slug: string;
-        title: string;
-        description: string;
-        categories: string[];
-        tags: string[];
-        integrations?: string[];
-    };
-}
-
-// Map integration names to specialized icons and colors
-const integrationMap: Record<string, { icon: any, color: string, bgColor: string }> = {
-    'Salesforce': { icon: Cloud, color: '#00A1E0', bgColor: 'bg-sky-50' },
-    'Slack': { icon: MessageSquare, color: '#4A154B', bgColor: 'bg-purple-50' },
-    'HubSpot': { icon: GitMerge, color: '#FF7A59', bgColor: 'bg-orange-50' },
-    'OpenAI': { icon: Bot, color: '#74aa9c', bgColor: 'bg-teal-50' },
-    'Bright Pattern': { icon: Layers, color: '#10B981', bgColor: 'bg-emerald-50' },
-    'default': { icon: Database, color: '#64748b', bgColor: 'bg-slate-50' }
-};
-
-const TemplateCard: React.FC<TemplateCardProps> = ({ template }) => {
-    const [isHovered, setIsHovered] = useState(false);
-    const x = useMotionValue(0);
-    const y = useMotionValue(0);
-
-    const cardRef = useRef<HTMLDivElement>(null);
-
-    const mouseXSpring = useSpring(x);
-    const mouseYSpring = useSpring(y);
-
-    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7deg", "-7deg"]);
-    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
-
-    const handleMouseMove = (event: React.MouseEvent) => {
-        if (!cardRef.current) return;
-        const rect = cardRef.current.getBoundingClientRect();
-        const width = rect.width;
-        const height = rect.height;
-        const mouseX = event.clientX - rect.left;
-        const mouseY = event.clientY - rect.top;
-        const xPct = (mouseX / width) - 0.5;
-        const yPct = (mouseY / height) - 0.5;
-        x.set(xPct);
-        y.set(yPct);
-    };
-
-    const handleMouseLeave = () => {
-        x.set(0);
-        y.set(0);
-        setIsHovered(false);
-    };
-
-    const mainCategory = template.categories[0];
-
-    return (
-        <Link to={`/templates/${template.slug}`} className="block h-full perspective-1000">
-            <motion.div
-                ref={cardRef}
-                onMouseMove={handleMouseMove}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={handleMouseLeave}
-                style={{
-                    rotateX,
-                    rotateY,
-                    transformStyle: "preserve-3d",
-                }}
-                className="relative h-full bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-shadow duration-500 flex flex-col group"
-            >
-                <div style={{ transform: "translateZ(50px)" }} className="flex flex-col h-full p-8">
-                    {/* Header Badge */}
-                    <div className="flex justify-between items-start mb-6">
-                        <span className="px-4 py-1.5 rounded-full bg-[#10B981]/10 text-[#10B981] text-xs font-bold uppercase tracking-wider border border-[#10B981]/20">
-                            {mainCategory}
-                        </span>
-
-                        {/* Integration Clusters */}
-                        <div className="flex -space-x-3">
-                            {template.integrations?.slice(0, 3).map((int, i) => {
-                                const config = integrationMap[int] || integrationMap.default;
-                                const Icon = config.icon;
-                                return (
-                                    <motion.div
-                                        key={i}
-                                        whileHover={{ y: -5, scale: 1.1, zIndex: 20 }}
-                                        title={int}
-                                        className={`w-10 h-10 rounded-xl ${config.bgColor} border-2 border-white shadow-sm flex items-center justify-center relative z-10 transition-transform`}
-                                    >
-                                        <Icon size={18} color={config.color} />
-                                    </motion.div>
-                                );
-                            })}
-                        </div>
+import { ChevronRight, Database, Cloud, MessageSquare, Bot, GitMerge, Layers, Mail, Phone, Globe, HardDrive, BarChart, Database as SqlIcon, FileSpreadsheet } from 'lucide-react';
+ 
+ interface TemplateCardProps {
+     template: {
+         id: string;
+         slug: string;
+         title: string;
+         description: string;
+         categories: string[];
+         tags: string[];
+         integrations?: string[];
+     };
+ }
+ 
+ // Map integration keys from JSON to icons and colors
+ const integrationMap: Record<string, { icon: any, color: string, bgColor: string }> = {
+     'salesforce': { icon: Cloud, color: '#00A1E0', bgColor: 'bg-sky-50' },
+     'slack': { icon: MessageSquare, color: '#4A154B', bgColor: 'bg-purple-50' },
+     'hubspot': { icon: GitMerge, color: '#FF7A59', bgColor: 'bg-orange-50' },
+     'openai': { icon: Bot, color: '#74aa9c', bgColor: 'bg-teal-50' },
+     'bright-pattern': { icon: Layers, color: '#10B981', bgColor: 'bg-emerald-50' },
+     'genesys-cloud': { icon: Globe, color: '#FF4F1F', bgColor: 'bg-red-50' },
+     'microsoft-365-email': { icon: Mail, color: '#0078D4', bgColor: 'bg-blue-50' },
+     'google-gmail': { icon: Mail, color: '#EA4335', bgColor: 'bg-red-50' },
+     'twilio-sms': { icon: Phone, color: '#F22F46', bgColor: 'bg-red-50' },
+     'aws-s3': { icon: HardDrive, color: '#FF9900', bgColor: 'bg-orange-50' },
+     'onedrive': { icon: HardDrive, color: '#0078D4', bgColor: 'bg-blue-50' },
+     'asknicely': { icon: BarChart, color: '#FF4D4D', bgColor: 'bg-red-50' },
+     'surveymonkey': { icon: BarChart, color: '#00BF6F', bgColor: 'bg-emerald-50' },
+     'mysql': { icon: SqlIcon, color: '#4479A1', bgColor: 'bg-blue-50' },
+     'microsoft-365-excel': { icon: FileSpreadsheet, color: '#217346', bgColor: 'bg-emerald-50' },
+     'google-sheets': { icon: FileSpreadsheet, color: '#0F9D58', bgColor: 'bg-emerald-50' },
+     'default': { icon: Database, color: '#64748b', bgColor: 'bg-slate-50' }
+ };
+ 
+ const TemplateCard: React.FC<TemplateCardProps> = ({ template }) => {
+     return (
+         <Link 
+            to={`/templates/${template.slug}`} 
+            className="group flex flex-col h-full bg-white border border-slate-200 rounded-[2rem] p-8 lg:p-10 transition-all duration-500 hover:border-slate-300 hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.06)] shadow-sm relative overflow-hidden"
+         >
+             {/* Integration Icons - TOP LEFT */}
+             <div className="flex -space-x-2 mb-10 relative z-20">
+                 {template.integrations && template.integrations.length > 0 ? (
+                     template.integrations.slice(0, 3).map((int, i) => {
+                         const config = integrationMap[int.toLowerCase()] || integrationMap.default;
+                         const Icon = config.icon;
+                         return (
+                             <div
+                                 key={i}
+                                 className={`w-11 h-11 rounded-full ${config.bgColor} border-2 border-white shadow-sm flex items-center justify-center relative z-10 transition-transform group-hover:-translate-y-1`}
+                                 style={{ transitionDelay: `${i * 50}ms`, zIndex: 10 - i }}
+                             >
+                                 <Icon size={18} color={config.color} />
+                             </div>
+                         );
+                     })
+                 ) : (
+                    <div className="w-11 h-11 rounded-full bg-slate-50 border-2 border-white shadow-sm flex items-center justify-center">
+                        <Database size={18} className="text-slate-400" />
                     </div>
-
-                    <h3 className="text-xl font-bold text-slate-900 mb-4 line-clamp-2 leading-tight group-hover:text-[#10B981] transition-colors">
-                        {template.title}
-                    </h3>
-
-                    <div className="relative flex-grow min-h-[140px]">
-                        <AnimatePresence mode="wait">
-                            {!isHovered ? (
-                                <motion.p
-                                    key="desc"
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, scale: 0.95 }}
-                                    className="text-slate-600 text-sm leading-relaxed"
-                                >
-                                    {template.description}
-                                </motion.p>
-                            ) : (
-                                <motion.div
-                                    key="blueprint"
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    exit={{ opacity: 0, scale: 0.9 }}
-                                    className="absolute inset-0"
-                                >
-                                    <BlueprintPreview />
-                                </motion.div>
-                            )
-                            }
-                        </AnimatePresence>
-                    </div>
-
-                    {/* Footer Area */}
-                    <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
-                        <div className="flex flex-wrap gap-2">
-                            {template.tags.slice(0, 2).map((tag, i) => (
-                                <span key={i} className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
-
-                        <div className="flex items-center gap-2 text-[#10B981] font-bold text-sm group/btn">
-                            <span className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all">Details</span>
-                            <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover/btn:bg-[#10B981] group-hover/btn:text-white transition-colors">
-                                <ArrowRight size={16} />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Global Glow */}
-                <div className="absolute -inset-[100px] bg-gradient-to-tr from-[#10B981]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 blur-3xl transition-opacity duration-1000 pointer-events-none" />
-            </motion.div>
-        </Link>
-    );
-};
-
-export default TemplateCard;
+                 )}
+             </div>
+ 
+             {/* Title - Stable text color on hover */}
+             <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 tracking-tight leading-[1.2] relative z-20">
+                 {template.title}
+             </h3>
+ 
+             {/* Description - Stable text color on hover */}
+             <p className="text-slate-500 text-sm lg:text-base font-medium leading-relaxed line-clamp-3 mb-10 flex-grow relative z-20">
+                 {template.description}
+             </p>
+ 
+             {/* Action */}
+             <div className="mt-auto pt-6 flex items-center gap-2 text-slate-900 font-bold text-sm tracking-tight group-hover:text-[#10B981] transition-colors relative z-20">
+                 <span>Try it</span>
+                 <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
+             </div>
+ 
+             {/* Hover Tint - Subtle background change for contrast, doesn't overlap text layer */}
+             <div className="absolute inset-0 bg-slate-50/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
+         </Link>
+     );
+ };
+ 
+ export default TemplateCard;

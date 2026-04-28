@@ -1,198 +1,175 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle2, ChevronRight, Play, Database, BrainCircuit, Activity, FileCheck } from 'lucide-react';
-
-const TASKS = [
-    { id: '1', title: 'Automate Customer Support', icon: <BrainCircuit className="w-5 h-5" /> },
-    { id: '2', title: 'Analyze Sales Data', icon: <Database className="w-5 h-5" /> },
-    { id: '3', title: 'Generate Market Report', icon: <FileCheck className="w-5 h-5" /> }
-];
-
-const AGENT_STEPS = [
-    { id: 'decides', label: 'Agent Decides', description: 'Interpreting request & planning steps' },
-    { id: 'validates', label: 'Validates', description: 'Checking guardrails & data access' },
-    { id: 'executes', label: 'Executes', description: 'Processing task autonomously' }
-];
-
-export default function AgentDemo() {
-    const [activeTask, setActiveTask] = useState(TASKS[0]);
-    const [currentStep, setCurrentStep] = useState(0);
-    const [isPlaying, setIsPlaying] = useState(false);
-
-    useEffect(() => {
-        let interval: NodeJS.Timeout;
-        if (isPlaying) {
-            interval = setInterval(() => {
-                setCurrentStep((prev) => {
-                    if (prev >= AGENT_STEPS.length - 1) {
-                        setIsPlaying(false);
-                        return 2;
-                    }
-                    return prev + 1;
-                });
-            }, 2000);
-        }
-        return () => clearInterval(interval);
-    }, [isPlaying]);
-
-    const handleTaskClick = (task: typeof TASKS[0]) => {
-        setActiveTask(task);
-        setCurrentStep(0);
-        setIsPlaying(false);
-    };
-
-    const startDemo = () => {
-        setCurrentStep(0);
-        setIsPlaying(true);
-    };
-
-    return (
-        <section className="pb-8 pt-10 lg:pt-12 bg-white relative overflow-hidden">
-            {/* Background elements */}
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#10B981]/10 rounded-full blur-[120px] -z-10 animate-pulse pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#8b5cf6]/10 rounded-full blur-[120px] -z-10 animate-pulse pointer-events-none" style={{ animationDelay: '2s' }} />
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-10">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-bold mb-6 text-slate-900"
-                    >
-                        Watch <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-emerald-300">AI</span> in Action
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-xl text-slate-600 max-w-3xl mx-auto"
-                    >
-                        Experience true agent autonomy. See how Gapflow agents process real-world tasks through reasoning, validation, and execution.
-                    </motion.p>
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    {/* Left Panel: Inputs */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        className="bg-white/80 backdrop-blur-xl border border-slate-200 rounded-3xl p-8 shadow-2xl relative"
-                    >
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-[#10B981]/10 rounded-full blur-[40px] -z-10" />
-                        <h3 className="text-2xl font-semibold text-slate-900 mb-6 flex items-center gap-3">
-                            <Activity className="text-[#10B981]" /> Agent Playground
-                        </h3>
-
-                        <div className="space-y-4 mb-8">
-                            {TASKS.map((task) => (
-                                <button
-                                    key={task.id}
-                                    onClick={() => handleTaskClick(task)}
-                                    className={`w-full text-left p-4 rounded-xl border transition-all duration-300 flex items-center gap-4 ${activeTask.id === task.id
-                                        ? 'bg-[#10B981]/10 border-[#10B981]/50 text-slate-900 shadow-[0_0_20px_rgba(16,185,129,0.1)]'
-                                        : 'bg-slate-100 border-transparent text-slate-600 hover:bg-slate-200'
-                                        }`}
-                                >
-                                    <div className={`p-2 rounded-lg ${activeTask.id === task.id ? 'bg-[#10B981]/20' : 'bg-slate-200'}`}>
-                                        {task.icon}
-                                    </div>
-                                    <span className="font-medium text-lg">{task.title}</span>
-                                </button>
-                            ))}
-                        </div>
-
-                        <button
-                            onClick={startDemo}
-                            disabled={isPlaying}
-                            className={`w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all duration-300 ${isPlaying
-                                ? 'bg-[#10B981]/20 text-[#10B981] cursor-not-allowed border border-[#10B981]/30'
-                                : 'bg-[#10B981] text-[#0A0B14] hover:bg-[#0ea5e9] hover:shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:-translate-y-1'
-                                }`}
-                        >
-                            {isPlaying ? (
-                                <>
-                                    <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin" />
-                                    Agent Processing...
-                                </>
-                            ) : (
-                                <>
-                                    <Play className="w-5 h-5" /> Execute Workflow
-                                </>
-                            )}
-                        </button>
-                    </motion.div>
-
-                    {/* Right Panel: Agent Execution Trace */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        className="bg-white border border-slate-200 rounded-3xl p-8 font-mono relative"
-                    >
-                        <div className="absolute top-0 right-0 p-4 font-sans text-xs font-semibold tracking-wider text-[#10B981] uppercase bg-[#10B981]/10 rounded-bl-xl rounded-tr-3xl">Live Log</div>
-
-                        <div className="mt-6 space-y-8">
-                            {AGENT_STEPS.map((step, index) => {
-                                const isActive = currentStep === index;
-                                const isPast = currentStep > index || (currentStep === 2 && !isPlaying && activeTask); // Completed state correctly checks running status
-                                const opacity = isPast || isActive ? 1 : 0.4;
-
-                                return (
-                                    <div key={step.id} className="relative flex gap-6" style={{ opacity }}>
-                                        {/* Connecting Line */}
-                                        {index < AGENT_STEPS.length - 1 && (
-                                            <div className={`absolute left-5 top-12 bottom-[-40px] w-0.5 transition-colors duration-500 ${isPast ? 'bg-[#10B981]' : 'bg-slate-200'}`} />
-                                        )}
-
-                                        {/* Step Indicator */}
-                                        <div className={`relative z-10 w-10 h-10 rounded-full flex items-center justify-center border-2 transition-colors duration-500 bg-white ${isPast && (!isActive || !isPlaying) ? 'border-[#10B981] text-[#10B981]' : isActive && isPlaying ? 'border-[#eab308] text-[#eab308] shadow-[0_0_15px_rgba(234,179,8,0.3)]' : 'border-white/20 text-slate-900/50'
-                                            }`}>
-                                            {isPast && (!isActive || !isPlaying) ? <CheckCircle2 className="w-5 h-5" /> : <span>{index + 1}</span>}
-
-                                            {/* Pulse effect if active */}
-                                            {isActive && isPlaying && (
-                                                <span className="absolute w-full h-full rounded-full border-2 border-[#eab308] animate-ping opacity-75" />
-                                            )}
-                                        </div>
-
-                                        {/* Step Content */}
-                                        <div className="flex-1 pt-1">
-                                            <h4 className={`text-xl font-bold mb-2 transition-colors ${isPast && (!isActive || !isPlaying) ? 'text-[#10B981]' : isActive && isPlaying ? 'text-[#eab308]' : 'text-slate-900'
-                                                }`}>
-                                                {step.label}
-                                            </h4>
-                                            <p className="text-slate-600 font-sans">
-                                                {step.description}
-                                            </p>
-
-                                            <AnimatePresence>
-                                                {(isActive || isPast) && (
-                                                    <motion.div
-                                                        initial={{ opacity: 0, height: 0 }}
-                                                        animate={{ opacity: 1, height: 'auto' }}
-                                                        className="mt-4 bg-slate-100 rounded-lg p-4 border border-slate-200"
-                                                    >
-                                                        <div className="flex items-center gap-2 text-sm text-[#10B981] mb-2">
-                                                            <ChevronRight className="w-4 h-4" />
-                                                            {isActive && isPlaying ? <span className="animate-pulse">Running process...</span> : <span>Process completed</span>}
-                                                        </div>
-                                                        <p className="text-xs text-slate-900/60 font-sans">
-                                                            Target: {activeTask.title}
-                                                        </p>
-                                                    </motion.div>
-                                                )}
-                                            </AnimatePresence>
-                                        </div>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </motion.div>
-                </div>
-            </div>
-        </section>
-    );
-}
+import { CheckCircle2, Play, Database, BrainCircuit, FileCheck } from 'lucide-react';
+ 
+ const TASKS = [
+     { 
+         id: '1', 
+         title: 'Automate Customer Support', 
+         icon: <BrainCircuit className="w-5 h-5" />,
+         steps: [
+             { id: 'reasoning', label: 'Intent Analysis', description: 'Agent classifies ticket as "Billing" and retrieves customer history.' },
+             { id: 'validation', label: 'Guardrail Check', description: 'Verifying refund policy constraints and secure PII handling.' },
+             { id: 'execution', label: 'Auto-Resolution', description: 'Issuing partial credit and updating Zendesk ticket status.' }
+         ]
+     },
+     { 
+         id: '2', 
+         title: 'Analyze Sales Data', 
+         icon: <Database className="w-5 h-5" />,
+         steps: [
+             { id: 'reasoning', label: 'Data Mapping', description: 'Agent identifies Q3 sales vectors and isolates outlier regions.' },
+             { id: 'validation', label: 'Schema Audit', description: 'Verifying currency conversion rates and cross-referencing CRM totals.' },
+             { id: 'execution', label: 'Synthesis', description: 'Generating growth projections and pushing to Snowflake BI layer.' }
+         ]
+     },
+     { 
+         id: '3', 
+         title: 'Generate Market Report', 
+         icon: <FileCheck className="w-5 h-5" />,
+         steps: [
+             { id: 'reasoning', label: 'Deep Crawl', description: 'Agent scrapes competitor pricing and social sentiment trends.' },
+             { id: 'validation', label: 'Source Verification', description: 'Filtering for high-confidence financial signals and removing noise.' },
+             { id: 'execution', label: 'Drafting', description: 'Compiling PDF executive summary and dispatching via Slack.' }
+         ]
+     }
+ ];
+ 
+ export default function AgentDemo() {
+     const [activeTask, setActiveTask] = useState(TASKS[0]);
+     const [currentStep, setCurrentStep] = useState(0);
+     const [isPlaying, setIsPlaying] = useState(false);
+ 
+     useEffect(() => {
+         let interval: NodeJS.Timeout;
+         if (isPlaying) {
+             interval = setInterval(() => {
+                 setCurrentStep((prev) => {
+                     if (prev >= activeTask.steps.length - 1) {
+                         setIsPlaying(false);
+                         return activeTask.steps.length - 1;
+                     }
+                     return prev + 1;
+                 });
+             }, 2000);
+         }
+         return () => clearInterval(interval);
+     }, [isPlaying, activeTask]);
+ 
+     const handleTaskClick = (task: typeof TASKS[0]) => {
+         setActiveTask(task);
+         setCurrentStep(0);
+         setIsPlaying(false);
+     };
+ 
+     const startDemo = () => {
+         setCurrentStep(0);
+         setIsPlaying(true);
+     };
+ 
+     return (
+         <section id="demo" className="section-padding bg-slate-50/50 overflow-hidden border-y border-slate-100">
+             <div className="container-standard">
+                 <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+                     {/* Left Panel: Content */}
+                     <div className="flex-1 max-w-xl">
+                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-100 mb-6">
+                             <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+                             <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Autonomous Core</span>
+                         </div>
+                         
+                         <h2 className="heading-section mb-6">
+                             Watch <span className="text-[#10B981]">AI</span> in Action.<br />
+                             <span className="text-slate-300">Total Logic Autonomy.</span>
+                         </h2>
+                         
+                         <p className="text-subcopy mb-10">
+                             True agent autonomy at scale. See how Gapflow agents process real-world tasks through native reasoning and execution.
+                         </p>
+   
+                         <div className="space-y-3 mb-10">
+                             {TASKS.map((task) => (
+                                 <button
+                                     key={task.id}
+                                     onClick={() => handleTaskClick(task)}
+                                     className={`w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-4 ${activeTask.id === task.id
+                                         ? 'bg-white border-slate-900 text-slate-900 shadow-xl shadow-slate-200/20'
+                                         : 'bg-white/50 border-slate-100 text-slate-500 hover:border-slate-200 hover:bg-white'
+                                         }`}
+                                 >
+                                     <div className={`p-2 rounded-lg transition-colors ${activeTask.id === task.id ? 'bg-slate-900 text-white' : 'text-slate-400'}`}>
+                                         {task.icon}
+                                     </div>
+                                     <span className="font-bold text-sm uppercase tracking-widest">{task.title}</span>
+                                 </button>
+                             ))}
+                         </div>
+   
+                         <button
+                             onClick={startDemo}
+                             disabled={isPlaying}
+                             className={`btn-primary w-full sm:w-auto flex items-center justify-center gap-3 ${isPlaying ? 'opacity-50 cursor-not-allowed' : ''}`}
+                         >
+                             {isPlaying ? (
+                                 <>
+                                     <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                     Processing...
+                                 </>
+                             ) : (
+                                 <>
+                                     <Play className="w-4 h-4" fill="currentColor" /> Run Demo
+                                 </>
+                             )}
+                         </button>
+                     </div>
+ 
+                     {/* Right Panel: Live Trace */}
+                     <div className="flex-1 w-full max-w-xl">
+                         <div className="bg-white border border-slate-100 rounded-[2.5rem] p-8 lg:p-12 shadow-2xl shadow-slate-200/50 relative overflow-hidden">
+                             <div className="absolute top-8 right-8 text-[10px] font-bold tracking-widest text-[#10B981] uppercase bg-emerald-50/50 border border-emerald-100/50 px-4 py-1.5 rounded-full">Live Trace</div>
+                             
+                             <div className="mt-10 space-y-10">
+                                 {activeTask.steps.map((step, index) => {
+                                       const isActive = currentStep === index;
+                                       const isPast = currentStep > index || (currentStep === activeTask.steps.length - 1 && !isPlaying);
+                                       const opacity = isPast || isActive ? 1 : 0.2;
+   
+                                       return (
+                                           <div key={step.id} className="relative flex gap-6" style={{ opacity }}>
+                                               {/* Connecting Line */}
+                                               {index < activeTask.steps.length - 1 && (
+                                                   <div className={`absolute left-[21px] top-12 bottom-[-40px] w-px transition-colors duration-500 ${isPast ? 'bg-[#10B981]' : 'bg-slate-100'}`} />
+                                               )}
+   
+                                               {/* Step Indicator */}
+                                               <div className={`relative z-10 w-11 h-11 rounded-full flex items-center justify-center border-2 transition-all duration-500 ${
+                                                   isPast && (!isActive || !isPlaying) 
+                                                     ? 'bg-[#10B981] border-[#10B981] text-white' 
+                                                     : isActive && isPlaying 
+                                                       ? 'border-[#10B981] text-[#10B981] bg-white animate-pulse' 
+                                                       : 'border-slate-100 bg-white text-slate-300'
+                                                   }`}>
+                                                   {isPast && (!isActive || !isPlaying) ? <CheckCircle2 className="w-5 h-5" /> : <span className="font-bold text-xs">{index + 1}</span>}
+                                               </div>
+   
+                                               {/* Step Content */}
+                                               <div className="flex-1 pt-1">
+                                                   <h4 className={`text-lg font-bold mb-1 transition-colors ${
+                                                       isPast && (!isActive || !isPlaying) ? 'text-slate-900' : isActive && isPlaying ? 'text-[#10B981]' : 'text-slate-400'
+                                                   }`}>
+                                                       {step.label}
+                                                   </h4>
+                                                   <p className="text-sm text-slate-500 font-medium leading-relaxed">
+                                                       {step.description}
+                                                   </p>
+                                               </div>
+                                           </div>
+                                       );
+                                   })}
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </section>
+     );
+ }

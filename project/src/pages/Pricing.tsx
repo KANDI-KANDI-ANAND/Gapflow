@@ -81,101 +81,72 @@ export default function Pricing() {
         </div>
       </div>
 
-      <section id="pricing-hero" className="relative bg-white py-16 lg:py-20" style={{ minHeight: '60vh', display: 'flex', alignItems: 'center' }}>
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0" style={{
-            background: 'radial-gradient(1200px 600px at 50% -10%, rgba(107, 75, 255, 0.25), transparent)'
-          }} />
-        </div>
-        <div className="container relative z-10 mx-auto px-6" style={{ textAlign: 'center' }}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#32D38A]/10 border border-[#32D38A]/20 mb-6">
-            <Sparkles size={16} className="text-[#32D38A]" />
-            <span className="text-sm text-slate-600 font-medium">Pricing</span>
+      <section id="pricing-hero" className="py-24 lg:py-32 bg-white relative">
+        <div className="container relative z-10 mx-auto px-6 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-50 border border-slate-200 mb-8">
+            <Sparkles size={14} className="text-[#10B981]" />
+            <span className="text-xs text-slate-500 font-medium tracking-wide uppercase">Pricing</span>
           </div>
-          <h1 className="text-5xl lg:text-7xl font-bold text-slate-900 leading-tight mb-6">
+          <h1 className="text-5xl lg:text-7xl font-bold text-slate-900 leading-tight mb-6 tracking-tight">
             Simple, scalable pricing
           </h1>
-          <p className="text-xl text-slate-600 font-light max-w-3xl mx-auto mb-12">
-            Start free. Upgrade when you're ready to scale.
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto mb-12 leading-relaxed">
+            Start free. Upgrade when you're ready to scale. No hidden fees.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <button className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#10B981] to-[#059669] text-slate-900 font-medium text-lg rounded-xl shadow-lg shadow-[#10B981]/20 hover:shadow-2xl hover:shadow-[#10B981]/40 transition-all duration-300 hover:scale-[1.02]">
+            <button className="inline-flex items-center gap-3 px-8 py-3.5 bg-slate-900 text-white font-semibold text-lg rounded-full hover:bg-slate-800 transition-all duration-300">
               <span>Start Free</span>
-              <Rocket size={20} />
+              <Rocket size={18} />
             </button>
-            <button className="inline-flex items-center gap-3 px-8 py-4 bg-white/60 backdrop-blur-sm text-slate-600 font-medium text-lg rounded-xl border border-slate-200 hover:border-[#10B981]/50 hover:bg-white hover:text-slate-900 transition-all duration-300">
-              <Phone size={20} />
+            <button className="inline-flex items-center gap-3 px-8 py-3.5 bg-white text-slate-900 font-semibold text-lg rounded-full border border-slate-200 hover:border-slate-300 transition-all duration-300">
+              <Phone size={18} />
               <span>Talk to Sales</span>
             </button>
           </div>
         </div>
       </section>
 
-      <section id="plans" className="relative bg-white py-16 lg:py-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#F8FAFC] via-transparent to-[#F8FAFC]" />
+      <section id="plans" className="py-24 lg:py-32 bg-white relative border-t border-slate-100">
         <div className="container relative z-10 mx-auto px-6">
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 text-center mb-8">Choose your plan</h2>
-
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 'var(--space-md)', marginBottom: 'var(--space-xxl)' }}>
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 text-center mb-20 tracking-tight">Choose your plan</h2>
+ 
+          <div className="flex justify-center items-center gap-4 mb-20">
             <button
               onClick={() => setBillingPeriod('Monthly')}
-              className="px-6 py-3 rounded-lg font-medium text-lg transition-all duration-300"
-              style={{
-                background: billingPeriod === 'Monthly' ? 'linear-gradient(135deg, #10B981, #059669)' : 'transparent',
-                color: billingPeriod === 'Monthly' ? '#fff' : '#64748b',
-                border: billingPeriod === 'Monthly' ? 'none' : '1px solid #e2e8f0'
-              }}
+              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${billingPeriod === 'Monthly' ? 'bg-slate-900 text-white' : 'bg-white border border-slate-200 text-slate-500'}`}
             >
               Monthly
             </button>
             <button
               onClick={() => setBillingPeriod('Yearly')}
-              className="px-6 py-3 rounded-lg font-medium text-lg transition-all duration-300"
-              style={{
-                background: billingPeriod === 'Yearly' ? 'linear-gradient(135deg, #10B981, #059669)' : 'transparent',
-                color: billingPeriod === 'Yearly' ? '#fff' : '#64748b',
-                border: billingPeriod === 'Yearly' ? 'none' : '1px solid #e2e8f0'
-              }}
+              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${billingPeriod === 'Yearly' ? 'bg-slate-900 text-white' : 'bg-white border border-slate-200 text-slate-500'}`}
             >
               Yearly
             </button>
-            <span className="text-sm text-[#32D38A] font-medium">Yearly saves 20%</span>
+            <span className="text-sm text-[#10B981] font-bold ml-2">Save 20%</span>
           </div>
-
+ 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {plans.map((plan, i) => (
-              <div key={i} className={`relative bg-white rounded-2xl p-8 transition-all duration-300 ${plan.highlight ? 'border-2 border-[#10B981]' : 'border border-slate-200'} hover:border-[#10B981]/50`}>
-                {plan.highlight && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="inline-block px-4 py-1 text-xs font-semibold rounded-full bg-gradient-to-r from-[#10B981] to-[#059669] text-slate-900 shadow-lg">
-                      {plan.badge}
-                    </span>
-                  </div>
-                )}
-                {!plan.highlight && plan.badge && (
-                  <div style={{ marginBottom: 'var(--space-md)' }}>
-                    <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#10B981]/10 text-[#10B981] border border-[#10B981]/20">
-                      {plan.badge}
-                    </span>
-                  </div>
-                )}
-                <h3 className="text-2xl font-bold text-slate-900 mb-4 mt-2">{plan.name}</h3>
-                <div style={{ marginBottom: 'var(--space-lg)' }}>
-                  <span className="text-5xl font-bold text-[#10B981]">{plan.price}</span>
-                  <span className="text-lg text-slate-600 ml-1">{plan.unit}</span>
+              <div key={i} className={`relative bg-white rounded-2xl p-8 lg:p-10 border transition-all duration-300 ${plan.highlight ? 'border-[#10B981] ring-1 ring-[#10B981]' : 'border-slate-100 bg-slate-50'}`}>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">{plan.name}</h3>
+                <p className="text-sm text-slate-500 mb-8">{plan.badge}</p>
+                <div className="mb-8">
+                  <span className="text-5xl font-bold text-slate-900">{plan.price}</span>
+                  <span className="text-slate-500 ml-1">{plan.unit}</span>
                 </div>
-                <ul style={{ listStyle: 'none', padding: 0, marginBottom: 'var(--space-lg)' }}>
+                <ul className="space-y-4 mb-10">
                   {plan.features.map((feature, j) => (
-                    <li key={j} className="flex items-center gap-3 mb-3">
-                      <Check size={18} className="text-[#32D38A] flex-shrink-0" />
-                      <span className="text-slate-600">{feature}</span>
+                    <li key={j} className="flex items-center gap-3">
+                      <Check size={16} className="text-[#10B981] flex-shrink-0" />
+                      <span className="text-sm font-medium text-slate-600">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 <button
-                  className={`w-full inline-flex items-center justify-center gap-2 px-6 py-3 font-medium rounded-lg transition-all duration-300 ${plan.highlight
-                    ? 'bg-gradient-to-r from-[#10B981] to-[#059669] text-slate-900 shadow-lg shadow-[#10B981]/20 hover:shadow-xl hover:shadow-[#10B981]/30 hover:scale-[1.02]'
-                    : 'bg-white text-slate-600 border border-slate-200 hover:border-[#10B981]/50 hover:text-slate-900'
+                  className={`w-full py-3 rounded-xl font-bold transition-all duration-300 ${plan.highlight
+                    ? 'bg-[#10B981] text-white hover:bg-[#059669]'
+                    : 'bg-white text-slate-900 border border-slate-200 hover:border-slate-300'
                     }`}
                 >
                   {plan.cta.label}
@@ -185,33 +156,27 @@ export default function Pricing() {
           </div>
         </div>
       </section>
-
-      <section id="compare" className="relative bg-white py-16 lg:py-20">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(107,75,255,0.3) 1px, transparent 0)',
-            backgroundSize: '48px 48px'
-          }} />
-        </div>
+ 
+      <section id="compare" className="py-24 lg:py-32 bg-white relative border-t border-slate-100">
         <div className="container relative z-10 mx-auto px-6">
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 text-center mb-16">Plan comparison</h2>
-          <div style={{ overflowX: 'auto' }}>
-            <table className="w-full max-w-5xl mx-auto bg-white border border-slate-200 rounded-2xl overflow-hidden">
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 text-center mb-20 tracking-tight">Plan comparison</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full max-w-5xl mx-auto border-collapse">
               <thead>
-                <tr className="bg-white/50 border-b border-slate-200">
-                  <th className="px-6 py-4 text-left font-semibold text-slate-900">Feature</th>
-                  <th className="px-6 py-4 text-center font-semibold text-slate-900">Starter</th>
-                  <th className="px-6 py-4 text-center font-semibold text-slate-900">Pro</th>
-                  <th className="px-6 py-4 text-center font-semibold text-slate-900">Enterprise</th>
+                <tr className="border-b border-slate-200">
+                  <th className="px-6 py-4 text-left text-sm font-bold text-slate-900 uppercase tracking-wider">Feature</th>
+                  <th className="px-6 py-4 text-center text-sm font-bold text-slate-900 uppercase tracking-wider">Starter</th>
+                  <th className="px-6 py-4 text-center text-sm font-bold text-slate-900 uppercase tracking-wider">Pro</th>
+                  <th className="px-6 py-4 text-center text-sm font-bold text-slate-900 uppercase tracking-wider">Enterprise</th>
                 </tr>
               </thead>
               <tbody>
                 {comparisonRows.map((row, i) => (
-                  <tr key={i} className="border-t border-slate-200">
-                    <td className="px-6 py-4 font-medium text-slate-600">{row[0]}</td>
-                    <td className="px-6 py-4 text-center text-slate-600">{row[1]}</td>
-                    <td className="px-6 py-4 text-center text-slate-600">{row[2]}</td>
-                    <td className="px-6 py-4 text-center text-slate-600">{row[3]}</td>
+                  <tr key={i} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+                    <td className="px-6 py-5 text-sm font-semibold text-slate-700">{row[0]}</td>
+                    <td className="px-6 py-5 text-center text-sm text-slate-500">{row[1]}</td>
+                    <td className="px-6 py-5 text-center text-sm text-slate-500">{row[2]}</td>
+                    <td className="px-6 py-5 text-center text-sm text-slate-500">{row[3]}</td>
                   </tr>
                 ))}
               </tbody>
@@ -220,36 +185,29 @@ export default function Pricing() {
         </div>
       </section>
 
-      <section id="faq" className="relative bg-white py-16 lg:py-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#F8FAFC] via-transparent to-[#F8FAFC]" />
+      <section id="faq" className="py-24 lg:py-32 bg-white relative border-t border-slate-100">
         <div className="container relative z-10 mx-auto px-6">
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 text-center mb-16">Frequently asked questions</h2>
-          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 text-center mb-20 tracking-tight">Frequently asked questions</h2>
+          <div className="max-w-3xl mx-auto space-y-6">
             {faqs.map((faq, i) => (
-              <div key={i} className="bg-white border border-slate-200 rounded-xl p-6 mb-6">
-                <h3 className="text-xl font-bold text-[#10B981] mb-3">{faq.q}</h3>
-                <p className="text-slate-600 leading-relaxed">{faq.a}</p>
+              <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-8 transition-all duration-300 hover:border-slate-200">
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{faq.q}</h3>
+                <p className="text-slate-500 leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
-
-      <section id="pricing-final-cta" className="relative bg-gradient-to-b from-[#F8FAFC] to-slate-50 py-16 lg:py-24">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0" style={{
-            background: 'radial-gradient(1200px 600px at 50% 50%, rgba(107, 75, 255, 0.25), transparent)'
-          }} />
-        </div>
+ 
+      <section id="pricing-final-cta" className="py-24 lg:py-32 bg-slate-900 relative overflow-hidden">
         <div className="container relative z-10 mx-auto px-6 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-12">Ready to automate?</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-12 tracking-tight">Ready to automate?</h2>
           <div className="flex gap-4 justify-center flex-wrap">
-            <button className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#10B981] to-[#059669] text-slate-900 font-medium text-lg rounded-xl shadow-lg shadow-[#10B981]/20 hover:shadow-2xl hover:shadow-[#10B981]/40 transition-all duration-300 hover:scale-[1.02]">
+            <button className="inline-flex items-center gap-3 px-8 py-3.5 bg-white text-slate-900 font-bold text-lg rounded-full hover:bg-slate-100 transition-all duration-300">
               <span>Get Started</span>
-              <Rocket size={20} />
+              <Rocket size={18} />
             </button>
-            <button className="text-[#10B981] font-medium hover:text-[#059669] transition-colors duration-300 px-8 py-4">
-              <Phone size={20} className="inline mr-2" />
+            <button className="px-8 py-3.5 text-white font-bold text-lg hover:text-[#10B981] transition-all duration-300">
               Talk to Sales →
             </button>
           </div>

@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import {
   Search,
-  ChevronDown,
-  ChevronUp,
   Layers,
   Rocket,
-  ArrowRight
+  ChevronDown,
+  Sparkles,
 } from 'lucide-react';
+import { motion } from 'framer-motion';
 import ScrollToTop from '../components/ScrollToTop';
 import templatesData from '../data/templates.json';
 import { searchTemplate } from '../utils/searchUtils';
@@ -14,88 +14,39 @@ import TemplateCard from '../components/TemplateCard';
 
 export default function Templates() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeFilter, setActiveFilter] = useState('All');
-  const [sortBy, setSortBy] = useState('Newest');
-  const [aiExpanded, setAiExpanded] = useState(false);
-  const [contactCentreExpanded, setContactCentreExpanded] = useState(false);
-  const [aiSubcategories, setAiSubcategories] = useState<string[]>([]);
-  const [contactCentreSubcategories, setContactCentreSubcategories] = useState<string[]>([]);
+  const [activeFilter, setActiveFilter] = useState('All Templates');
+  const [sortBy, setSortBy] = useState('Most Popular');
 
   const templates = templatesData.templates;
 
-  const allCategories = Array.from(new Set(templates.flatMap(t => t.categories)));
-
-  const filters = ['All', 'AI', 'Contact Centre', 'Sales & CRM', 'Marketing', 'Customer Support', 'Data & Analytics', 'IT & DevOps', 'Finance & Accounting', 'Communication', 'Productivity', 'Data & Storage'];
-
-  const aiSubFilters = [
-    'Agents',
-    'Chains',
-    'Vector Stores',
-    'Tools',
-    'Language Models',
-    'Output Parsers',
-    'Embeddings',
-    'Rerankers',
-    'Retrievers',
-    'Memory',
-    'Model Context Protocol',
-    'Text Splitters',
-    'Document Loaders'
+  const filters = [
+    'All Templates',
+    'AI',
+    'Built-in Apps',
+    'Business Intelligence',
+    'Business Operations & ERPs',
+    'Commerce',
+    'Communication',
+    'CRM/Sales',
+    'Customer Support',
+    'Education',
+    'Enterprise'
   ];
-  const contactCentreSubFilters = [
-    'List Management',
-    'Outbound Dialling',
-    'Bright Pattern',
-    'Genesys'
-  ];
-  const sortOptions = ['Newest', 'Popular', 'A‑Z'];
 
-  const isFilterEnabled = (filter: string) => {
-    if (filter === 'All') return true;
-    return templates.some(t => t.categories.includes(filter));
-  };
-
-  const toggleAiSubcategory = (subcategory: string) => {
-    setAiSubcategories(prev =>
-      prev.includes(subcategory)
-        ? prev.filter(s => s !== subcategory)
-        : [...prev, subcategory]
-    );
-  };
-
-  const toggleContactCentreSubcategory = (subcategory: string) => {
-    setActiveFilter('Contact Centre');
-    setContactCentreExpanded(true);
-    setContactCentreSubcategories(prev =>
-      prev.includes(subcategory)
-        ? prev.filter(s => s !== subcategory)
-        : [...prev, subcategory]
-    );
-  };
+  const sortOptions = ['Most Popular', 'Newest', 'A‑Z'];
 
   const filteredAndSortedTemplates = templates.filter(t => {
     let matchesFilter = false;
-
-    if (activeFilter === 'All') {
+    if (activeFilter === 'All Templates') {
       matchesFilter = true;
-    } else if (activeFilter === 'Contact Centre') {
-      if (contactCentreSubcategories.length === 0) {
-        matchesFilter = t.categories.includes('Contact Centre');
-      } else {
-        matchesFilter = contactCentreSubcategories.some(sub => {
-          const normalizedSub = sub.toLowerCase().replace(/\s+/g, '-');
-          return t.tags.some(tag => tag.toLowerCase() === normalizedSub) ||
-            t.categories.some(cat => cat.toLowerCase() === sub.toLowerCase()) ||
-            t.title.toLowerCase().includes(sub.toLowerCase()) ||
-            t.integrations?.some(int => int.toLowerCase().includes(sub.toLowerCase()));
-        });
-      }
     } else {
-      matchesFilter = t.categories.includes(activeFilter);
+      // Check categories in JSON
+      matchesFilter = t.categories.some(cat =>
+        cat.toLowerCase().includes(activeFilter.toLowerCase()) ||
+        activeFilter.toLowerCase().includes(cat.toLowerCase())
+      );
     }
-
     const matchesSearch = searchTemplate(t, searchQuery);
-
     return matchesFilter && matchesSearch;
   }).sort((a, b) => {
     if (sortBy === 'Newest') {
@@ -108,297 +59,176 @@ export default function Templates() {
     return 0;
   });
 
+  const getCategoryCount = (category: string) => {
+    if (category === 'All Templates') return templates.length;
+    return templates.filter(t =>
+      t.categories.some(cat =>
+        cat.toLowerCase().includes(category.toLowerCase()) ||
+        category.toLowerCase().includes(cat.toLowerCase())
+      )
+    ).length;
+  };
+
   return (
-    <div>
+    <div className="bg-white min-h-screen">
       <ScrollToTop />
-      <section id="templates-hero" className="relative bg-white py-8 lg:py-12" style={{ display: 'flex', alignItems: 'center' }}>
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0" style={{
-            background: 'radial-gradient(1200px 600px at 50% -10%, rgba(107, 75, 255, 0.25), transparent)'
-          }} />
-        </div>
-        <div className="container relative z-10 mx-auto px-6" style={{ textAlign: 'center' }}>
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#32D38A]/10 border border-[#32D38A]/20 mb-4">
-            <Layers size={16} className="text-[#32D38A]" />
-            <span className="text-sm text-slate-600 font-medium">Templates Library</span>
+
+      {/* Page Header */}
+      <section className="pt-24 pb-12 lg:pt-32 lg:pb-16 bg-white border-b border-slate-100 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-purple-50/20 via-white to-white pointer-events-none" />
+
+        <div className="container-standard text-center relative z-10">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-50 border border-purple-100 shadow-sm mb-6">
+            <Sparkles size={14} className="text-purple-600" />
+            <span className="text-[10px] text-purple-700 font-bold tracking-[0.15em] uppercase">Ready-to-use flows</span>
           </div>
-          <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight mb-4">
-            Start fast with ready‑made flows
+
+          <h1 className="text-4xl lg:text-7xl font-black text-slate-900 mb-6 tracking-tighter">
+            Templates <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">library</span>
           </h1>
-          <p className="text-lg lg:text-xl text-slate-600 font-light max-w-3xl mx-auto mb-8">
-            Pick a blueprint, connect your apps, and customise.
+          <p className="text-base lg:text-lg text-slate-500 font-medium max-w-3xl mx-auto mb-12 leading-relaxed">
+            Choose from thousands of production-ready blueprints that will help you save time and scale your automation logic.
           </p>
-          <div className="flex gap-3 justify-center flex-wrap">
-            <button className="inline-flex items-center gap-3 px-7 py-3 bg-gradient-to-r from-[#10B981] to-[#059669] text-slate-900 font-medium text-base rounded-xl shadow-lg shadow-[#10B981]/20 hover:shadow-2xl hover:shadow-[#10B981]/40 transition-all duration-300 hover:scale-[1.02]">
-              <span>Browse All</span>
-              <Layers size={18} />
-            </button>
-            <button className="inline-flex items-center gap-3 px-7 py-3 bg-white/60 backdrop-blur-sm text-slate-600 font-medium text-base rounded-xl border border-slate-200 hover:border-[#10B981]/50 hover:bg-white hover:text-slate-900 transition-all duration-300">
-              <span>Create from Scratch</span>
-            </button>
+
+          {/* Large Search Bar Area */}
+          <div className="max-w-4xl mx-auto relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/20 via-[#10B981]/10 to-blue-500/20 blur-2xl opacity-0 group-focus-within:opacity-100 transition-opacity duration-700" />
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search templates..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full px-8 py-6 bg-white border-2 border-slate-100 rounded-[2rem] text-lg font-bold placeholder-slate-300 focus:outline-none focus:border-purple-400 focus:ring-4 focus:ring-purple-500/5 transition-all shadow-xl shadow-purple-900/5"
+              />
+              <div className="absolute right-6 top-1/2 -translate-y-1/2 flex items-center gap-4">
+                <span className="h-8 w-px bg-slate-100 hidden sm:block" />
+                <Search size={24} className="text-slate-300 group-focus-within:text-purple-500 transition-colors" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="catalog" className="relative bg-white py-8 lg:py-12">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#F8FAFC] via-transparent to-[#F8FAFC]" />
-        <div className="container relative z-10 mx-auto px-6">
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 text-center mb-12">Template Library</h2>
-
-          <div className="mb-12">
-            <div className="relative w-full max-w-4xl mx-auto group">
-              <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none group-focus-within:text-[#10B981] transition-colors" />
-              <input
-                type="text"
-                placeholder="Search templates and integrations…"
-                aria-label="Search templates"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-4 py-3 pl-12 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-[#6B7280] focus:outline-none focus:border-[#10B981]/50 transition-all duration-300"
-              />
-            </div>
-          </div>
-
-          <div style={{ display: 'flex', gap: 'var(--space-lg)', maxWidth: '1400px', margin: '0 auto' }} className="flex-col md:flex-row">
-            <aside style={{
-              flexShrink: 0,
-              height: 'fit-content',
-              maxHeight: 'calc(100vh - 120px)'
-            }} className="w-[220px] md:sticky md:top-[100px] bg-white border border-slate-200 rounded-2xl p-4">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-4">
-                Categories
-              </h3>
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '4px',
-                maxHeight: 'calc(100vh - 340px)',
-                overflowY: 'auto',
-                overflowX: 'hidden',
-                marginLeft: '-4px',
-                marginRight: '-4px',
-                paddingLeft: '4px',
-                paddingRight: '4px'
-              }}>
-                {filters.map(filter => {
-                  const isAI = filter === 'AI';
-                  const isContactCentre = filter === 'Contact Centre';
-                  const filterEnabled = isFilterEnabled(filter);
-                  return (
-                    <div key={filter}>
-                      <label
-                        className="flex items-center justify-between px-2 py-2 rounded-lg transition-all duration-200"
-                        style={{
-                          backgroundColor: activeFilter === filter ? 'rgba(107, 75, 255, 0.15)' : 'transparent',
-                          color: !filterEnabled ? '#9ca3af' : (activeFilter === filter ? '#10B981' : '#475569'),
-                          fontWeight: activeFilter === filter ? 600 : 400,
-                          cursor: filterEnabled ? 'pointer' : 'not-allowed',
-                          opacity: filterEnabled ? 1 : 0.5
-                        }}
-                        onMouseEnter={(e) => {
-                          if (activeFilter !== filter && filterEnabled) {
-                            e.currentTarget.style.backgroundColor = 'rgba(26, 27, 46, 0.6)';
-                          }
-                        }}
-                        onMouseLeave={(e) => {
-                          if (activeFilter !== filter) {
-                            e.currentTarget.style.backgroundColor = 'transparent';
-                          }
-                        }}
-                      >
-                        <div style={{ display: 'flex', alignItems: 'center' }}>
-                          <input
-                            type="radio"
-                            name="category"
-                            value={filter}
-                            checked={activeFilter === filter}
-                            disabled={!filterEnabled}
-                            onChange={() => {
-                              if (filterEnabled) {
-                                setActiveFilter(filter);
-                                if (filter !== 'AI') {
-                                  setAiSubcategories([]);
-                                }
-                                if (filter === 'Contact Centre') {
-                                  setContactCentreSubcategories(contactCentreSubFilters);
-                                } else {
-                                  setContactCentreSubcategories([]);
-                                }
-                              }
-                            }}
-                            className="mr-2 accent-[#10B981] cursor-pointer flex-shrink-0"
-                            style={{ width: '14px', height: '14px' }}
-                          />
-                          <span className="text-sm">{filter}</span>
-                        </div>
-                        {isAI && filterEnabled && (
-                          <button
-                            onClick={(e) => {
-                              e.preventDefault();
-                              setAiExpanded(!aiExpanded);
-                            }}
-                            className="bg-transparent border-0 cursor-pointer flex items-center p-0 text-slate-600 flex-shrink-0"
-                          >
-                            {aiExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
-                          </button>
-                        )}
-                        {isContactCentre && filterEnabled && (
-                          <button
-                            onClick={(e) => {
-                              e.preventDefault();
-                              setContactCentreExpanded(!contactCentreExpanded);
-                            }}
-                            className="bg-transparent border-0 cursor-pointer flex items-center p-0 text-slate-600 flex-shrink-0"
-                          >
-                            {contactCentreExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
-                          </button>
-                        )}
-                      </label>
-
-                      {isAI && aiExpanded && (
-                        <div style={{
-                          marginTop: '4px',
-                          marginLeft: '20px',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          gap: '2px'
-                        }}>
-                          {aiSubFilters.map(subFilter => (
-                            <label
-                              key={subFilter}
-                              className="flex items-center px-1.5 py-1 rounded cursor-pointer transition-all duration-200 text-sm text-slate-600"
-                              onMouseEnter={(e) => {
-                                e.currentTarget.style.backgroundColor = 'rgba(26, 27, 46, 0.6)';
-                              }}
-                              onMouseLeave={(e) => {
-                                e.currentTarget.style.backgroundColor = 'transparent';
-                              }}
-                            >
-                              <input
-                                type="checkbox"
-                                checked={aiSubcategories.includes(subFilter)}
-                                onChange={() => toggleAiSubcategory(subFilter)}
-                                className="mr-2 accent-[#10B981] cursor-pointer flex-shrink-0"
-                                style={{ width: '13px', height: '13px' }}
-                              />
-                              {subFilter}
-                            </label>
-                          ))}
-                        </div>
-                      )}
-
-                      {isContactCentre && contactCentreExpanded && (
-                        <div style={{
-                          marginTop: '4px',
-                          marginLeft: '20px',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          gap: '2px'
-                        }}>
-                          {contactCentreSubFilters.map(subFilter => (
-                            <label
-                              key={subFilter}
-                              className="flex items-center px-1.5 py-1 rounded cursor-pointer transition-all duration-200 text-sm text-slate-600"
-                              onMouseEnter={(e) => {
-                                e.currentTarget.style.backgroundColor = 'rgba(26, 27, 46, 0.6)';
-                              }}
-                              onMouseLeave={(e) => {
-                                e.currentTarget.style.backgroundColor = 'transparent';
-                              }}
-                            >
-                              <input
-                                type="checkbox"
-                                checked={contactCentreSubcategories.includes(subFilter)}
-                                onChange={() => toggleContactCentreSubcategory(subFilter)}
-                                className="mr-2 accent-[#10B981] cursor-pointer flex-shrink-0"
-                                style={{ width: '13px', height: '13px' }}
-                              />
-                              {subFilter}
-                            </label>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+      {/* Browser Section */}
+      <section className="py-12 lg:py-20 bg-[#F9FAFF]">
+        <div className="container-standard">
+          {/* Top Stats & Sorting */}
+          <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6 border-b border-slate-200/50 pb-10">
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-sm">
+                <Layers size={18} className="text-purple-500" />
               </div>
+              <div>
+                <span className="text-sm font-black text-slate-900 block">
+                  {filteredAndSortedTemplates.length} results
+                </span>
+                <span className="text-[10px] font-bold text-purple-500 uppercase tracking-widest">
+                  in {activeFilter}
+                </span>
+              </div>
+            </div>
 
-            </aside>
-
-            <div style={{ flex: 1 }}>
-              <div className="flex justify-between items-center mb-8">
-                <p className="text-slate-500 text-sm font-medium">
-                  {filteredAndSortedTemplates.length} template{filteredAndSortedTemplates.length !== 1 ? 's' : ''} found
-                </p>
-                <div className="flex items-center gap-3">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">Sort:</span>
+            <div className="flex items-center gap-8">
+              <div className="flex items-center gap-4">
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Sort By</span>
+                <div className="relative group">
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value)}
-                    className="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm text-slate-600 font-medium cursor-pointer focus:outline-none focus:border-[#10B981] transition-all duration-300 hover:border-slate-300 shadow-sm"
+                    className="appearance-none bg-white border border-slate-200 rounded-lg px-6 py-2.5 text-xs font-black text-slate-900 focus:outline-none cursor-pointer hover:border-purple-300 transition-colors pr-10 shadow-sm"
                   >
-                    {sortOptions.map(option => (
-                      <option key={option} value={option}>{option}</option>
-                    ))}
+                    {sortOptions.map(opt => <option key={opt} value={opt}>{opt}</option>)}
                   </select>
+                  <ChevronDown size={14} className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 group-hover:text-purple-500 pointer-events-none transition-colors" />
                 </div>
               </div>
+            </div>
+          </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-                {filteredAndSortedTemplates.map((template) => (
-                  <TemplateCard key={template.id} template={template} />
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+            {/* Sidebar */}
+            <aside className="w-full lg:w-72 lg:sticky lg:top-[120px]">
+              <div className="flex items-center gap-3 mb-8 px-2">
+                <div className="w-1.5 h-6 bg-purple-500 rounded-full" />
+                <h3 className="text-sm font-black text-slate-900 uppercase tracking-widest">
+                  Categories
+                </h3>
+              </div>
+              <div className="space-y-1.5">
+                {filters.map(filter => {
+                  const isActive = activeFilter === filter;
+                  const count = getCategoryCount(filter);
+                  return (
+                    <button
+                      key={filter}
+                      onClick={() => setActiveFilter(filter)}
+                      className={`w-full flex items-center justify-between px-5 py-4 rounded-[1.25rem] text-xs font-bold transition-all duration-300 group ${isActive
+                        ? 'text-purple-700 bg-purple-100 shadow-sm shadow-purple-200/50'
+                        : 'text-slate-500 hover:text-slate-900 hover:bg-white hover:shadow-sm'
+                        }`}
+                    >
+                      <span className="flex items-center gap-4">
+                        <div className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${isActive ? 'bg-purple-600 scale-125' : 'bg-slate-300 group-hover:bg-slate-400'}`} />
+                        {filter}
+                      </span>
+                      <span className={`px-2.5 py-1 rounded-full text-[10px] font-black transition-all duration-300 ${isActive
+                        ? 'bg-purple-600 text-white'
+                        : 'bg-slate-100 text-slate-400 group-hover:bg-slate-200 group-hover:text-slate-600'}`}>
+                        {count}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </aside>
+
+            {/* Templates Grid */}
+            <div className="flex-1 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+                {filteredAndSortedTemplates.map((template, i) => (
+                  <motion.div
+                    key={template.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: (i % 3) * 0.1 }}
+                  >
+                    <TemplateCard template={template} />
+                  </motion.div>
                 ))}
               </div>
 
               {filteredAndSortedTemplates.length === 0 && (
-                <div style={{ textAlign: 'center', padding: 'var(--space-xxl)', color: '#6B7280' }}>
-                  <p className="text-lg">No templates found matching your criteria.</p>
+                <div className="text-center py-40 bg-white rounded-[3rem] border border-slate-100 shadow-sm mt-12">
+                  <Layers className="mx-auto text-slate-100 mb-10 animate-bounce" size={80} />
+                  <h3 className="text-2xl font-black text-slate-900 mb-4 tracking-tight">No blueprints found</h3>
+                  <p className="text-slate-400 font-medium text-base">Try adjusting your search or category filters.</p>
                 </div>
               )}
-
-              <div className="mt-16 text-center text-slate-500 text-sm">
-                Showing {filteredAndSortedTemplates.length} of {templates.length} templates
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="submit-template" className="relative bg-white py-12 lg:py-16">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(107,75,255,0.3) 1px, transparent 0)',
-            backgroundSize: '48px 48px'
-          }} />
+      {/* Final CTA */}
+      <section className="section-padding bg-slate-900 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent" />
         </div>
-        <div className="container relative z-10 mx-auto px-6 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">Have a great flow? Share it.</h2>
-          <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto">
-            Contribute a template to help the community move faster.
-          </p>
-          <button className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-[#10B981] transition-all duration-300 group">
-            <span>Submit a template</span>
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </button>
-        </div>
-      </section>
+        <div className="container-standard text-center relative z-10">
+          <h2 className="text-3xl lg:text-6xl font-black text-white mb-10 tracking-tighter leading-tight">
+            Ready to build? <br />
+            <span className="text-[#10B981]">Start for free.</span>
+          </h2>
 
-      <section id="templates-final-cta" className="relative bg-white py-12 lg:py-16">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(16,185,129,0.2) 1px, transparent 0)',
-            backgroundSize: '48px 48px'
-          }} />
-        </div>
-        <div className="container relative z-10 mx-auto px-6 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-8">Ready to build?</h2>
-          <div className="flex gap-6 justify-center items-center flex-wrap">
-            <button className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-[#10B981] transition-all duration-300 group">
-              <span>Start Building</span>
-              <Rocket size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          <div className="flex gap-5 justify-center flex-wrap">
+            <button className="btn-secondary !bg-white !text-slate-900 hover:!bg-slate-100 !border-none group min-w-[220px] shadow-xl shadow-black/20">
+              <span>Create Account</span>
+              <Rocket size={18} className="ml-2 inline group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="text-slate-600 font-bold hover:text-[#10B981] transition-colors duration-300 flex items-center gap-2 group">
-              Go to Docs <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <button className="text-xs font-black uppercase tracking-[0.2em] text-white/60 hover:text-white transition-all px-10 py-5">
+              Talk to Sales →
             </button>
           </div>
         </div>

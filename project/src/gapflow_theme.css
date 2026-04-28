@@ -5,63 +5,66 @@
   --color-primary-2: #059669;
   --color-accent: #F59E0B;
   --color-neutral-100: #FFFFFF;
-  --color-neutral-200: #F7F8FC;
-  --color-neutral-300: #F3F5FB;
-  --color-neutral-400: #E3E6EF;
-  --color-neutral-600: #5F6368;
-  --color-neutral-800: #202124;
-  --color-muted: #9AA0A6;
+  --color-neutral-200: #FFFFFF; /* Changed to pure white */
+  --color-neutral-300: #F9FAFB; /* Subtler light gray */
+  --color-neutral-400: #F3F4F6; /* Borders */
+  --color-neutral-600: #4B5563; /* Text-muted */
+  --color-neutral-800: #111827; /* Darker heading text */
+  --color-muted: #9CA3AF;
   --hero-dark-start: #064E3B;
   --hero-dark-end: #065F46;
 
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-xxl: 32px;
+  --radius-sm: 6px; /* Sharper edges for production feel */
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-xxl: 24px;
   --space-xs: 8px;
   --space-sm: 12px;
   --space-md: 16px;
   --space-lg: 24px;
   --space-xl: 32px;
   --space-xxl: 48px;
-  --space-section: 100px;
+  --space-section: 120px; /* More generous section spacing */
 
-  --shadow-card: 0 2px 6px rgba(0, 0, 0, 0.06);
-  --shadow-elevated: 0 8px 24px rgba(0, 0, 0, 0.12);
-  --shadow-glow: 0 0 24px rgba(16, 185, 129, 0.45);
+  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-elevated: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-glow: none; /* Removed glow shadow */
 
-  --easing: cubic-bezier(.4, 0, .2, 1);
+  --easing: cubic-bezier(0.4, 0, 0.2, 1);
   --dur-fast: 150ms;
   --dur-base: 250ms;
   --dur-slow: 400ms;
   --dur-bg: 8000ms;
 
-  --container-max: 1200px;
+  --container-max: 1280px; /* Slightly wider for modern monitors */
 }
 
 /* Base */
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  background: var(--color-neutral-200);
-  color: var(--color-neutral-800);
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--color-neutral-100);
+  color: #374151; /* Standard body text color */
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-size: 16px;
-  line-height: 1.6
+  line-height: 1.6;
 }
 
 h1,
 h2,
 h3 {
-  font-family: Poppins, Inter, Arial, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif; /* Unified font for cleaner look */
   color: var(--color-neutral-800);
-  margin: 0 0 var(--space-lg)
+  margin: 0 0 var(--space-md);
+  letter-spacing: -0.02em;
 }
 
 h1 {

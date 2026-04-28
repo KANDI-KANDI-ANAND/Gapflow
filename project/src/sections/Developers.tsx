@@ -1,112 +1,124 @@
-import { Code2, Terminal, Webhook, FileJson } from 'lucide-react';
-
-export default function Developers() {
-  const features = [
-    {
-      icon: Code2,
-      text: '(upcoming) Custom nodes (SDK)',
-      description: 'Build your own integrations'
-    },
-    {
-      icon: Terminal,
-      text: '(upcoming) CLI & REST API',
-      description: 'Automate deployments'
-    },
-    {
-      icon: Webhook,
-      text: 'Incoming/outgoing webhooks',
-      description: 'Event-driven workflows'
-    },
-    {
-      icon: FileJson,
-      text: 'JSON export & import',
-      description: 'Version control friendly'
-    }
-  ];
-
-  return (
-    <section id="developers" className="relative bg-white py-8 lg:py-10">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#F8FAFC] via-transparent to-[#F8FAFC]" />
-
-      <div className="container relative z-10 mx-auto px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#32D38A]/10 border border-[#32D38A]/20 mb-6">
-              <Code2 size={16} className="text-[#32D38A]" />
-              <span className="text-sm text-slate-600 font-medium">Developer-Friendly</span>
-            </div>
-
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-              Built for developers who ship
-            </h2>
-            <p className="text-xl text-slate-600 font-light">
-              Powerful APIs, SDKs, and tools that integrate seamlessly into your development workflow
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            <div>
-
-              <div className="space-y-4 mb-12">
-                {features.map((feature, i) => (
-                  <div
-                    key={i}
-                    className="group flex items-start gap-4 p-5 rounded-xl bg-white border border-slate-200 hover:border-[#32D38A]/50 hover:bg-white transition-all duration-300"
-                  >
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-[#32D38A]/20 to-[#28B876]/20 border border-[#32D38A]/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <feature.icon size={20} className="text-[#32D38A]" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-slate-900 mb-1">{feature.text}</h3>
-                      <p className="text-sm text-slate-600">{feature.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-br from-[#32D38A]/20 to-[#10B981]/20 rounded-2xl blur-3xl opacity-30" />
-
-              <div className="relative bg-[#0A0B14] border border-slate-200 rounded-2xl overflow-hidden shadow-2xl">
-                <div className="flex items-center gap-2 px-4 py-3 bg-[#1A1B2E] border-b border-slate-200">
-                  <div className="flex gap-1.5">
-                    <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
-                    <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
-                    <div className="w-3 h-3 rounded-full bg-[#28CA42]" />
-                  </div>
-                  <span className="ml-4 text-xs text-[#6B7280] font-medium">deploy-flow.js</span>
-                </div>
-
-                <div className="p-6 font-mono text-sm overflow-x-auto">
-                  <pre className="text-slate-600">
-                    <code>
-                      <span className="text-[#FF79C6]">const</span> <span className="text-slate-900">response</span> = <span className="text-[#FF79C6]">await</span> <span className="text-[#50FA7B]">fetch</span>({'\n'}
-                      {'  '}<span className="text-[#F1FA8C]">'https://api.gapflow.ai/v1/flows'</span>,{'\n'}
-                      {'  '}{'{'}{'\n'}
-                      {'    '}<span className="text-[#8BE9FD]">method</span>: <span className="text-[#F1FA8C]">'POST'</span>,{'\n'}
-                      {'    '}<span className="text-[#8BE9FD]">headers</span>: {'{'}{'\n'}
-                      {'      '}<span className="text-[#F1FA8C]">'Authorization'</span>: <span className="text-[#F1FA8C]">`Bearer </span><span className="text-[#FFB86C]">{'${TOKEN}'}</span><span className="text-[#F1FA8C]">`</span>,{'\n'}
-                      {'      '}<span className="text-[#F1FA8C]">'Content-Type'</span>: <span className="text-[#F1FA8C]">'application/json'</span>{'\n'}
-                      {'    '}{'}'},{'\n'}
-                      {'    '}<span className="text-[#8BE9FD]">body</span>: <span className="text-slate-900">JSON</span>.<span className="text-[#50FA7B]">stringify</span>({'{'}){'\n'}
-                      {'      '}<span className="text-[#8BE9FD]">name</span>: <span className="text-[#F1FA8C]">'Daily Digest'</span>,{'\n'}
-                      {'      '}<span className="text-[#8BE9FD]">trigger</span>: <span className="text-[#F1FA8C]">'schedule'</span>,{'\n'}
-                      {'      '}<span className="text-[#8BE9FD]">nodes</span>: [<span className="text-[#6B7280]">...</span>]{'\n'}
-                      {'    '}{'}'}{'\n'}
-                      {'  '}{'}'}{'\n'}
-                      );{'\n\n'}
-                      <span className="text-[#6272A4]">// ✓ Flow deployed successfully</span>
-                    </code>
-                  </pre>
-                </div>
-              </div>
-
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-br from-[#10B981]/20 to-[#32D38A]/20 rounded-full blur-3xl" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+import { Code2, Terminal, Webhook, FileJson, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+ 
+ export default function Developers() {
+   const features = [
+     {
+       icon: Code2,
+       text: 'Custom nodes (SDK)',
+       tag: 'Upcoming',
+       description: 'Build your own custom integrations with our high-performance SDK.'
+     },
+     {
+       icon: Terminal,
+       text: 'CLI & REST API',
+       tag: 'Upcoming',
+       description: 'Automate deployments directly from your CI/CD pipelines.'
+     },
+     {
+       icon: Webhook,
+       text: 'Incoming/outgoing webhooks',
+       description: 'Create event-driven workflows that respond instantly.'
+     },
+     {
+       icon: FileJson,
+       text: 'JSON export & import',
+       description: 'Maintain version control with full JSON schema support.'
+     }
+   ];
+ 
+   return (
+     <section id="developers" className="section-padding bg-white overflow-hidden">
+       <div className="container-standard">
+         <div className="max-w-3xl mx-auto text-center mb-14">
+           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-slate-200/60 shadow-sm mb-6">
+             <Code2 size={14} className="text-slate-900" />
+             <span className="text-[10px] text-slate-500 font-bold tracking-[0.15em] uppercase">Developer First</span>
+           </div>
+           
+           <h2 className="heading-section mb-4">
+             Engineered for <br />
+             <span className="text-slate-300">Scale & Extensibility.</span>
+           </h2>
+           <p className="text-subcopy text-slate-500/90">
+             Direct access to the underlying engine. Export JSON blueprints, trigger via CLI, or build custom nodes with our SDK.
+           </p>
+         </div>
+ 
+         <div className="bg-slate-50/50 border border-slate-200/60 rounded-[3rem] p-6 lg:p-10 shadow-inner">
+           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
+             {/* Left: Features List */}
+             <div className="flex flex-col gap-3">
+               {features.map((feature, i) => (
+                 <div
+                   key={i}
+                   className="flex-1 flex items-center gap-6 p-6 rounded-[2rem] bg-white border border-slate-200/60 transition-all duration-500 hover:border-slate-900 shadow-sm hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.06)] group"
+                 >
+                   <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-slate-900 flex items-center justify-center shadow-xl shadow-slate-200/50 group-hover:scale-105 transition-transform">
+                     <feature.icon size={22} className="text-[#10B981]" />
+                   </div>
+                   <div className="text-left">
+                     <div className="flex items-center gap-3 mb-1.5">
+                       <h3 className="text-[11px] font-black text-slate-900 uppercase tracking-[0.15em]">{feature.text}</h3>
+                       {feature.tag && (
+                         <span className="text-[9px] font-black text-[#10B981] uppercase tracking-tighter bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">
+                           {feature.tag}
+                         </span>
+                       )}
+                     </div>
+                     <p className="text-[11px] text-slate-500 font-medium leading-relaxed tracking-tight">{feature.description}</p>
+                   </div>
+                 </div>
+               ))}
+               
+               <div className="mt-4 px-2">
+                 <Link to="/signup" className="btn-primary w-full justify-center !py-5">
+                   Access Developer SDK
+                   <ArrowRight size={18} className="ml-3" />
+                 </Link>
+               </div>
+             </div>
+ 
+             {/* Right: Code Console */}
+             <div className="relative flex flex-col min-h-[400px]">
+               <div className="absolute -inset-10 bg-[#10B981]/5 blur-[120px] rounded-full pointer-events-none" />
+               <div className="relative flex-grow bg-slate-900 border border-slate-800 rounded-[3rem] overflow-hidden shadow-2xl flex flex-col">
+                 <div className="flex items-center justify-between px-8 py-4 bg-white/5 border-b border-white/5">
+                   <div className="flex items-center gap-4">
+                     <Terminal size={16} className="text-[#10B981]" />
+                     <span className="text-[10px] text-white/40 font-bold font-mono tracking-[0.2em] uppercase">deploy-flow.js</span>
+                   </div>
+                   <div className="flex gap-2">
+                     <div className="w-2.5 h-2.5 rounded-full bg-white/5" />
+                     <div className="w-2.5 h-2.5 rounded-full bg-white/5" />
+                   </div>
+                 </div>
+ 
+                 <div className="p-8 font-mono text-[11px] overflow-x-auto flex-grow bg-slate-900/50">
+                   <pre className="text-slate-400">
+                     <code className="block leading-relaxed">
+                       <span className="text-[#10B981] font-bold">const</span> <span className="text-white">response</span> = <span className="text-[#10B981] font-bold">await</span> <span className="text-blue-400">fetch</span>({'\n'}
+                       {'  '}<span className="text-emerald-400">'https://api.gapflow.ai/v1/flows'</span>,{'\n'}
+                       {'  '}{'{'}{'\n'}
+                       {'    '}<span className="text-slate-500">method</span>: <span className="text-emerald-400">'POST'</span>,{'\n'}
+                       {'    '}<span className="text-slate-500">headers</span>: {'{'}{'\n'}
+                       {'      '}<span className="text-emerald-400">'Auth'</span>: <span className="text-emerald-400">`Bearer token`</span>,{'\n'}
+                       {'      '}<span className="text-emerald-400">'Content-Type'</span>: <span className="text-emerald-400">'json'</span>{'\n'}
+                       {'    '}{'}'},{'\n'}
+                       {'    '}<span className="text-slate-500">body</span>: <span className="text-white">JSON</span>.<span className="text-blue-400">stringify</span>({'{'}){'\n'}
+                       {'      '}<span className="text-slate-500">name</span>: <span className="text-emerald-400">'Daily Digest'</span>{'\n'}
+                       {'    '}{'}'}{'\n'}
+                       {'  '}{'}'}{'\n'}
+                       );{'\n\n'}
+                       <span className="text-white/20 font-bold">// ✓ Process initiated successfully.</span>
+                     </code>
+                   </pre>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </section>
+   );
+ }

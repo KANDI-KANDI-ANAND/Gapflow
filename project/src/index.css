@@ -5,60 +5,110 @@
 @layer base {
   html {
     scroll-behavior: smooth !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    letter-spacing: -0.01em;
   }
-
-  /* Suppress default highlight on mobile */
-  button,
-  a {
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  /* Provide tactile feedback across the site */
-  button:active,
-  a.button:active {
-    transform: scale(0.96);
-    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  /* Enforce standard touch accessibility minimums */
-  @media (max-width: 768px) {
-
-    button,
-    a.btn,
-    .touch-target {
-      min-height: 48px;
-    }
-  }
-
+ 
   body {
-    @apply bg-white text-slate-900 antialiased overflow-x-hidden;
+    @apply bg-white text-slate-900 antialiased overflow-x-hidden selection:bg-emerald-100 selection:text-emerald-900 font-sans;
+  }
+ 
+  /* Standard Section Containers */
+  .container-tight {
+    @apply max-w-5xl mx-auto px-6 lg:px-8;
+  }
+ 
+  .container-standard {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+ 
+  .container-wide {
+    @apply max-w-[1440px] mx-auto px-6 lg:px-12;
+  }
+ 
+  /* Professional Spacing - TIGHTER & COMPACT */
+  .section-padding {
+    @apply py-14 lg:py-20;
+  }
+ 
+  .section-padding-large {
+    @apply py-20 lg:py-28;
+  }
+ 
+  /* Typography Utilities - CRISP & POLISHED */
+  .heading-hero {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] text-slate-900;
+  }
+ 
+  .heading-section {
+    @apply text-3xl lg:text-4xl font-bold tracking-tight leading-[1.2] text-slate-900;
+  }
+ 
+  .text-subcopy {
+    @apply text-base lg:text-lg text-slate-500/90 leading-relaxed font-medium tracking-tight;
+  }
+
+  .text-premium {
+    @apply font-medium leading-relaxed tracking-tight text-slate-600/90 antialiased;
+  }
+
+  .text-uppercase-bold {
+    @apply text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400;
+  }
+
+  /* Premium UI Components */
+  .btn-primary {
+    @apply px-8 py-4 bg-slate-900 text-white font-bold rounded-full hover:bg-black transition-all shadow-xl shadow-slate-200/40 active:scale-[0.97] text-xs uppercase tracking-[0.1em] inline-flex items-center justify-center;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-4 bg-white text-slate-900 font-bold border border-slate-200 rounded-full hover:border-slate-900 transition-all active:scale-[0.97] text-xs uppercase tracking-[0.1em] inline-flex items-center justify-center;
+  }
+
+  /* REFINED CARD STYLING */
+  .card-premium {
+    @apply bg-white border border-slate-200/60 rounded-[2rem] p-8 lg:p-10 transition-all duration-500 hover:border-slate-900/10 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.08)];
+  }
+
+  .card-bordered {
+    @apply border border-slate-200/70 rounded-[1.5rem] p-6 lg:p-8 bg-white transition-all duration-300 hover:border-slate-300 shadow-sm;
+  }
+
+  .surface-tint {
+    @apply bg-slate-50/50 border-y border-slate-200/40;
   }
 }
-
+ 
 @layer base {
   :root {
     --input: 214.3 31.8% 91.4%;
     --ring: 221.2 83.2% 53.3%;
-    --radius: 0.5rem;
+    --radius: 1rem;
   }
 }
-
-@keyframes floatSlow {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-12px);
-  }
+ 
+/* Suppress default highlight on mobile */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+ 
+/* Provide tactile feedback across the site */
+button:active,
+a.button:active {
+  transform: scale(0.98);
+  transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.animate-float-slow {
-  animation: floatSlow 5s ease-in-out infinite;
+/* Custom Scrollbar for Premium Feel */
+::-webkit-scrollbar {
+  width: 10px;
 }
-
-.hover-pause-animation:hover {
-  animation-play-state: paused;
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 border-4 border-transparent bg-clip-content rounded-full hover:bg-slate-300;
 }
