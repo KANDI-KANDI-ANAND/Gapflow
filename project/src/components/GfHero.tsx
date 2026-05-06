@@ -47,7 +47,7 @@ import { ArrowRight } from 'lucide-react';
    const secondaryLabel = secondaryCtaLabel || copy.secondary;
  
    return (
-    <section className="relative overflow-hidden bg-white pt-16 pb-8 lg:pt-24 lg:pb-14 border-b border-slate-100/50">
+    <section className="relative overflow-hidden bg-white pt-10 pb-6 lg:pt-14 lg:pb-8 border-b border-slate-100/50">
       {/* Subtle Background Treatment */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-50/20 via-white to-white pointer-events-none" />
       

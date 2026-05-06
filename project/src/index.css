@@ -30,11 +30,11 @@
  
   /* Professional Spacing - TIGHTER & COMPACT */
   .section-padding {
-    @apply py-14 lg:py-20;
+    @apply py-8 lg:py-12;
   }
  
   .section-padding-large {
-    @apply py-20 lg:py-28;
+    @apply py-12 lg:py-16;
   }
  
   /* Typography Utilities - CRISP & POLISHED */

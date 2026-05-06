@@ -5,8 +5,7 @@ export default function Hero() {
     <GfHero
       variant="launch"
       onPrimaryClick={() => {
-        const element = document.getElementById('get-started');
-        if (element) element.scrollIntoView({ behavior: 'smooth' });
+        window.open('https://app.gapflow.ai/', '_blank');
       }}
       onSecondaryClick={() => {
         const element = document.getElementById('demo');

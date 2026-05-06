@@ -5,12 +5,10 @@ import {
   Download,
   Calendar,
   Link as LinkIcon,
-  Share2,
   Clock,
   BarChart3,
   Sparkles
 } from 'lucide-react';
-import Breadcrumbs from '../components/Breadcrumbs';
 import ScrollToTop from '../components/ScrollToTop';
 import ImageLightbox from '../components/ImageLightbox';
 import SimilarTemplatesCarousel from '../components/SimilarTemplatesCarousel';
@@ -104,7 +102,7 @@ export default function TemplateDetail() {
         />
       )}
 
-      <section className="relative bg-white py-12">
+      <section className="relative bg-white pt-6 pb-2">
         <div className="container mx-auto px-6">
           <button
             onClick={() => navigate(-1)}
@@ -114,13 +112,11 @@ export default function TemplateDetail() {
             <span>Back</span>
           </button>
 
-          <Breadcrumbs
-            items={[{ label: 'Templates', path: '/templates' }, { label: template.title }]}
-          />
+
         </div>
       </section>
 
-      <section className="relative bg-white py-16">
+      <section className="relative bg-white pt-2 pb-16">
         <div className="container mx-auto px-6">
           <div style={{ display: 'flex', gap: 'var(--space-xxl)', maxWidth: '1400px', margin: '0 auto' }}>
 

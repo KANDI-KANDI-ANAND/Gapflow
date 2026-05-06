@@ -7,6 +7,19 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import CommandCenter from '../sections/CommandCenter';
 import DevConsole from '../components/DevConsole';
+import LazySection from '../components/LazySection';
+import { lazy, Suspense } from 'react';
+
+const Teams = lazy(() => import('../sections/Teams'));
+
+const SectionLoader = () => (
+  <div className="flex justify-center items-center py-10 min-h-[20vh] w-full border border-slate-100 bg-white/50 animate-pulse my-6 rounded-2xl">
+    <div className="flex flex-col items-center gap-4">
+      <div className="w-12 h-12 border-2 border-[#10B981] border-t-transparent rounded-full animate-spin"></div>
+      <span className="text-slate-400 text-[10px] font-bold tracking-widest uppercase">Initializing Module</span>
+    </div>
+  </div>
+);
 
 export default function Features() {
   const [activeDevFeature, setActiveDevFeature] = useState('sdk');
@@ -57,7 +70,7 @@ export default function Features() {
         `}</style>
 
       {/* Hero Section */}
-      <section className="pt-16 pb-8 lg:pt-24 lg:pb-16 border-b border-slate-100/50 relative overflow-hidden">
+      <section className="pt-10 pb-6 lg:pt-14 lg:pb-8 border-b border-slate-100/50 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-50/20 via-white to-white pointer-events-none" />
         <div className="container-standard text-center relative z-10">
           <div className="inline-flex items-center justify-center w-full mb-6">
@@ -87,8 +100,15 @@ export default function Features() {
         </div>
       </section>
 
+      {/* Teams Section */}
+      <LazySection fallback={<SectionLoader />}>
+        <Suspense fallback={<SectionLoader />}>
+          <Teams />
+        </Suspense>
+      </LazySection>
+
       {/* Platform Preview Section */}
-      <section className="py-14 lg:py-20 bg-slate-50/50 border-y border-slate-100">
+      <section className="py-8 lg:py-12 bg-slate-50/50 border-y border-slate-100">
         <div className="container-standard">
           <div className="w-full text-center mb-12">
             <h2 className="heading-section mb-4">The Unified Automation Engine</h2>

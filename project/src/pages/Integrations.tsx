@@ -56,7 +56,7 @@ export default function Integrations() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-24 bg-slate-900 relative overflow-hidden">
+      <section className="pt-14 pb-10 lg:pt-20 lg:pb-14 bg-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-25">
           <div className="absolute top-0 right-0 w-[60%] h-full bg-[#10B981]/20 blur-[150px] rounded-full" />
           <div className="absolute bottom-0 left-0 w-[60%] h-full bg-blue-600/15 blur-[150px] rounded-full" />
@@ -91,7 +91,7 @@ export default function Integrations() {
       </section>
 
       {/* Main Grid */}
-      <section className="py-20 bg-[#F9FAFF]">
+      <section className="py-10 bg-[#F9FAFF]">
         <div className="container-standard">
           <div className="flex flex-wrap gap-3 mb-16 justify-center max-w-5xl mx-auto">
             {CATEGORIES.map((cat: string) => (

@@ -36,54 +36,67 @@ import { ChevronRight, Database, Cloud, MessageSquare, Bot, GitMerge, Layers, Ma
  };
  
  const TemplateCard: React.FC<TemplateCardProps> = ({ template }) => {
-     return (
-         <Link 
-            to={`/templates/${template.slug}`} 
-            className="group flex flex-col h-full bg-white border border-slate-200 rounded-[2rem] p-8 lg:p-10 transition-all duration-500 hover:border-slate-300 hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.06)] shadow-sm relative overflow-hidden"
-         >
-             {/* Integration Icons - TOP LEFT */}
-             <div className="flex -space-x-2 mb-10 relative z-20">
-                 {template.integrations && template.integrations.length > 0 ? (
-                     template.integrations.slice(0, 3).map((int, i) => {
-                         const config = integrationMap[int.toLowerCase()] || integrationMap.default;
-                         const Icon = config.icon;
-                         return (
-                             <div
-                                 key={i}
-                                 className={`w-11 h-11 rounded-full ${config.bgColor} border-2 border-white shadow-sm flex items-center justify-center relative z-10 transition-transform group-hover:-translate-y-1`}
-                                 style={{ transitionDelay: `${i * 50}ms`, zIndex: 10 - i }}
-                             >
-                                 <Icon size={18} color={config.color} />
-                             </div>
-                         );
-                     })
-                 ) : (
-                    <div className="w-11 h-11 rounded-full bg-slate-50 border-2 border-white shadow-sm flex items-center justify-center">
-                        <Database size={18} className="text-slate-400" />
+    return (
+        <Link 
+           to={`/templates/${template.slug}`} 
+           className="group flex flex-col h-full bg-white border border-slate-200 rounded-[2.5rem] overflow-hidden transition-all duration-500 hover:border-purple-300 hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.06)] shadow-sm relative"
+        >
+            {/* Top Workflow Area (Canvas Placeholder) */}
+            <div className="h-48 bg-slate-50 border-b border-slate-100 flex items-center justify-center relative overflow-hidden group-hover:bg-purple-50/50 transition-colors duration-500">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                
+                {/* Integration Icons - CENTERED IN CANVAS */}
+                <div className="flex -space-x-3 relative z-20">
+                    {template.integrations && template.integrations.length > 0 ? (
+                        template.integrations.slice(0, 4).map((int, i) => {
+                            const config = integrationMap[int.toLowerCase()] || integrationMap.default;
+                            const Icon = config.icon;
+                            return (
+                                <div
+                                    key={i}
+                                    className={`w-14 h-14 rounded-2xl ${config.bgColor} border-4 border-white shadow-md flex items-center justify-center relative z-10 transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2`}
+                                    style={{ transitionDelay: `${i * 50}ms`, zIndex: 10 - i }}
+                                >
+                                    <Icon size={24} color={config.color} />
+                                </div>
+                            );
+                        })
+                    ) : (
+                       <div className="w-14 h-14 rounded-2xl bg-white border-2 border-slate-100 shadow-sm flex items-center justify-center">
+                           <Database size={24} className="text-slate-200" />
+                       </div>
+                    )}
+                </div>
+            </div>
+
+            {/* Content Area */}
+            <div className="p-8 lg:p-10 flex flex-col flex-grow">
+                {/* Workflow Name */}
+                <h3 className="text-xl font-black text-slate-900 mb-4 tracking-tight leading-tight group-hover:text-purple-600 transition-colors duration-300">
+                    {template.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-slate-500 text-sm font-medium leading-relaxed line-clamp-2 mb-6">
+                    {template.description}
+                </p>
+
+                {/* Published By */}
+                <div className="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between">
+                    <div className="flex items-center gap-2.5">
+                        <div className="w-6 h-6 rounded-full bg-slate-900 flex items-center justify-center text-[10px] text-white font-black">G</div>
+                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Published by Gapflow</span>
                     </div>
-                 )}
-             </div>
- 
-             {/* Title - Stable text color on hover */}
-             <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 tracking-tight leading-[1.2] relative z-20">
-                 {template.title}
-             </h3>
- 
-             {/* Description - Stable text color on hover */}
-             <p className="text-slate-500 text-sm lg:text-base font-medium leading-relaxed line-clamp-3 mb-10 flex-grow relative z-20">
-                 {template.description}
-             </p>
- 
-             {/* Action */}
-             <div className="mt-auto pt-6 flex items-center gap-2 text-slate-900 font-bold text-sm tracking-tight group-hover:text-[#10B981] transition-colors relative z-20">
-                 <span>Try it</span>
-                 <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
-             </div>
- 
-             {/* Hover Tint - Subtle background change for contrast, doesn't overlap text layer */}
-             <div className="absolute inset-0 bg-slate-50/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
-         </Link>
-     );
- };
+                    
+                    <div className="flex items-center gap-1.5 text-[#10B981] font-black text-[10px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
+                        <span>Try now</span>
+                        <ChevronRight size={14} />
+                    </div>
+                </div>
+            </div>
+        </Link>
+    );
+};
  
  export default TemplateCard;

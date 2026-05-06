@@ -9,12 +9,12 @@ import { Github, Twitter, Linkedin } from 'lucide-react';
    };
  
    return (
-     <footer id="footer" className="bg-white border-t border-slate-50 pt-16 pb-10 lg:pt-24 lg:pb-12">
+     <footer id="footer" className="bg-white border-t border-slate-50 pt-10 pb-6 lg:pt-14 lg:pb-8">
        <div className="container-standard">
-         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 lg:gap-20 mb-16">
+         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 lg:gap-20 mb-10">
            <div className="col-span-2">
-             <div className="mb-12">
-               <h3 className="text-3xl font-bold text-slate-900 mb-8 tracking-tight">Gapflow</h3>
+             <div className="mb-8">
+               <h3 className="text-3xl font-bold text-slate-900 mb-4 tracking-tight">Gapflow</h3>
                <p className="text-sm font-medium text-slate-500 leading-relaxed max-w-sm">
                  The AI-powered workflow platform that connects your apps, data, and teams with production-grade reliability and visual reasoning.
                </p>
@@ -34,10 +34,10 @@ import { Github, Twitter, Linkedin } from 'lucide-react';
   
            {Object.entries(menus).map(([category, links]) => (
              <div key={category}>
-               <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em] mb-10">
+               <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em] mb-6">
                  {category}
                </h4>
-               <ul className="space-y-5">
+               <ul className="space-y-3">
                  {links.map(link => (
                    <li key={link}>
                      <a
@@ -53,7 +53,7 @@ import { Github, Twitter, Linkedin } from 'lucide-react';
            ))}
          </div>
   
-         <div className="pt-16 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-10">
+         <div className="pt-10 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-10">
            <div className="flex items-center gap-4">
              <div className="w-2 h-2 rounded-full bg-[#10B981]" />
              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
