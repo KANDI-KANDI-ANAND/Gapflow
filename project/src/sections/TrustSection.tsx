@@ -14,13 +14,13 @@ export default function TrustSection() {
     <section className="py-8 bg-white border-y border-slate-100/50 overflow-hidden">
       <div className="container-standard">
         <p className="text-center text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400 mb-10">
-          Built using world class Engineer tools
+          Built using world class AI tools
         </p>
 
         <div className="relative">
           {/* Gradient Overlays */}
-          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white/90 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white/90 to-transparent z-10 pointer-events-none" />
 
           <div className="flex gap-16 items-center animate-scroll whitespace-nowrap">
             {[...partners, ...partners].map((partner, i) => (
@@ -28,7 +28,7 @@ export default function TrustSection() {
                 key={i}
                 src={partner.logo}
                 alt={partner.name}
-                className="h-7 md:h-8 grayscale opacity-[0.25] hover:grayscale-0 hover:opacity-100 transition-all duration-700 cursor-pointer object-contain min-w-[140px]"
+                className="h-7 md:h-8 opacity-80 hover:opacity-100 transition-all duration-500 cursor-pointer object-contain min-w-[140px]"
               />
             ))}
           </div>
