@@ -38,7 +38,7 @@ export default function EngineeringLeverage() {
               {builtInFeatures.map((feature, i) => (
                 <div
                   key={i}
-                  className="flex items-center justify-between bg-slate-900/40 border border-slate-800/50 rounded-xl p-4 group hover:border-[#00C07F]/30 transition-all duration-300"
+                  className="flex items-center justify-between bg-slate-900/40 border border-slate-700/80 rounded-xl p-4 group hover:border-[#00C07F]/30 transition-all duration-300 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.5)]"
                 >
                   <span className="text-[13px] font-black text-slate-300 group-hover:text-white transition-colors">
                     {feature}

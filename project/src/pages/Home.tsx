@@ -10,8 +10,6 @@ const VisualOrchestration = lazy(() => import('../sections/VisualOrchestration')
 const OperationalWorkflows = lazy(() => import('../sections/OperationalWorkflows'));
 const IntegrationsStack = lazy(() => import('../sections/IntegrationsStack'));
 const MetricsSection = lazy(() => import('../sections/MetricsSection'));
-const AgentDemo = lazy(() => import('../sections/AgentDemo'));
-const HowItWorks = lazy(() => import('../sections/HowItWorks'));
 const WorkflowBuilder = lazy(() => import('../sections/WorkflowBuilder'));
 const Capabilities = lazy(() => import('../sections/Capabilities'));
 const Templates = lazy(() => import('../sections/Templates'));
@@ -38,9 +36,6 @@ export default function Home() {
         <TrustSection />
       </Suspense>
 
-      <Suspense fallback={<SectionLoader />}>
-        <HowItWorks />
-      </Suspense>
  
       <Suspense fallback={<SectionLoader />}>
         <OrchestrationEngine />
@@ -66,12 +61,6 @@ export default function Home() {
         <IntegrationsStack />
       </Suspense>
  
-      {/* Subsequent sections wait until intersected */}
-      <LazySection fallback={<SectionLoader />}>
-        <Suspense fallback={<SectionLoader />}>
-          <AgentDemo />
-        </Suspense>
-      </LazySection>
 
       <Suspense fallback={<SectionLoader />}>
         <MetricsSection />

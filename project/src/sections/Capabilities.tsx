@@ -55,7 +55,7 @@ export default function Capabilities() {
   return (
     <section className="section-padding bg-[#F9FAFF] overflow-hidden">
       <div className="container-standard">
-        <div className="max-w-3xl mx-auto text-center mb-24">
+        <div className="max-w-3xl mx-auto text-center mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200/60 shadow-sm mb-8">
             <Cpu size={14} className="text-[#10B981]" />
             <span className="text-[10px] text-slate-500 font-bold tracking-[0.15em] uppercase">Platform Core</span>
@@ -81,7 +81,7 @@ export default function Capabilities() {
                 <div className={`w-14 h-14 rounded-2xl ${theme.bg} flex items-center justify-center mb-8 group-hover:scale-110 transition-all duration-500 border border-slate-100`}>
                   <item.icon size={26} className={theme.icon} />
                 </div>
-                
+
                 <div className="flex items-center gap-3 mb-4">
                   <h3 className="text-xl font-bold text-slate-900 tracking-tight">{item.title}</h3>
                   {item.upcoming && (

@@ -7,7 +7,7 @@
   --color-neutral-100: #FFFFFF;
   --color-neutral-200: #FFFFFF; /* Changed to pure white */
   --color-neutral-300: #F9FAFB; /* Subtler light gray */
-  --color-neutral-400: #F3F4F6; /* Borders */
+  --color-neutral-400: #E2E8F0; /* Darker borders for better visibility */
   --color-neutral-600: #4B5563; /* Text-muted */
   --color-neutral-800: #111827; /* Darker heading text */
   --color-muted: #9CA3AF;
@@ -53,7 +53,6 @@ body {
   padding: 0;
   background: var(--color-neutral-100);
   color: #374151; /* Standard body text color */
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-size: 16px;
   line-height: 1.6;
 }
@@ -61,30 +60,11 @@ body {
 h1,
 h2,
 h3 {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif; /* Unified font for cleaner look */
   color: var(--color-neutral-800);
   margin: 0 0 var(--space-md);
   letter-spacing: -0.02em;
 }
 
-h1 {
-  font-size: 56px;
-  line-height: 64px;
-  font-weight: 700;
-  letter-spacing: -0.5px
-}
-
-h2 {
-  font-size: 40px;
-  line-height: 48px;
-  font-weight: 700
-}
-
-h3 {
-  font-size: 28px;
-  line-height: 36px;
-  font-weight: 700
-}
 
 p.lead {
   font-size: 18px;
@@ -203,15 +183,15 @@ section.bg-light-gradient {
   background: #fff;
   border: 1px solid var(--color-neutral-400);
   border-radius: 16px;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   padding: var(--space-lg);
   transition: transform var(--dur-fast) var(--easing), box-shadow var(--dur-fast) var(--easing), border-color var(--dur-fast) var(--easing)
 }
 
 .bolt-card[data-interactive="true"]:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-elevated);
-  border-color: #6EE7B7
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: #10B981
 }
 
 /* Pill */

@@ -1,97 +1,67 @@
-/*
- * GapFlow Accessibility & Readability Enhancements
- *
- * This stylesheet addresses:
- * - WCAG 2.1 Level AA compliance
- * - Dyslexia-friendly typography
- * - Visual impairment accommodations
- * - Improved text spacing and contrast
- */
-
-/* ========================================
-   1. IMPROVED HEADING HIERARCHY & SPACING
-   ======================================== */
-
-/* Override base headings with proper line-height (WCAG 1.5+ requirement) */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.5;
   margin-bottom: var(--space-lg, 1.5rem);
-  font-family: Poppins, Inter, Arial, sans-serif;
   color: var(--color-neutral-800);
   font-weight: 700;
 }
 
-/* Desktop heading sizes with accessible line-height */
-h1 {
-  font-size: 56px;
-  line-height: 1.5; /* 84px - improved from 64px */
-  letter-spacing: -0.5px;
-}
 
-h2 {
-  font-size: 40px;
-  line-height: 1.5; /* 60px - improved from 48px */
-}
-
-h3 {
-  font-size: 28px;
-  line-height: 1.5; /* 42px - improved from 36px */
-}
-
-/* Add missing H4-H6 styles */
 h4 {
   font-size: 22px;
-  line-height: 1.5; /* 33px */
+  line-height: 1.5;
+  /* 33px */
   font-weight: 600;
   color: var(--color-neutral-800);
 }
 
 h5 {
   font-size: 18px;
-  line-height: 1.5; /* 27px */
+  line-height: 1.5;
+  /* 27px */
   font-weight: 600;
   color: var(--color-neutral-800);
 }
 
 h6 {
   font-size: 16px;
-  line-height: 1.5; /* 24px */
+  line-height: 1.5;
+  /* 24px */
   font-weight: 600;
   color: var(--color-neutral-800);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-/* ========================================
-   2. IMPROVED BODY TEXT READABILITY
-   ======================================== */
 
-/* Enhanced base typography for readability */
 body {
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.75; /* Improved from 1.6 for better readability */
+  line-height: 1.75;
   color: var(--color-neutral-800);
-  letter-spacing: 0.01em; /* Slight letter spacing improves dyslexia readability */
+  letter-spacing: 0.01em;
 }
 
-/* Paragraph spacing for better reading flow */
 p {
   margin-bottom: 1.25rem;
-  max-width: 75ch; /* Optimal line length for readability */
+  max-width: 75ch;
 }
 
-/* Lead text with better contrast */
+
 p.lead,
 .text-lead {
-  font-size: 20px; /* Increased from 18px */
-  line-height: 1.75; /* 35px - improved from 28px */
-  color: var(--color-neutral-700); /* Darker for better contrast */
+  font-size: 20px;
+  line-height: 1.75;
+  color: var(--color-neutral-700);
   margin-bottom: 1.5rem;
 }
 
-/* Lists with improved spacing */
-ul, ol {
+
+ul,
+ol {
   margin-bottom: 1.5rem;
   padding-left: 1.75rem;
 }
@@ -101,49 +71,37 @@ li {
   line-height: 1.75;
 }
 
-/* ========================================
-   3. MINIMUM FONT SIZE ENFORCEMENT
-   ======================================== */
 
-/* No text smaller than 14px (WCAG recommendation) */
 .text-xs,
 small {
-  font-size: 14px !important; /* Increased from 12px */
+  font-size: 14px !important;
   line-height: 1.6;
 }
 
-/* Small text should still be readable */
 .text-sm {
-  font-size: 15px; /* Increased from 14px */
+  font-size: 15px;
   line-height: 1.6;
 }
 
-/* Pill component - minimum readable size */
+
 .pill,
 [class*="pill"] {
-  font-size: 14px !important; /* Increased from 12px */
+  font-size: 14px !important;
   padding: 6px 14px;
   line-height: 1.5;
-  font-weight: 500; /* Medium weight for better readability */
+  font-weight: 500;
 }
 
-/* ========================================
-   4. HIGH CONTRAST TEXT COLORS
-   ======================================== */
 
-/* Replace low-contrast greys with WCAG AA compliant colors */
-
-/* Primary text - ensure 7:1 contrast (AAA standard) */
 :root {
-  --text-primary: #0F172A; /* Near black, 16:1 contrast on white */
-  --text-secondary: #334155; /* Dark grey, 9:1 contrast */
-  --text-tertiary: #475569; /* Medium grey, 7:1 contrast */
-  --text-muted: #64748B; /* Lighter grey, 4.5:1 contrast (AA minimum) */
-  --text-on-dark: #F8FAFC; /* Near white for dark backgrounds */
-  --text-on-dark-secondary: #E2E8F0; /* Light grey on dark, 12:1 contrast */
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-tertiary: #475569;
+  --text-muted: #64748B;
+  --text-on-dark: #F8FAFC;
+  --text-on-dark-secondary: #E2E8F0;
 }
 
-/* Override low-contrast colors */
 .text-gray-500,
 .text-gray-600,
 .text-\[\#6B7280\] {
@@ -158,7 +116,7 @@ small {
   color: var(--text-secondary) !important;
 }
 
-/* Ensure sufficient contrast on dark backgrounds */
+
 .bg-dark p,
 .bg-dark li,
 .bg-\[\#0A0B14\] p,
@@ -173,26 +131,17 @@ small {
   color: var(--text-on-dark-secondary) !important;
 }
 
-/* ========================================
-   5. IMPROVED SPACING & WHITE SPACE
-   ======================================== */
 
-/* Content spacing */
-.content-block > * + * {
+.content-block>*+* {
   margin-top: 1.5rem;
 }
 
-/* Card content spacing */
 .card p,
 .card-body p {
   margin-bottom: 1rem;
 }
 
-/* ========================================
-   6. HIGH CONTRAST MODE
-   ======================================== */
 
-/* Support for high contrast mode preference */
 @media (prefers-contrast: high) {
   :root {
     --text-primary: #000000;
@@ -206,12 +155,19 @@ small {
     background: #FFFFFF;
   }
 
-  /* All text gets maximum contrast */
-  h1, h2, h3, h4, h5, h6, p, li, span, a {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li,
+  span,
+  a {
     color: #000000 !important;
   }
 
-  /* Dark sections get inverted */
   [class*="bg-dark"],
   .bg-\[\#0A0B14\],
   .bg-\[\#1A1B2E\] {
@@ -224,130 +180,155 @@ small {
     color: #FFFFFF !important;
   }
 
-  /* Borders become more prominent */
-  button, input, select, textarea {
+  button,
+  input,
+  select,
+  textarea {
     border: 2px solid #000000 !important;
   }
 }
 
-/* ========================================
-   7. RESPONSIVE TYPOGRAPHY
-   ======================================== */
 
-/* Tablet adjustments */
 @media (max-width: 1024px) {
-  h1 { font-size: 44px; line-height: 1.5; }
-  h2 { font-size: 34px; line-height: 1.5; }
-  h3 { font-size: 24px; line-height: 1.5; }
-  h4 { font-size: 20px; line-height: 1.5; }
-  h5 { font-size: 17px; line-height: 1.5; }
+  h1 {
+    font-size: 44px;
+    line-height: 1.5;
+  }
 
-  body { font-size: 16px; }
-  p.lead, .text-lead { font-size: 18px; }
+  h2 {
+    font-size: 34px;
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  h5 {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  p.lead,
+  .text-lead {
+    font-size: 18px;
+  }
 }
 
-/* Mobile adjustments */
+
 @media (max-width: 640px) {
-  h1 { font-size: 36px; line-height: 1.5; }
-  h2 { font-size: 28px; line-height: 1.5; }
-  h3 { font-size: 22px; line-height: 1.5; }
-  h4 { font-size: 18px; line-height: 1.5; }
-  h5 { font-size: 16px; line-height: 1.5; }
+  h1 {
+    font-size: 36px;
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: 28px;
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: 22px;
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  h5 {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 
   body {
     font-size: 16px;
     line-height: 1.75;
   }
 
-  p.lead, .text-lead {
+  p.lead,
+  .text-lead {
     font-size: 17px;
     line-height: 1.75;
   }
 }
 
-/* ========================================
-   8. ACCESSIBLE COLOR PALETTE
-   ======================================== */
 
-/* WCAG AA compliant color definitions */
 :root {
-  /* Text colors with guaranteed contrast ratios */
-  --color-text-primary: #0F172A;        /* 16:1 on white */
-  --color-text-secondary: #334155;      /* 9:1 on white */
-  --color-text-tertiary: #475569;       /* 7:1 on white */
-  --color-text-muted: #64748B;          /* 4.6:1 on white (AA) */
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #334155;
+  --color-text-tertiary: #475569;
+  --color-text-muted: #64748B;
 
-  /* Link colors with sufficient contrast */
-  --color-link: #047857;                /* 4.8:1 on white (AA Large) */
-  --color-link-hover: #059669;          /* 4.5:1 on white (AA) */
-  --color-link-visited: #7C3AED;        /* 4.5:1 on white (AA) */
+  --color-link: #047857;
+  --color-link-hover: #059669;
+  --color-link-visited: #7C3AED;
 
-  /* Status colors with accessible variants */
-  --color-success-text: #065F46;        /* 7:1 on white */
-  --color-warning-text: #92400E;        /* 7.3:1 on white */
-  --color-error-text: #991B1B;          /* 7.5:1 on white */
-  --color-info-text: #1E40AF;           /* 8:1 on white */
+  --color-success-text: #065F46;
+  --color-warning-text: #92400E;
+  --color-error-text: #991B1B;
+  --color-info-text: #1E40AF;
 
-  /* Dark mode text colors */
-  --color-text-on-dark-primary: #F8FAFC;    /* 15:1 on #0A0B14 */
-  --color-text-on-dark-secondary: #E2E8F0;  /* 12:1 on #0A0B14 */
-  --color-text-on-dark-tertiary: #CBD5E1;   /* 9:1 on #0A0B14 */
+  --color-text-on-dark-primary: #F8FAFC;
+  --color-text-on-dark-secondary: #E2E8F0;
+  --color-text-on-dark-tertiary: #CBD5E1;
 }
 
-/* Apply accessible colors */
+
 body {
   color: var(--color-text-primary);
 }
 
-/* ========================================
-   9. PRINT STYLES
-   ======================================== */
 
 @media print {
-  /* Ensure text is black for printing */
+
   * {
     color: #000000 !important;
     background: transparent !important;
   }
 
-  /* Ensure links are visible */
   a {
     text-decoration: underline !important;
   }
 
-  /* Show URL after links */
   a[href^="http"]::after {
     content: " (" attr(href) ")";
     font-size: 0.9em;
     color: #666666;
   }
 
-  /* Remove animations for print */
   * {
     animation: none !important;
     transition: none !important;
   }
 }
 
-/* ========================================
-   10. USER PREFERENCE OVERRIDES
-   ======================================== */
 
-/* Respect user's text spacing preferences (WCAG 2.1 1.4.12) */
 * {
-  /* Allow text to reflow without breaking layout */
+
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
 }
 
-/* Support text resize up to 200% without loss of functionality */
+
 html {
   font-size: 100%;
 }
 
 @media (min-width: 1920px) {
   html {
-    font-size: 112.5%; /* 18px base for large screens */
+    font-size: 112.5%;
   }
 }
