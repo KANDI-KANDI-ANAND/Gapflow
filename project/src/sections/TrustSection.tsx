@@ -18,7 +18,6 @@ export default function TrustSection() {
         </p>
 
         <div className="relative">
-          {/* Gradient Overlays */}
           <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white/90 to-transparent z-10 pointer-events-none" />
           <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white/90 to-transparent z-10 pointer-events-none" />
 

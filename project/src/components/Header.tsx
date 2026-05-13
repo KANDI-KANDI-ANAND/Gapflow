@@ -32,7 +32,6 @@ export default function Header() {
     <header className={`sticky top-0 z-[100] transition-all duration-300 ease-in-out ${isScrolled ? 'bg-white/80 backdrop-blur-md border-b border-slate-100 py-3 shadow-sm' : 'bg-white py-5'}`}>
       <div className="container-standard flex items-center justify-between">
 
-        {/* Left: Logo */}
         <div className="flex-1 flex justify-start">
           <Link to="/" className="flex items-center gap-2.5 no-underline text-slate-900 font-bold text-lg tracking-tight">
             <Logo />
@@ -40,7 +39,6 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Center: Navigation Links */}
         <nav className="hidden lg:flex flex-[2] justify-center items-center gap-10" aria-label="Main navigation">
           {navLinks.map(link => (
             <Link
@@ -55,7 +53,6 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Right: Primary Call to Action */}
         <div className="hidden lg:flex flex-1 justify-end">
           <a
             href="https://app.gapflow.ai/"
@@ -68,7 +65,6 @@ export default function Header() {
 
         </div>
 
-        {/* Mobile Toggle Button */}
         <div className="flex-1 flex lg:hidden justify-end">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -80,7 +76,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.nav

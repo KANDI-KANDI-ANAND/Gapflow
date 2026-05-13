@@ -43,7 +43,7 @@ export default function DecryptedText({
             }, speed);
         };
 
-        // Add a tiny delay so the text isn't scrambled before the page fully loads
+
         const timeout = setTimeout(startAnimation, 300);
 
         return () => {

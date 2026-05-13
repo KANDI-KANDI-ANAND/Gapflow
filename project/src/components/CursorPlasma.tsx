@@ -7,19 +7,19 @@ export default function CursorPlasma() {
     const cursorX = useMotionValue(-100);
     const cursorY = useMotionValue(-100);
 
-    // Smooth out the movement using spring physics for an organic fluid trail effect
+
     const springConfig = { damping: 40, stiffness: 150, mass: 0.8 };
     const smoothX = useSpring(cursorX, springConfig);
     const smoothY = useSpring(cursorY, springConfig);
 
     useEffect(() => {
-        // Only show custom cursor trail on non-touch devices
+
         if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
             return;
         }
 
         const moveCursor = (e: MouseEvent) => {
-            cursorX.set(e.clientX - 64); // Center the 128px circle
+            cursorX.set(e.clientX - 64);
             cursorY.set(e.clientY - 64);
             if (!isVisible) setIsVisible(true);
         };

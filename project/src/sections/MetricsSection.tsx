@@ -9,8 +9,7 @@ const stats = [
 
 export default function MetricsSection() {
   return (
-    <section className="section-padding bg-slate-900 overflow-hidden relative">
-      {/* Abstract Background Elements - ADDED MULTI-COLOR GLOWS */}
+    <section className="mt-10 pb-10 pt-12 bg-slate-900 overflow-hidden relative">
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
         <div className="absolute -top-[50%] -left-[10%] w-[70%] h-[150%] bg-emerald-500/10 blur-[120px] rounded-full rotate-12 animate-pulse" />
         <div className="absolute top-[20%] -right-[10%] w-[50%] h-[100%] bg-blue-500/10 blur-[120px] rounded-full -rotate-12" />
@@ -36,7 +35,6 @@ export default function MetricsSection() {
               transition={{ delay: i * 0.1, duration: 0.8 }}
               className="flex flex-col group relative"
             >
-              {/* Decorative Vertical Line */}
               <div className={`absolute -left-6 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-slate-700 to-transparent opacity-50 hidden lg:block`} />
 
               <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400 mb-6 group-hover:text-white transition-colors duration-500">

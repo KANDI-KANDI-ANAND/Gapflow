@@ -37,7 +37,7 @@ function App() {
 
 ```typescript
 type GfHeroProps = {
-  variant?: 'launch' | 'dev' | 'enterprise';  // Default: 'launch'
+  variant?: 'launch' | 'dev' | 'enterprise';  
   onPrimaryClick?: () => void;
   onSecondaryClick?: () => void;
   headlineOverride?: string;
@@ -85,7 +85,6 @@ To modify the workflow nodes, edit `WorkflowAnimation.tsx`:
 ```tsx
 const nodes = [
   { id: 'yourservice', label: 'Your Service', angle: 0, color: 'primary' },
-  // Add or modify nodes here
 ];
 ```
 

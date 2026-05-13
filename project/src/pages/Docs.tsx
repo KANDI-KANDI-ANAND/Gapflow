@@ -1,7 +1,4 @@
 import { Zap, Bot, Plug, FileText, Package, Puzzle, Rocket, MessageCircle, BookOpen } from 'lucide-react';
-import Button from '../components/Button';
-import Card from '../components/Card';
-import Pill from '../components/Pill';
 import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function Docs() {

@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 export default function FinalCTA() {
   return (
     <section id="get-started" className="py-16 lg:py-20 bg-slate-900 overflow-hidden relative">
-      {/* Vibrant Gradient Backgrounds */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-[20%] -right-[10%] w-[60%] h-[100%] bg-blue-600/10 blur-[150px] rounded-full animate-pulse" />
         <div className="absolute -bottom-[20%] -left-[10%] w-[60%] h-[100%] bg-emerald-500/10 blur-[150px] rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
@@ -13,7 +12,7 @@ export default function FinalCTA() {
 
       <div className="container-standard relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -23,12 +22,12 @@ export default function FinalCTA() {
               <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse"></span>
               <span className="text-[10px] font-bold text-white/60 uppercase tracking-[0.15em]">Instant Deployment</span>
             </div>
-            
+
             <h2 className="text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight leading-[1.1]">
               Deploy your first agent <br />
               <span className="text-slate-500">in seconds.</span>
             </h2>
-            
+
             <p className="text-lg lg:text-xl font-medium text-slate-400 mb-12 leading-relaxed max-w-2xl mx-auto tracking-tight">
               Describe your automation, and Gapflow will handle the logic, security, and orchestration. No complex codebases required.
             </p>

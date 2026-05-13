@@ -48,18 +48,16 @@ export default function GfHero({
 
   return (
     <section className="relative overflow-hidden bg-white pt-10 pb-6 lg:pt-14 lg:pb-8 border-b border-slate-100/50">
-      {/* Subtle Background Treatment */}
+
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-50/40 via-white to-white pointer-events-none" />
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 0l50 50L0 100zM100 0L50 50l50 50z' fill='%2310b981' fill-opacity='0.1'/%3E%3Cpath d='M0 0l100 0L50 50zM0 100l100 0L50 50z' fill='%2310b981' fill-opacity='0.05'/%3E%3C/svg%3E")`, backgroundSize: '160px 160px' }} />
 
       <div className="container-standard relative z-10">
         <div className="mx-auto max-w-7xl text-center">
-          {/* Pill Badge */}
           <div className="inline-flex items-center gap-3 rounded-full border border-emerald-200 bg-emerald-50 px-5 py-2 text-[11px] font-extrabold uppercase tracking-[0.22em] text-emerald-700">
             AI Workflow Infrastructure
           </div>
 
-          {/* Headline */}
           <h1 className="mx-auto mt-8 max-w-6xl text-5xl md:text-6xl lg:text-7xl font-black leading-[0.94] tracking-[-0.055em] text-slate-950">
             {customHeadline[0]} <br />
             {customHeadline[1] && (
@@ -69,12 +67,10 @@ export default function GfHero({
             )}
           </h1>
 
-          {/* Subcopy */}
           <p className="mx-auto mt-8 max-w-3xl text-xl font-medium leading-8 text-slate-500">
             {subcopy}
           </p>
 
-          {/* CTAs */}
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <button
               onClick={onPrimaryClick}

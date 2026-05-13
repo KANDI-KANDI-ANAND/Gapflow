@@ -30,7 +30,7 @@ export default function VisualOrchestration() {
   ];
 
   return (
-    <section className="py-12 bg-white overflow-hidden">
+    <section className="pt-12 pb-0 bg-white overflow-hidden">
       <div className="container-standard">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           <div>

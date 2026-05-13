@@ -7,8 +7,6 @@ import {
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import integrationsData from '../data/gapflow_integrations.json';
-
-// Robust mapping of brand names to icons and premium colors
 const BRAND_THEMES: Record<string, { icon: any, color: string, bgColor: string, logo?: string }> = {
   'openai': { icon: Bot, color: '#74aa9c', bgColor: 'bg-teal-50', logo: 'https://us1.discourse-cdn.com/openai1/original/4X/3/2/1/321a1ba297482d3d4060d114860de1aa5610f8a9.png' },
   'anthropic': { icon: Cpu, color: '#D97706', bgColor: 'bg-amber-50' },
@@ -40,7 +38,6 @@ export default function Integrations() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCat, setActiveCat] = useState('All');
 
-  // Extract data from JSON
   const catalogSection = integrationsData.sections.find((s: any) => s.id === 'catalog') as any;
   const CATEGORIES = catalogSection?.content?.controls?.filters || ['All'];
   const ALL_INTEGRATIONS = catalogSection?.content?.cards || [];
@@ -55,7 +52,6 @@ export default function Integrations() {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
       <section className="pt-14 pb-10 lg:pt-20 lg:pb-14 bg-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-25">
           <div className="absolute top-0 right-0 w-[60%] h-full bg-[#10B981]/20 blur-[150px] rounded-full" />
@@ -90,7 +86,6 @@ export default function Integrations() {
         </div>
       </section>
 
-      {/* Main Grid */}
       <section className="py-10 bg-[#F9FAFF]">
         <div className="container-standard">
           <div className="flex flex-wrap gap-3 mb-16 justify-center max-w-5xl mx-auto">
@@ -99,8 +94,8 @@ export default function Integrations() {
                 key={cat}
                 onClick={() => setActiveCat(cat)}
                 className={`px-7 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest border transition-all duration-300 ${activeCat === cat
-                    ? 'bg-[#10B981] border-[#10B981] text-slate-900 shadow-lg shadow-emerald-200'
-                    : 'bg-white border-slate-200 text-slate-400 hover:border-[#10B981] hover:text-[#10B981] shadow-sm'
+                  ? 'bg-[#10B981] border-[#10B981] text-slate-900 shadow-lg shadow-emerald-200'
+                  : 'bg-white border-slate-200 text-slate-400 hover:border-[#10B981] hover:text-[#10B981] shadow-sm'
                   }`}
               >
                 {cat}
@@ -181,7 +176,6 @@ export default function Integrations() {
         </div>
       </section>
 
-      {/* Custom Connector CTA */}
       <section className="section-padding bg-white">
         <div className="container-standard">
           <div className="bg-slate-900 rounded-[3rem] p-10 lg:p-16 relative overflow-hidden shadow-2xl shadow-slate-900/20">

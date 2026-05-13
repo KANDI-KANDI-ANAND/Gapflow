@@ -100,14 +100,12 @@ export default function Features() {
         </div>
       </section>
 
-      {/* Teams Section */}
       <LazySection fallback={<SectionLoader />}>
         <Suspense fallback={<SectionLoader />}>
           <Teams />
         </Suspense>
       </LazySection>
 
-      {/* Platform Preview Section */}
       <section className="py-8 lg:py-12 bg-slate-50/50 border-y border-slate-100">
         <div className="container-standard">
           <div className="w-full text-center mb-12">
@@ -129,7 +127,6 @@ export default function Features() {
         </div>
       </section>
 
-      {/* Visual Flow Builder */}
       <section className="section-padding bg-emerald-50/30 border-y border-emerald-100/50">
         <div className="container-standard">
           <div className="w-full flex flex-col items-center justify-center text-center mb-16">
@@ -162,7 +159,6 @@ export default function Features() {
         </div>
       </section>
 
-      {/* AI-Native Actions */}
       <section className="section-padding bg-slate-900 border-y border-slate-800 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 right-0 w-[40%] h-full bg-purple-500/20 blur-[120px] rounded-full" />
@@ -199,7 +195,6 @@ export default function Features() {
         </div>
       </section>
 
-      {/* Integrations & Connectors */}
       <section className="section-padding bg-white border-y border-slate-100 overflow-hidden">
         <div className="container-standard">
           <div className="w-full flex flex-col items-center justify-center text-center mb-16">
@@ -210,7 +205,6 @@ export default function Features() {
           </div>
 
           <div className="relative">
-            {/* Row 1: Left */}
             <div className="flex gap-6 mb-8 animate-marquee-left whitespace-nowrap">
               {[...integrations, ...integrations].map((item, i) => (
                 <div key={`left-${i}`} className="inline-flex items-center justify-center px-10 py-5 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-[10px] uppercase tracking-[0.2em] text-slate-600 shadow-sm hover:border-[#10B981] hover:text-[#10B981] transition-all cursor-default min-w-[200px]">
@@ -219,7 +213,6 @@ export default function Features() {
               ))}
             </div>
 
-            {/* Row 2: Right */}
             <div className="flex gap-6 animate-marquee-right whitespace-nowrap">
               {[...integrations, ...integrations].map((_, i) => (
                 <div key={`right-${i}`} className="inline-flex items-center justify-center px-10 py-5 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-[10px] uppercase tracking-[0.2em] text-slate-600 shadow-sm hover:border-[#10B981] hover:text-[#10B981] transition-all cursor-default min-w-[200px]">
@@ -228,7 +221,6 @@ export default function Features() {
               ))}
             </div>
 
-            {/* Fades */}
             <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
             <div className="absolute inset-y-0 right-0 w-48 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
           </div>
@@ -239,12 +231,10 @@ export default function Features() {
         </div>
       </section>
 
-      {/* CommandCenter Section */}
       <section className="py-16 bg-slate-50/50 border-y border-slate-100">
         <CommandCenter />
       </section>
 
-      {/* Developer Section */}
       <section className="section-padding bg-blue-50/20 overflow-hidden">
         <div className="container-standard">
           <div className="max-w-3xl mx-auto text-center mb-14">
@@ -315,7 +305,6 @@ export default function Features() {
         </div>
       </section>
 
-      {/* Final CTA */}
       <section className="section-padding bg-slate-900 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent" />

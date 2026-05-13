@@ -9,14 +9,31 @@ export default function EngineeringLeverage() {
   ];
 
   return (
-    <section className="py-6 bg-white overflow-hidden">
-      <div className="container-standard max-w-6xl mx-auto">
+    <section className="py-20 bg-white overflow-hidden">
+      <div className="container-standard">
+        <div className="text-center max-w-4xl mx-auto mb-8">
+          <div className="inline-flex items-center rounded-full border border-slate-200 bg-white px-5 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 mb-10 shadow-sm">
+            WHY TEAMS USE GAPFLOW
+          </div>
+
+          <h2 className="text-5xl lg:text-7xl font-black text-slate-900 tracking-tighter leading-[1.1] mb-10">
+            Stop Building Operational Infrastructure Internally
+          </h2>
+
+          <p className="text-lg lg:text-xl text-slate-500 font-bold max-w-3xl mx-auto leading-relaxed mb-6">
+            Most teams waste engineering time rebuilding workflows, retries, integrations,
+            queues, triggers, scheduling, AI coordination, and execution systems from scratch.
+          </p>
+
+          <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] max-w-3xl mx-auto">
+            Gapflow gives your product these capabilities out of the box.
+          </p>
+        </div>
+
         <div className="bg-[#0a0a0b] rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden shadow-2xl">
-          {/* Subtle Background Glow */}
           <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#00C07F]/5 blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-            {/* Left: Content */}
             <div className="max-w-lg">
               <div className="inline-flex items-center rounded-full border border-slate-800 bg-slate-900 px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-[#00C07F] mb-6">
                 ENGINEERING LEVERAGE
@@ -33,7 +50,6 @@ export default function EngineeringLeverage() {
               </p>
             </div>
 
-            {/* Right: Built-in Features List */}
             <div className="space-y-2.5">
               {builtInFeatures.map((feature, i) => (
                 <div
